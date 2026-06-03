@@ -2,30 +2,24 @@ schema: "hugoblox/author/v1"
 slug: "me"
 is_owner: true
 name:
-  display: "Josh McCamley - Technical Game Designer"
-  given: "Alex"
-  family: "Johnson"
+  display: "Josh McCamley"
+  given: "Josh"
+  family: "McCamley"
 postnominals: []
 status:
   icon: "💻"
-role: "Full-Stack Developer"
-email: "alex@example.com"
-bio: "Full-stack developer with 5+ years of experience building scalable web applications.
-
-  Passionate about modern JavaScript, cloud architecture, and creating delightful user experiences.\n"
+role: "Technical Game Designer"
+email: "Josh@madmoonstudios.co.uk"
+bio: "Co-Director and Game Developer at Mad Moon Studios"
 affiliations:
   - name: "Tech Corp"
     url: "https://techcorp.example.com"
 links:
-  - icon: "at-symbol"
-    url: "mailto:alex@example.com"
-    label: "E-mail Me"
-  - icon: "brands/github"
-    url: "https://github.com/alexjohnson"
+  - icon: "hero/at-symbol"
+    url: "Josh@madmoonstudios.co.uk"
+    label: "Email"
   - icon: "brands/linkedin"
-    url: "https://www.linkedin.com/in/alexjohnson/"
-  - icon: "brands/x"
-    url: "https://x.com/alexjohnson"
+    url: "https://www.linkedin.com/in/joshmccamley/"
 interests:
   - "Web Development"
   - "Cloud Architecture"

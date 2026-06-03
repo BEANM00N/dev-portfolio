@@ -21,7 +21,7 @@ image:
     background-position: center !important;
   }
 
-  /* 2. Wrap your content in a premium "glass" card like Tony's */
+  /* 2. Wrap your content in a premium "glass" card */
   article {
     background-color: rgba(30, 41, 59, 0.6) !important;
     backdrop-filter: blur(12px);
@@ -33,19 +33,19 @@ image:
     margin-bottom: 3rem;
   }
 
- /* 3. Custom Action Button */
+  /* 3. Custom Action Button */
   .custom-play-btn {
     display: inline-flex;
     align-items: center;
     gap: 0.6rem;
-    padding: 0.6rem 1.25rem; /* Slightly adjusted padding for a perfect pill/rectangle */
+    padding: 0.6rem 1.25rem; 
     border: 2px solid #e05e5e; 
     border-radius: 0.5rem;
     color: white !important;
     text-decoration: none !important;
     font-weight: 600;
     font-size: 1.1rem;
-    line-height: 1 !important; /* Keeps the text from stretching the button vertically */
+    line-height: 1 !important; 
     background-color: transparent;
     transition: all 0.2s ease-in-out;
     margin-bottom: 2rem;
@@ -56,72 +56,91 @@ image:
     color: white !important;
   }
   
-  /* Forces the external SVG icon to size correctly */
   .custom-play-btn img {
     width: 1.25rem !important;
     height: 1.25rem !important;
     object-fit: contain;
     display: block;
-    margin: 0 !important; /* This kills the giant default image margins! */
+    margin: 0 !important; 
   }
-
- /* 4. Table of Contents - Tony's Fluid Sidebar (Updated for Tailwind) */
-  .docs-toc, .toc, #TableOfContents, aside nav {
+/* Prevent browser anchor jumps from overshooting */
+  article h2, article h3 {
+    scroll-margin-top: 120px !important;
+  }
+  /* 4. Table of Contents - Glass Card & Links */
+  .hb-toc > div {
     background-color: rgba(30, 41, 59, 0.6) !important;
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
     border-radius: 1rem;
     padding: 1.5rem !important;
-    border-left: 4px solid #e05e5e !important; /* The solid red line on the left */
-    margin-top: 3rem;
+    border-left: 4px solid #e05e5e !important; 
+    height: fit-content !important; 
+    margin-top: 3rem !important;
   }
 
-  /* Style the "On this page" header */
-  .docs-toc h2, .docs-toc h3, .toc h2, aside nav h2 {
+  .hb-toc p {
     color: white !important;
     font-size: 1.1rem !important;
     margin-bottom: 1rem !important;
     font-weight: 600 !important;
+    text-transform: none !important;
   }
 
-  /* Remove default bullet points */
-  .docs-toc ul, .toc ul, #TableOfContents ul, aside nav ul {
+  .hb-toc ul {
     list-style: none !important;
     padding-left: 0 !important;
     margin: 0 !important;
   }
   
-  /* Indent sub-headings slightly */
-  .docs-toc ul ul, .toc ul ul, #TableOfContents ul ul, aside nav ul ul {
+  .hb-toc ul ul {
     padding-left: 1rem !important; 
   }
 
-  /* Style the links */
-  .docs-toc a, .toc a, #TableOfContents a, aside nav a {
-    color: #94a3b8 !important; /* Muted grey text */
+  .hb-toc a {
+    color: #94a3b8 !important; 
     text-decoration: none !important;
-    display: inline-block;
-    padding: 0.3rem 0.8rem;
-    border-radius: 9999px !important; /* Pill shape */
+    display: block !important;
+    padding: 0.35rem 0.8rem !important;
+    border-radius: 9999px !important; 
     transition: all 0.2s ease-in-out;
-    margin-bottom: 0.2rem;
-    font-size: 0.9rem;
+    margin-bottom: 0.25rem !important;
+    font-size: 0.9rem !important;
     border: 1px solid transparent !important; 
-    width: 100%;
   }
 
-  .docs-toc a:hover, .toc a:hover, #TableOfContents a:hover, aside nav a:hover {
+  .hb-toc a:hover {
     color: white !important;
     background-color: rgba(255, 255, 255, 0.05) !important;
   }
 
-  /* The magic 'active' class applied by Hugo's Scrollspy */
-  .docs-toc a.active, .toc a.active, #TableOfContents a.active, aside nav a.active {
+  /* --- GUARANTEED RED PILL ACTIVE STATE --- */
+  .hb-toc a.red-pill-active {
     color: white !important;
-    border: 1px solid #e05e5e !important; /* Tony's red pill outline */
+    border: 1px solid #e05e5e !important; 
     background-color: transparent !important;
   }
 </style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        const id = entry.target.getAttribute('id');
+        const link = document.querySelector(`.hb-toc a[href="#${id}"]`);
+        
+        // When a heading enters the view, highlight its link
+        if (entry.isIntersecting && link) {
+          document.querySelectorAll('.hb-toc a').forEach(l => l.classList.remove('red-pill-active'));
+          link.classList.add('red-pill-active');
+        }
+      });
+    }, { rootMargin: '-20% 0px -70% 0px' });
+
+    // Track all H2 and H3 headings inside the article
+    document.querySelectorAll('article h2, article h3').forEach(h => observer.observe(h));
+  });
+</script>
 
 <a href="https://mad-moon-studios.itch.io/shoot-to-die" class="custom-play-btn" target="_blank">
   <img src="https://static.itch.io/images/itchio-textless-white.svg" alt="Itch.io logo">
@@ -129,13 +148,16 @@ image:
 </a>
 
 ## Gameplay Trailer
-(Embed your trailer here later)
+
+<div style="border-radius: 1rem; overflow: hidden; border: 1px solid rgba(255, 255, 255, 0.1); box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
+  {{< youtube RBfGwsypPt4 >}}
+</div>
 
 ## Full Demo Gameplay
-(Embed your demo here later)
+<div style="height: 600px; background: rgba(255,255,255,0.05); border-radius: 1rem; padding: 2rem;">Pretend this is a huge block of text describing the demo!</div>
 
 ## Overview
-Shoot to Die is a fast-paced incremental game...
+<div style="height: 600px; background: rgba(255,255,255,0.05); border-radius: 1rem; padding: 2rem;">Shoot to Die is a fast-paced incremental game...</div>
 
 ## Combat Design
-We focused heavily on dice mechanics...
+<div style="height: 600px; background: rgba(255,255,255,0.05); border-radius: 1rem; padding: 2rem;">We focused heavily on dice mechanics...</div>

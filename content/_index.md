@@ -7,49 +7,39 @@ sections:
   - block: "dev-hero"
     content:
       username: "me"
-      greeting: "Hi, I'm"
+      greeting: ""
+      text: "Co-Director and Game Developer at Mad Moon Studios"
       show_status: false
       show_scroll_indicator: false
-      typewriter:
-        enable: false
-        prefix: "I build"
-        strings:
-          - "full-stack web apps"
-          - "scalable APIs"
-          - "beautiful UIs"
-          - "open source tools"
-        type_speed: 70
-        delete_speed: 40
-        pause_time: 2500
       cta_buttons:
         - text: "Check out my Work!"
           url: "#projects"
           icon: "arrow-down"
       links:
-        - icon: "brands/LI-In-Bug"
-          url: "https://www.linkedin.com/in/joshmccamley/?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3B4uuo3CidQWuXa%2B3A%2Fk1VXw%3D%3D"
-          label: ""
+        - icon: "brands/linkedin"
+          url: "https://www.linkedin.com/in/joshmccamley/"
+        - icon: "brands/github"
+          url: "https://github.com/your-username"
+        - icon: "brands/itch-io"
+          url: "https://your-username.itch.io/"
+      bio: "Co-Director and Game Developer at Mad Moon Studios"
     design:
       style: "centered"
       avatar_shape: "circle"
       animations: true
-      background:
-        color:
-          light: "#fafafa"
-          dark: "#0a0a0f"
       spacing:
         padding:
-          - "6rem"
-          - "0"
-          - "4rem"
-          - "0"
+          - "8rem"
+          - "1rem"
+          - "8rem"
+          - "1rem"
     ce: "section-hero"
     id: "hero"
     As: "section-8ede42dd"
   - block: "portfolio"
     content:
-      title: "Featured Projects"
-      subtitle: "A selection of my recent work"
+      title: "My Projects"
+      subtitle: ""
       count: 0
       filters:
         folders:
@@ -57,14 +47,13 @@ sections:
       buttons:
         - name: "All"
           tag: "*"
-        - name: "Full-Stack"
-          tag: "Full-Stack"
-        - name: "Frontend"
-          tag: "Frontend"
-        - name: "Backend"
-          tag: "Backend"
+        - name: "Unreal Engine"
+          tag: "Unreal Engine"
+        - name: "Tools"
+          tag: "Tools"
       default_button_index: 0
     design:
+      view: "showcase"
       columns: 3
       background:
         color:
@@ -76,44 +65,33 @@ sections:
           - "0"
           - "4rem"
           - "0"
+      animations: false
     ce: "section-projects"
     id: "projects"
     As: "section-1995ef5c"
   - block: "tech-stack"
     content:
-      title: "Tech Stack"
-      subtitle: "Technologies I use to build things"
+      title: "Tech"
+      subtitle: "Things I like to use"
       categories:
         - name: "Languages"
           items:
-            - name: "TypeScript"
-              icon: "devicon/typescript"
-            - name: "JavaScript"
-              icon: "devicon/javascript"
-            - name: "Python"
-              icon: "devicon/python"
-            - name: "Go"
-              icon: "devicon/go"
-        - name: "Frontend"
+            - name: "C++"
+              icon: "devicon/cplusplus"
+        - name: "Software"
           items:
-            - name: "React"
-              icon: "devicon/react"
-            - name: "Next.js"
-              icon: "devicon/nextjs"
-            - name: "Tailwind CSS"
-              icon: "devicon/tailwindcss"
-            - name: "Alpine.js"
-              icon: "devicon/alpinejs"
-        - name: "Backend"
+            - name: "UE5"
+              icon: "brands/unreal"
+            - name: "Blender"
+              icon: "devicon/blender"
+            - name: "Obsidian"
+              icon: "brands/obsidian"
+        - name: "Source"
           items:
-            - name: "Node.js"
-              icon: "devicon/nodejs"
-            - name: "Express"
-              icon: "devicon/express"
-            - name: "PostgreSQL"
-              icon: "devicon/postgresql"
-            - name: "Redis"
-              icon: "devicon/redis"
+            - name: "Github"
+              icon: "devicon/github"
+            - name: "Perforce"
+              icon: "assets/media/icons/perforce.svg"
         - name: "DevOps"
           items:
             - name: "Docker"
@@ -247,4 +225,69 @@ sections:
     ce: "section-contact"
     id: "contact"
     As: "section-7a252383"
+  - block: "markdown"
+    content:
+      title: ""
+      text: |
+        <style>
+          /* 1. Full-bleed background image for the Hero Section */
+          #hero {
+            /* We added a dark linear-gradient overlay before the url() */
+            background-image: linear-gradient(rgba(15, 23, 42, 0.3), rgba(15, 23, 42, 0.4)), url('/hero-bg.jpg') !important; 
+            background-size: cover !important;
+            background-position: center !important;
+            background-attachment: fixed !important;
+            position: relative;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+          }
+
+        /* 2. Turn ONLY the content container into a centered Glass Island */
+          #hero > div:has(h1) {
+            background-color: rgba(30, 41, 59, 0.75) !important;
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1) !important;
+            border-radius: 2rem !important;
+            padding: 3.5rem 2rem !important;
+            max-width: 600px !important; 
+            margin: 0 auto !important; 
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5) !important; 
+          }
+          /* 4. Resize the Profile Picture AND its circular mask */
+          #hero img {
+            width: 200px !important; 
+            height: 200px !important; 
+            max-width: none !important;
+            object-fit: cover !important; /* Ensures the image doesn't stretch weirdly */
+          }
+
+          /* Target the invisible wrapper container */
+          #hero div:has(> img), 
+          #hero a:has(> img),
+          #hero span:has(> img) {
+            width: 200px !important;
+            height: 200px !important;
+            max-width: 200px !important;
+            border-radius: 50% !important; /* Enforces the perfect circle */
+            overflow: hidden !important;   /* Clips anything outside the circle */
+            margin: 0 auto !important;     /* Keeps the avatar perfectly centered */
+          }
+          /* Force the Unreal Engine logo to be pure white */
+          [class*="unrealengine"], 
+          img[src*="unrealengine"], 
+          svg:has([id*="unrealengine"]) {
+            color: white !important;
+            fill: white !important;
+            filter: brightness(0) invert(1) !important; /* Turns any color/black asset pure white */
+          }
+        </style>
+    design:
+      spacing:
+        padding:
+          - "0"
+          - "0"
+          - "0"
+          - "0"
+    ce: "section-43a65081"
+    As: "section-0eee42b6"
 ---
