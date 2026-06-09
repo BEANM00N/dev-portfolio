@@ -1,12 +1,13 @@
 ---
-title: Shoot to Die
+title: Panzer Dragoner
 date: 2025-11-10
-summary: An incremental Dice Shooting Game - Keep the Dice up as long as you can!
+summary: Control a Modular Tank in an Isometric Roguelike where Realistic Armour
+  and Ballistics dictate your Fight.
 tags:
   - Games
   - Unreal Engine
   - Blueprints
-  - Tech Art
+  - Multiplayer
 image:
   preview_only: true
 ---
@@ -14,7 +15,7 @@ image:
 <style>
   /* 1. Set the fixed, darkened background image for the whole page */
   body {
-    background-image: linear-gradient(rgba(15, 23, 42, 0.45), rgba(15, 23, 42, 0.55)), url('featured.jpg') !important;
+    background-image: linear-gradient(rgba(15, 23, 42, 0.45), rgba(15, 23, 42, 0.55)), url('featured.png') !important;
     background-size: cover !important;
     background-attachment: fixed !important;
     background-position: center !important;
@@ -260,7 +261,7 @@ image:
 </a>
 
 <div class="tony-blurb">
-  An incremental Dice Shooting Game - Keep the Dice up as long as you can!
+  Control a Modular Tank in an Isometric Roguelike where Realistic Armour and Ballistics dictate your Fight.
 </div>
 
 <div class="tony-specs-container">
@@ -272,7 +273,7 @@ image:
   <div class="tony-spec-row">
     <i class="fas fa-code"></i>
     <span class="tony-pill blue">Blueprints</span>
-    <span class="tony-pill blue">Tech Art</span>
+    <span class="tony-pill blue">Multiplayer</span>
   </div>
   
   <div class="tony-spec-row">
@@ -284,9 +285,9 @@ image:
 <div class="tony-highlights-card">
   <h3><i class="far fa-star"></i> Highlights</h3>
   <ul>
-    <li>Developed core mechanics for an <span class="keyword-red">incremental dice shooting</span> gameplay loop</li>
-    <li>Implemented dynamic UI and satisfying game feel elements</li>
-    <li>Handled logic and technical art workflows entirely in <span class="keyword-red">Blueprints</span></li>
+    <li>Engineered a <span class="keyword-red">modular tank system</span> allowing deep customization of armor and loadouts</li>
+    <li>Developed <span class="keyword-red">realistic ballistics logic</span> and penetration calculations dynamically interacting with angled surfaces</li>
+    <li>Integrated seamless <span class="keyword-red">Multiplayer</span> replication for cooperative isometric roguelike gameplay</li>
   </ul>
 </div>
 
@@ -300,7 +301,7 @@ image:
 <div style="height: 600px; background: rgba(255,255,255,0.05); border-radius: 1rem; padding: 2rem;">Pretend this is a huge block of text describing the demo!</div>
 
 ## Overview
-<div style="height: 600px; background: rgba(255,255,255,0.05); border-radius: 1rem; padding: 2rem;">Shoot to Die is a fast-paced incremental game...</div>
+<div style="height: 600px; background: rgba(255,255,255,0.05); border-radius: 1rem; padding: 2rem;">Panzer Dragoner is a fast-paced incremental game...</div>
 
 ## Combat Design
 <div style="height: 600px; background: rgba(255,255,255,0.05); border-radius: 1rem; padding: 2rem;">We focused heavily on dice mechanics...</div>

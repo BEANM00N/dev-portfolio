@@ -1,13 +1,12 @@
 ---
 title: SOL CONSTRUCT
 date: 2025-11-10
-summary: An incremental Dice Shooting Game
+summary: Pilot a Scrappy Aerial Combat Rig in a Rusty Survival Roguelite
 tags:
+  - Games
   - Unreal Engine
   - Blueprints
   - Tech Art
-status: published
-draft: false
 image:
   preview_only: true
 ---
@@ -63,10 +62,12 @@ image:
     display: block;
     margin: 0 !important; 
   }
-/* Prevent browser anchor jumps from overshooting */
+
+  /* Prevent browser anchor jumps from overshooting */
   article h2, article h3 {
     scroll-margin-top: 120px !important;
   }
+
   /* 4. Table of Contents - Glass Card & Links */
   .hb-toc > div {
     background-color: rgba(30, 41, 59, 0.6) !important;
@@ -120,6 +121,117 @@ image:
     border: 1px solid #e05e5e !important; 
     background-color: transparent !important;
   }
+
+  /* ========================================== */
+  /* TONY'S HIGHLIGHTS & TAGS CSS               */
+  /* ========================================== */
+
+  /* Hide the native Hugo Blox tags block at the very bottom */
+  .article-tags, 
+  .pub-tags, 
+  div:has(> a[href*="/tags/"]) {
+    display: none !important;
+  }
+
+  /* Indented Blurb Styling */
+  .tony-blurb {
+    border-left: 4px solid #e05e5e;
+    padding-left: 1.5rem;
+    margin: 1.5rem 0 2.5rem 0;
+    font-size: 1.15rem;
+    line-height: 1.6;
+    color: #94a3b8;
+    font-style: italic;
+  }
+
+  /* Specs & Tech Tag Rows */
+  .tony-specs-container {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .tony-spec-row {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    color: white;
+  }
+
+  .tony-spec-row i {
+    width: 24px;
+    font-size: 1.25rem;
+    text-align: center;
+    color: #cbd5e1;
+  }
+
+  /* Custom Pill Buttons */
+  .tony-pill {
+    padding: 0.25rem 0.8rem;
+    border-radius: 0.35rem;
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.025em;
+  }
+
+  .tony-pill.blue {
+    background-color: #0070f3;
+    color: white;
+  }
+
+  .tony-pill.black {
+    background-color: #000000;
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+  }
+
+  /* Highlights Card Box */
+  .tony-highlights-card {
+    background-color: rgba(30, 41, 59, 0.2);
+    border: 2px solid rgba(224, 94, 94, 0.35);
+    border-radius: 1rem;
+    padding: 2rem;
+    margin-bottom: 3rem;
+  }
+
+  .tony-highlights-card h3 {
+    color: white !important;
+    font-size: 1.35rem !important;
+    font-weight: 700 !important;
+    margin-top: 0 !important;
+    margin-bottom: 1.25rem !important;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+  }
+
+  .tony-highlights-card h3 i {
+    color: #e05e5e;
+  }
+
+  .tony-highlights-card ul {
+    list-style-type: disc !important;
+    padding-left: 1.5rem !important;
+    margin: 0 !important;
+  }
+
+  .tony-highlights-card li {
+    color: #cbd5e1 !important;
+    margin-bottom: 0.85rem !important;
+    line-height: 1.6;
+    font-size: 1rem;
+  }
+
+  .tony-highlights-card li:last-child {
+    margin-bottom: 0 !important;
+  }
+
+  /* Specific Keyword Highlight Text */
+  .keyword-red {
+    color: #e05e5e;
+    font-weight: 600;
+  }
 </style>
 
 <script>
@@ -146,6 +258,42 @@ image:
   <img src="https://static.itch.io/images/itchio-textless-white.svg" alt="Itch.io logo">
   Play
 </a>
+
+<div class="tony-blurb">
+A high stakes SinglePlayer Survival Roguelite. Pilot a
+sentient flight combat rig built for survival in a decaying
+metal world. Obliterate your foes, harvest their scrap, and
+rebuild to survive.</div>
+
+<div class="tony-specs-container">
+  <div class="tony-spec-row">
+    <i class="fas fa-desktop"></i>
+    <span class="tony-pill blue">Windows</span>
+  </div>
+  
+  <div class="tony-spec-row">
+    <i class="fas fa-code"></i>
+    <span class="tony-pill blue">C++</span>
+    <span class="tony-pill blue">Blueprints</span>
+  </div>
+  
+  <div class="tony-spec-row">
+    <i class="fas fa-laptop-code"></i>
+    <span class="tony-pill black">Unreal Engine 5</span>
+    <span class="tony-pill blue">FMOD</span>
+  </div>
+</div>
+
+<div class="tony-highlights-card">
+  <h3><i class="far fa-star"></i> Highlights</h3>
+  <ul>
+    <li>Extended Unreal Engine’s Gameplay Ability System to work with turn-based abilities and effects</li>
+    <li>Implemented a custom <span class="keyword-red">Utility AI plugin</span> for modeling the behavior of creatures in combat</li>
+    <li>Developed a reusable solution for <span class="keyword-red">inventory</span> management across multiple game systems</li>
+    <li>Created tools for streamlining the creation process for character assets</li>
+  </ul>
+</div>
+
 
 ## Gameplay Trailer
 
