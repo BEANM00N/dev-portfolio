@@ -92,16 +92,6 @@ sections:
               icon: "devicon/github"
             - name: "Perforce"
               icon: "assets/media/icons/perforce.svg"
-        - name: "DevOps"
-          items:
-            - name: "Docker"
-              icon: "devicon/docker"
-            - name: "AWS"
-              icon: "devicon/amazonwebservices"
-            - name: "GitHub Actions"
-              icon: "brands/github"
-            - name: "Vercel"
-              icon: "devicon/vercel"
     design:
       style: "grid"
       show_levels: false
@@ -279,6 +269,26 @@ sections:
             color: white !important;
             fill: white !important;
             filter: brightness(0) invert(1) !important; /* Turns any color/black asset pure white */
+          }
+          /* --- FIX: Make the entire Project Card clickable --- */
+          
+          /* 1. Set the boundary for the clickable area without breaking native animations */
+          #projects .group,
+          #projects .card {
+            position: relative !important;
+          }
+
+          /* 2. Stretch the title/image link to completely cover the card */
+          #projects .group h2 a::after,
+          #projects .group h3 a::after,
+          #projects .group a:first-of-type::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 20; /* Ensures it sits firmly on top of the text and images */
           }
         </style>
     design:

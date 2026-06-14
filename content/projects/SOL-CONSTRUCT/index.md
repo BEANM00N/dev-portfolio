@@ -1,6 +1,6 @@
 ---
 title: SOL CONSTRUCT
-date: 2025-11-10
+date: 2026-06-14
 summary: Pilot a Scrappy Aerial Combat Rig in a Rusty Survival Roguelite
 tags:
   - Games

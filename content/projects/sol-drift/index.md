@@ -1,13 +1,12 @@
 ---
-title: Panzer Dragoner
-date: 2024-10-21
-summary: Control a Modular Tank in an Isometric Roguelike where Realistic Armour
-  and Ballistics dictate your Fight.
+title: SOL DRIFT
+date: 2024-02-16
+summary: Starfox meets Doom. a fusion of the classic arcade flight genre and the modern arena shooter.
 tags:
   - Games
   - Unreal Engine
   - Blueprints
-  - Multiplayer
+  - Tech Art
 image:
   preview_only: true
 ---
@@ -15,7 +14,7 @@ image:
 <style>
   /* 1. Set the fixed, darkened background image for the whole page */
   body {
-    background-image: linear-gradient(rgba(15, 23, 42, 0.45), rgba(15, 23, 42, 0.55)), url('featured.png') !important;
+    background-image: linear-gradient(rgba(15, 23, 42, 0.45), rgba(15, 23, 42, 0.55)), url('featured.jpg') !important;
     background-size: cover !important;
     background-attachment: fixed !important;
     background-position: center !important;
@@ -261,8 +260,10 @@ image:
 </a>
 
 <div class="tony-blurb">
-  Control a Modular Tank in an Isometric Roguelike where Realistic Armour and Ballistics dictate your Fight.
-</div>
+A high stakes SinglePlayer Survival Roguelite. Pilot a
+sentient flight combat rig built for survival in a decaying
+metal world. Obliterate your foes, harvest their scrap, and
+rebuild to survive.</div>
 
 <div class="tony-specs-container">
   <div class="tony-spec-row">
@@ -272,24 +273,27 @@ image:
   
   <div class="tony-spec-row">
     <i class="fas fa-code"></i>
+    <span class="tony-pill blue">C++</span>
     <span class="tony-pill blue">Blueprints</span>
-    <span class="tony-pill blue">Multiplayer</span>
   </div>
   
   <div class="tony-spec-row">
     <i class="fas fa-laptop-code"></i>
-    <span class="tony-pill black">Unreal Engine</span>
+    <span class="tony-pill black">Unreal Engine 5</span>
+    <span class="tony-pill blue">FMOD</span>
   </div>
 </div>
 
 <div class="tony-highlights-card">
   <h3><i class="far fa-star"></i> Highlights</h3>
   <ul>
-    <li>Engineered a <span class="keyword-red">modular tank system</span> allowing deep customization of armor and loadouts</li>
-    <li>Developed <span class="keyword-red">realistic ballistics logic</span> and penetration calculations dynamically interacting with angled surfaces</li>
-    <li>Integrated seamless <span class="keyword-red">Multiplayer</span> replication for cooperative isometric roguelike gameplay</li>
+    <li>Extended Unreal Engine’s Gameplay Ability System to work with turn-based abilities and effects</li>
+    <li>Implemented a custom <span class="keyword-red">Utility AI plugin</span> for modeling the behavior of creatures in combat</li>
+    <li>Developed a reusable solution for <span class="keyword-red">inventory</span> management across multiple game systems</li>
+    <li>Created tools for streamlining the creation process for character assets</li>
   </ul>
 </div>
+
 
 ## Gameplay Trailer
 
@@ -301,7 +305,7 @@ image:
 <div style="height: 600px; background: rgba(255,255,255,0.05); border-radius: 1rem; padding: 2rem;">Pretend this is a huge block of text describing the demo!</div>
 
 ## Overview
-<div style="height: 600px; background: rgba(255,255,255,0.05); border-radius: 1rem; padding: 2rem;">Panzer Dragoner is a fast-paced incremental game...</div>
+<div style="height: 600px; background: rgba(255,255,255,0.05); border-radius: 1rem; padding: 2rem;">Shoot to Die is a fast-paced incremental game...</div>
 
 ## Combat Design
 <div style="height: 600px; background: rgba(255,255,255,0.05); border-radius: 1rem; padding: 2rem;">We focused heavily on dice mechanics...</div>

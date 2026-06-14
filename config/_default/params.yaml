@@ -6,26 +6,38 @@ hugoblox:
     tagline: Co-Director and Technical Designer | Mad Moon Studios | Ulster University
     description: ""
   theme:
-    mode: system
+    mode: dark
     pack: retro
     colors:
-      primary: ""
+      primary: "#e05e5e"
       secondary: ""
       neutral: ""
+    colors_light:
+      primary: ""
+    colors_dark:
+      primary: ""
+      secondary: ""
+      neutral: "#476ed3"
+    surfaces:
+      header:
+        background: "#1c253a"
+      footer:
+        background: "#1c253a"
+      background: "#1c253a"
   typography:
     font: sans
     size: md
   layout:
     radius: md
     spacing: comfortable
-    avatar_shape: circle
+    avatar_shape: rounded
   header:
     enable: true
     style: navbar
     sticky: true
-    align: center
+    align: right
     search: true
-    theme_toggle: true
+    theme_toggle: false
   footer:
     style: minimal
     language_switcher: true
@@ -37,6 +49,6 @@ hugoblox:
     toc:
       enable: true
     reading_time:
-      enable: true
+      enable: false
   search:
     enable: true
