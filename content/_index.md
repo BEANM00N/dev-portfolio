@@ -194,11 +194,11 @@ sections:
   - block: "contact-info"
     content:
       title: "Get In Touch"
-      subtitle: "Let's build something amazing together"
+      subtitle: "Let's chat!"
       text: |-
         I'm always interested in hearing about new projects and opportunities.
         Whether you're looking to hire, collaborate, or just want to say hi, feel free to reach out!
-      email: "alex@example.com"
+      email: "josh@madmoonstudios.co.uk"
       autolink: true
     design:
       columns: "1"

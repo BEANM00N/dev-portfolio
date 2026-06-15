@@ -21,47 +21,29 @@ links:
   - icon: "brands/linkedin"
     url: "https://www.linkedin.com/in/joshmccamley/"
 interests:
-  - "Web Development"
-  - "Cloud Architecture"
-  - "Open Source"
-  - "Developer Experience"
 education:
-  - degree: "B.S. Computer Science"
-    institution: "State University"
-    start: "2015-09-01"
-    end: "2019-05-31"
-    summary: "Focus on software engineering and distributed systems.
-
-      Senior project on distributed caching systems.\n"
+  - degree: "Games Design BDes (Hons) "
+    institution: "Ulster University"
+    start: "2021-09-20"
+    end: "2026-05-06"
+    summary: "Focus on software engineering and distributed systems.\n"
     button:
-      text: "View Project"
+      text: "View Dissertation"
       url: "https://github.com/alexjohnson/senior-project"
       icon: "brands/github"
 experience:
-  - role: "Senior Software Engineer"
-    org: "Tech Corp"
-    start: "2023-01-01"
-    summary: "Lead development of microservices architecture serving 1M+ users.
-
-      Improved API response time by 40% through optimization.
-
-      Mentored team of 5 junior developers.\n"
-  - role: "Full-Stack Developer"
-    org: "Startup Inc"
-    start: "2021-06-01"
-    end: "2022-12-31"
-    summary: "Built and deployed 3 production applications from scratch.
-
-      Implemented CI/CD pipeline reducing deployment time by 60%.
-
-      Led migration from monolith to microservices architecture.\n"
-  - role: "Junior Developer"
-    org: "Web Agency"
-    start: "2020-01-01"
-    end: "2021-05-31"
-    summary: "Developed client websites using React and modern web technologies.
-
-      Participated in code reviews and agile ceremonies.\n"
+  - role: "Technical Game Designer & Co-Director"
+    org: "Mad Moon Studios"
+    location: 'Northern Ireland'
+    start: "2024-08-20"
+    end: "present"
+    summary: "Secured Goverment Funding as part of the Platform Program with Northern Ireland Screen, where I co-lead the development of several prototypes, delivered demos at conventions and pitched to Publishers.\n"
+  - role: "Technical Designer (Placement / DPP)"
+    org: "Mad Moon Studios"
+    location: 'Northern Ireland'
+    date_start: '2023-05-01'
+    date_end: '2024-08-20'
+    summary: "Secured an industrial placement year leading to the award of a Diploma in Professional Practice. Focused heavily on tool engineering, blueprint architecture, and shipping plugin assets.\n"
 skills:
   - name: "Development"
     items:
