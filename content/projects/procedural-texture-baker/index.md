@@ -464,11 +464,11 @@ ProcTex was born out of a need to rapidly iterate on retro assets during the dev
 * **Flexible Export:** You have the choice to either export raw textures to plug into your own custom shader pipelines, or export everything packaged cleanly into a ready to use Unreal Material. 
 
 <div class="glass-carousel">
-  <img src="image1.png" alt="ProcTex Screenshot 1">
-  <img src="image2.png" alt="ProcTex Screenshot 2">
-  <img src="image3.png" alt="ProcTex Screenshot 3">
-  <img src="image4.png" alt="ProcTex Screenshot 4">
-  <img src="image5.png" alt="ProcTex Screenshot 5">
+  <img src="Image1.png" alt="ProcTex Screenshot 1">
+  <img src="Image2.png" alt="ProcTex Screenshot 2">
+  <img src="Image3.png" alt="ProcTex Screenshot 3">
+  <img src="Image4.png" alt="ProcTex Screenshot 4">
+  <img src="Image5.png" alt="ProcTex Screenshot 5">
 </div>
 
 *(Little Side note: Coincidentally, Puck's Pixelizer came out right around the time I was building this! Their tool is incredibly robust and offers a ton of advanced features, so I highly recommend checking it out if you need a heavier-duty solution, plus their palette stuff is super neat!)*
