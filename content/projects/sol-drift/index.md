@@ -14,7 +14,7 @@ image:
 <style>
   /* 1. Set the fixed, darkened background image for the whole page */
   body {
-    background-image: linear-gradient(rgba(15, 23, 42, 0.45), rgba(15, 23, 42, 0.55)), url('featured.jpg') !important;
+    background-image: linear-gradient(rgba(15, 23, 42, 0.45), rgba(15, 23, 42, 0.55)), url('featured.png') !important;
     background-size: cover !important;
     background-attachment: fixed !important;
     background-position: center !important;

@@ -26,11 +26,11 @@ education:
     institution: "Ulster University"
     start: "2021-09-20"
     end: "2026-05-06"
-    summary: "Focus on software engineering and distributed systems.\n"
+    summary: "learned.\n"
     button:
       text: "View Dissertation"
-      url: "https://github.com/alexjohnson/senior-project"
-      icon: "brands/github"
+      url: "https://drive.google.com/file/d/16Td_qokedhmdSj0rU0_FCwcCKTpfwWnB/preview"
+      icon: "brands/google-drive"
 experience:
   - role: "Technical Game Designer & Co-Director"
     org: "Mad Moon Studios"

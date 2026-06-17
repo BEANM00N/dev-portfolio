@@ -567,4 +567,4 @@ void UModelPreviewWidget::ApplyMeshAsset()
   **Procedural Material Architecture:**
     The underlying retro rendering logic relies heavily on parameterized Materials all working together. The posterization effect, for instance, uses a streamlined Multiply -> Floor -> Divide math operation to snap 0-1 color values into distinct visual bands. By updating global parameters via Dynamic Material Instances, sliders in the UI recalculate the shader logic instantly.
 
-{{< blueprint src="generator-graph.txt" >}}
+{{< blueprint src="generatorgraph.txt" >}}
