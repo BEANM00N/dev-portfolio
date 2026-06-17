@@ -1,14 +1,16 @@
 ---
-title: Shoot to Die
+title: "Shoot To Die"
 date: 2025-11-10
-summary: An incremental Dice Shooting Game - Keep the Dice up as long as you can!
+summary: "A frantic, physically-driven arcade score-chaser where you juggle dice with a heavy revolver."
 tags:
   - Games
   - Unreal Engine
   - Blueprints
   - Tech Art
+  - Physics
 image:
   preview_only: true
+toc: true
 ---
 
 <style>
@@ -30,6 +32,12 @@ image:
     padding: 3rem;
     margin-top: 3rem;
     margin-bottom: 3rem;
+
+    /* Widens and centers the island */
+    width: 100% !important;
+    max-width: 950px !important; 
+    margin-left: auto !important;
+    margin-right: auto !important;
   }
 
   /* 3. Custom Action Button */
@@ -232,16 +240,35 @@ image:
     color: #e05e5e;
     font-weight: 600;
   }
+
+  /* Base text shrinking for elegance */
+  article p, 
+  article li {
+    font-size: 0.95rem !important; 
+    line-height: 1.6 !important;   
+  }
+
+  /* Image Captions */
+  article figcaption {
+    font-size: 0.85rem !important; 
+    line-height: 1.4 !important;
+    opacity: 0.8; 
+    text-align: center;
+  }
+  article figcaption p {
+    font-size: inherit !important; 
+    margin-bottom: 0 !important;
+  }
 </style>
 
 <script>
   document.addEventListener('DOMContentLoaded', () => {
+    // Table of Contents Scroll Highlighting
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         const id = entry.target.getAttribute('id');
         const link = document.querySelector(`.hb-toc a[href="#${id}"]`);
         
-        // When a heading enters the view, highlight its link
         if (entry.isIntersecting && link) {
           document.querySelectorAll('.hb-toc a').forEach(l => l.classList.remove('red-pill-active'));
           link.classList.add('red-pill-active');
@@ -249,7 +276,6 @@ image:
       });
     }, { rootMargin: '-20% 0px -70% 0px' });
 
-    // Track all H2 and H3 headings inside the article
     document.querySelectorAll('article h2, article h3').forEach(h => observer.observe(h));
   });
 </script>
@@ -260,7 +286,7 @@ image:
 </a>
 
 <div class="tony-blurb">
-  An incremental Dice Shooting Game - Keep the Dice up as long as you can!
+  A frantic, physically-driven arcade score-chaser where you juggle dice with a heavy revolver. Built part-time in just one week for the "Devs Under Duress" game jam, this prototype served as an experimental playground for highly tactile, physics-based interactions and crunchy retro aesthetics.
 </div>
 
 <div class="tony-specs-container">
@@ -273,34 +299,49 @@ image:
     <i class="fas fa-code"></i>
     <span class="tony-pill blue">Blueprints</span>
     <span class="tony-pill blue">Tech Art</span>
+    <span class="tony-pill blue">Physics</span>
   </div>
   
   <div class="tony-spec-row">
     <i class="fas fa-laptop-code"></i>
-    <span class="tony-pill black">Unreal Engine</span>
+    <span class="tony-pill black">Unreal Engine 5</span>
   </div>
 </div>
 
 <div class="tony-highlights-card">
   <h3><i class="far fa-star"></i> Highlights</h3>
   <ul>
-    <li>Developed core mechanics for an <span class="keyword-red">incremental dice shooting</span> gameplay loop</li>
-    <li>Implemented dynamic UI and satisfying game feel elements</li>
-    <li>Handled logic and technical art workflows entirely in <span class="keyword-red">Blueprints</span></li>
+    <li>Developed and scoped entirely within a <span class="keyword-red">single week</span> on a part-time schedule.</li>
+    <li>Engineered a highly tactile, physics-driven interaction system, featuring <span class="keyword-red">manual weapon mechanics</span> and fully interactable environmental objects.</li>
+    <li>Designed a dual-collision projectile system utilizing "wiff" velocities to allow players to <span class="keyword-red">juggle physics actors</span> dynamically in mid-air.</li>
+    <li>Created the foundational procedural rendering shaders that eventually evolved into the fully-fledged <span class="keyword-red">ProcTex</span> Unreal Engine plugin.</li>
+    <li>Translated complex mouse-to-world-space mathematics to drive custom player controllers and responsive UI elements.</li>
   </ul>
 </div>
 
-## Gameplay Trailer
+## Overview: From Top-Down to Skeet-Shooting
 
-<div style="border-radius: 1rem; overflow: hidden; border: 1px solid rgba(255, 255, 255, 0.1); box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
-  {{< youtube RBfGwsypPt4 >}}
-</div>
+This project was born during the "Devs Under Duress" game jam in November. Our original pitch was a 3D top-down dice-rolling game called "Pay The Toll," where players would try to breach score thresholds across multiple rounds. However, as we started developing, the concept rapidly evolved into something much more kinetic: a 3D first-person arcade shooter where you use a revolver to skeet-shoot dice. It was an incredibly fun pivot, and knowing we only had a week to build it part-time forced us to focus purely on the "feel" of the game. It’s a prototype I am incredibly proud of and absolutely plan to revisit in the future.
 
-## Full Demo Gameplay
-<div style="height: 600px; background: rgba(255,255,255,0.05); border-radius: 1rem; padding: 2rem;">Pretend this is a huge block of text describing the demo!</div>
+## An Experiment in Tactility and Physics
 
-## Overview
-<div style="height: 600px; background: rgba(255,255,255,0.05); border-radius: 1rem; padding: 2rem;">Shoot to Die is a fast-paced incremental game...</div>
+Weirdly enough, this jam was my very first real dip into physics in Unreal Engine. I wanted the game to ooze tactility, communicating a heavy, mechanical feel through both the visual styling and the player mechanics. Almost everything on the player's tool bench and shop is physically interactable. 
 
-## Combat Design
-<div style="height: 600px; background: rgba(255,255,255,0.05); border-radius: 1rem; padding: 2rem;">We focused heavily on dice mechanics...</div>
+This philosophy extended directly into our weapon design. Instead of a simple "click-to-shoot" mechanic, the revolver was heavily physicalized:
+* The player has to hold the trigger to manually prime the hammer.
+* You can hold 'R' to tilt the gun and physically check the cylinder for remaining rounds.
+* Reloading requires manually ejecting casings and loading bullets one by one. 
+
+## The Mechanics of Juggling
+
+The core gameplay loop starts by using your heavy revolver like a hammer to physically smack the dice into the air. From there, a timer starts, and it becomes a juggling act. 
+
+To make shooting a tiny, chaotic physics object fun rather than frustrating, I engineered a dual-collision system for the bullets. The inner collision sphere handles direct impact effects, while a much larger outer collision sphere applies "wiff" velocity. This means near-misses will still catch the dice in their wake, propelling it further into the air. 
+
+To maximize the score (Calculated by: *Time in Air* x *Shots Hit* x *Final Landed Number*), players can toss up "Ricochet Mirrors." Shooting these mirrors automatically bounces the bullet toward the dice, exponentially increasing the score multiplier upon a successful hit. 
+
+## Technical Foundations: The Birth of ProcTex
+
+Beyond the physics and gameplay, this jam was a massive learning experience for Tech Art. We wanted a very specific gritty, rusty aesthetic—a crunchy, color-banded, noisy image. During the jam, I experimented with a complex procedural material to achieve this look in real-time. 
+
+While the visual results were incredible, the shader instructions were in the several hundreds, which absolutely tanked performance when applied universally. To solve this, I built a system to bake that procedural math down into flat texture maps. That exact optimization hurdle during this 1-week jam laid the direct foundation for the "ProcTex" texture pipeline plugin I would later build for *SOL CONSTRUCT*!

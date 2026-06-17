@@ -7,8 +7,11 @@ tags:
   - Unreal Engine
   - Blueprints
   - Tech Art
+  - C++
+  - AI
 image:
   preview_only: true
+toc: true
 ---
 
 <style>
@@ -30,37 +33,12 @@ image:
     padding: 3rem;
     margin-top: 3rem;
     margin-bottom: 3rem;
-  }
 
-  /* 3. Custom Action Button */
-  .custom-play-btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.6rem;
-    padding: 0.6rem 1.25rem; 
-    border: 2px solid #e05e5e; 
-    border-radius: 0.5rem;
-    color: white !important;
-    text-decoration: none !important;
-    font-weight: 600;
-    font-size: 1.1rem;
-    line-height: 1 !important; 
-    background-color: transparent;
-    transition: all 0.2s ease-in-out;
-    margin-bottom: 2rem;
-  }
-  
-  .custom-play-btn:hover {
-    background-color: #e05e5e; 
-    color: white !important;
-  }
-  
-  .custom-play-btn img {
-    width: 1.25rem !important;
-    height: 1.25rem !important;
-    object-fit: contain;
-    display: block;
-    margin: 0 !important; 
+    /* Widens and centers the island */
+    width: 100% !important;
+    max-width: 950px !important; 
+    margin-left: auto !important;
+    margin-right: auto !important;
   }
 
   /* Prevent browser anchor jumps from overshooting */
@@ -68,7 +46,7 @@ image:
     scroll-margin-top: 120px !important;
   }
 
-  /* 4. Table of Contents - Glass Card & Links */
+  /* 3. Table of Contents - Glass Card & Links */
   .hb-toc > div {
     background-color: rgba(30, 41, 59, 0.6) !important;
     backdrop-filter: blur(12px);
@@ -232,16 +210,76 @@ image:
     color: #e05e5e;
     font-weight: 600;
   }
+
+  /* Base text shrinking for elegance */
+  article p, 
+  article li {
+    font-size: 0.95rem !important; 
+    line-height: 1.6 !important;   
+  }
+
+  /* Image Captions */
+  article figcaption {
+    font-size: 0.85rem !important; 
+    line-height: 1.4 !important;
+    opacity: 0.8; 
+    text-align: center;
+  }
+  article figcaption p {
+    font-size: inherit !important; 
+    margin-bottom: 0 !important;
+  }
+
+  /* ========================================== */
+  /* COLLAPSIBLE CODE BLOCKS CSS                */
+  /* ========================================== */
+  details.code-dropdown {
+    background: rgba(30, 41, 59, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 0.5rem;
+    margin-top: 1rem;
+    margin-bottom: 1.5rem;
+    overflow: hidden;
+  }
+
+  details.code-dropdown summary {
+    padding: 1rem;
+    font-weight: 600;
+    color: #e05e5e;
+    cursor: pointer;
+    user-select: none;
+    outline: none;
+    transition: background 0.2s ease;
+  }
+
+  details.code-dropdown summary:hover {
+    background: rgba(255, 255, 255, 0.05);
+  }
+
+  details.code-dropdown .highlight {
+    margin: 0 !important;
+    border-radius: 0 0 0.5rem 0.5rem;
+  }
+
+  details.code-dropdown .highlight pre {
+    background-color: rgba(10, 15, 24, 0.95) !important;
+    padding: 1.25rem !important;
+  }
+
+  details.code-dropdown .highlight code {
+    font-size: 0.8rem !important;
+    line-height: 1.5 !important;
+  }
 </style>
 
 <script>
   document.addEventListener('DOMContentLoaded', () => {
+    // Table of Contents Scroll Highlighting
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         const id = entry.target.getAttribute('id');
         const link = document.querySelector(`.hb-toc a[href="#${id}"]`);
         
-        // When a heading enters the view, highlight its link
         if (entry.isIntersecting && link) {
           document.querySelectorAll('.hb-toc a').forEach(l => l.classList.remove('red-pill-active'));
           link.classList.add('red-pill-active');
@@ -249,21 +287,12 @@ image:
       });
     }, { rootMargin: '-20% 0px -70% 0px' });
 
-    // Track all H2 and H3 headings inside the article
     document.querySelectorAll('article h2, article h3').forEach(h => observer.observe(h));
   });
 </script>
 
-<a href="https://mad-moon-studios.itch.io/shoot-to-die" class="custom-play-btn" target="_blank">
-  <img src="https://static.itch.io/images/itchio-textless-white.svg" alt="Itch.io logo">
-  Play
-</a>
-
 <div class="tony-blurb">
-A high stakes SinglePlayer Survival Roguelite. Pilot a
-sentient flight combat rig built for survival in a decaying
-metal world. Obliterate your foes, harvest their scrap, and
-rebuild to survive.</div>
+A high stakes SinglePlayer Survival Roguelite. Pilot a sentient flight combat rig built for survival in a decaying metal world. Obliterate your foes, harvest their scrap, and rebuild to survive.</div>
 
 <div class="tony-specs-container">
   <div class="tony-spec-row">
@@ -275,37 +304,67 @@ rebuild to survive.</div>
     <i class="fas fa-code"></i>
     <span class="tony-pill blue">C++</span>
     <span class="tony-pill blue">Blueprints</span>
+    <span class="tony-pill blue">FLECS ECS</span>
   </div>
   
   <div class="tony-spec-row">
     <i class="fas fa-laptop-code"></i>
     <span class="tony-pill black">Unreal Engine 5</span>
-    <span class="tony-pill blue">FMOD</span>
+    <span class="tony-pill black">AI & Pathfinding</span>
+    <span class="tony-pill black">Tech Art</span>
   </div>
 </div>
 
 <div class="tony-highlights-card">
   <h3><i class="far fa-star"></i> Highlights</h3>
   <ul>
-    <li>Extended Unreal Engine’s Gameplay Ability System to work with turn-based abilities and effects</li>
-    <li>Implemented a custom <span class="keyword-red">Utility AI plugin</span> for modeling the behavior of creatures in combat</li>
-    <li>Developed a reusable solution for <span class="keyword-red">inventory</span> management across multiple game systems</li>
-    <li>Created tools for streamlining the creation process for character assets</li>
+    <li>Designed and balanced a <span class="keyword-red">synergistic "chess-piece" enemy ecosystem</span> where unit combinations heavily exploit specific player movement mechanics.</li>
+    <li>Overhauled core 6DOF player movement through a tonne of playtesting, removing disorienting axis to create an intuitive flight model.</li>
+    <li>Engineered a highly optimised projectile system using the <span class="keyword-red">FLECS C++ library</span>, simulating 100,000+ projectiles with minimal frame drops.</li>
+    <li>Implemented a custom <span class="keyword-red">Async Pathfinding and Utility EQS</span> (Environment Query System) pipeline for dynamic flying enemy spatial awareness, in an effort to make them feel as real as the player.</li>
+    <li>Developed "ProcTex," an internal Editor Utility Plugin for real time procedural texture generation, drastically reducing asset creation bottlenecks.</li>
   </ul>
 </div>
 
+## Full Demo Gameplay
 
-## Gameplay Trailer
-
-<div style="border-radius: 1rem; overflow: hidden; border: 1px solid rgba(255, 255, 255, 0.1); box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
+<div style="border-radius: 1rem; overflow: hidden; border: 1px solid rgba(255, 255, 255, 0.1); box-shadow: 0 10px 30px rgba(0,0,0,0.5); margin-bottom: 3rem;">
   {{< youtube RBfGwsypPt4 >}}
 </div>
 
-## Full Demo Gameplay
-<div style="height: 600px; background: rgba(255,255,255,0.05); border-radius: 1rem; padding: 2rem;">Pretend this is a huge block of text describing the demo!</div>
-
 ## Overview
-<div style="height: 600px; background: rgba(255,255,255,0.05); border-radius: 1rem; padding: 2rem;">Shoot to Die is a fast-paced incremental game...</div>
 
-## Combat Design
-<div style="height: 600px; background: rgba(255,255,255,0.05); border-radius: 1rem; padding: 2rem;">We focused heavily on dice mechanics...</div>
+SOL CONSTRUCT is the culmination of nearly years of professional game development, encompassing all the triumphs, failures, and harsh lessons learned along the way. Originally setting out to make a flying game, we explored numerous genres before circling back to our roots, but this time with a hardened design philosophy.
+
+As a small team, we had to evaluate every mechanic on a "Bang for Buck" basis. We realised early on that the highest degree of excitement and variation in our gameplay loop would come directly from our enemies. No matter our capacity for level design or weapon crafting, our core pillar became creating AI that dynamically exploits and challenges the player's actions. 
+
+## Iterating the Player Flight Model
+
+During the first few months of development, player movement was the most heavily debated feature. I originally implemented Gyro Aim and full 6 Degrees of Freedom (6DOF). However, playtests revealed it was even more polarising than Marmite. Some players really grasped it, but many simply spun out. We realised that trying to cram standard flight sim conventions into an arcade action space was actively fighting the player’s intuition, at least in our game. [Delivery Complete](https://store.steampowered.com/app/3639060/DELIVERY_MUST_COMPLETE/) actually managed to implement it in a way that looks so cool, and frankly looks way more satisfying than what we had.
+
+Our solution was to strip it back. We removed "Roll" and the ability to fly completely upside down, pivoting to a movement style akin to Minecraft’s creative mode. While it was tough to say goodbye to true 6DOF, this restriction immediately gave players total, intuitive control over their positioning. We matched this mechanically with a modular ship design. A central frame where wings, thrusters, and turrets attach, heavily utilising procedural animation to make the craft feel responsive and weighty.
+
+## Designing a Flying Enemy Ecosystem
+
+Designing flying enemies is a completely different beast compared to grounded AI. Because they have an entire Z-axis of open space to utilise, restricting them and giving them purpose was my biggest design hurdle. To solve this, I modeled our enemy roster after chess pieces (definetely inspired by DOOM!), categorised by their effective engagement distances: **Stationary, Long Range, Medium, and Close Range**. 
+
+My golden rule for designing and implementing *every* new enemy was asking: *"What action am I trying to exploit from the player?"*
+
+For example:
+* **Long-range enemies** are designed to encourage and exploit the player's dash.
+* **Short-range enemies** force the player to constantly reconsider their spatial positioning.
+
+Because we always wanted a minimum level of enemy density in encounters, these units had to complement each other. They don't necessarily "communicate" via code, but their roles naturally synergise. For example, I recently implemented a close range "Saw" enemy that embeds itself in the player, dealing tick damage but, more importantly, *disabling the player's dash and dodge*. If left unchecked, this allows the Long-Range sniper enemies (who usually miss a dashing player) to easily land devastating hits. This forces the player to approach encounters strategically, prioritising targets based on the specific restrictions their synergy imposes.
+
+## Executing the AI: Frankensteined Pathfinding & EQS
+
+To bring these designs to life, the AI needed to understand 3D space. I frankensteined an existing pathfinding plugin combining Sparse Voxel Octrees with A* Pathfinding. 
+
+**The Async Solution:** Initially, synchronous pathfinding calls choked our Game Thread, causing massive stutters if multiple enemies requested paths simultaneously. By moving to an Async solution, I smoothed out the frame rate, carefully tuning the graph update rates to avoid garbage collection hitches.
+
+**EQS Implementation:** I replaced our early, hacky target tracking with a much more robust Environment Query System (EQS). Enemies now transition through Patrolling, Searching, and Attacking states based on true Perception (hearing, damage, visibility). Using Dot product math, I programmed enemies to evaluate points based on the player's orientation, allowing them to intelligently flank or close distance dynamically based on their role. This single feature completely blew our minds and gave us so much motivation to move forward.
+
+
+## Streamlining the Pipeline (ProcTex Plugin)
+
+To get that crunchy aesthetic without bottlenecking production, I developed a custom Editor Utility Plugin. Rather than going in and out of Substance Painter for every asset, ProcTex allows us to down res, posterize, and manipulate textures with a real time 3D preview directly inside the Unreal Editor. This tool single handedly sped up our asset creation pipeline, allowing the team to generate game ready materials in minutes. You can find more deets on it [here](https://beanm00n.github.io/dev-portfolio/projects/procedural-texture-baker/).
