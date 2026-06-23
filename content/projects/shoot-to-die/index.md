@@ -286,7 +286,7 @@ toc: true
 </a>
 
 <div class="tony-blurb">
-  A frantic, physically-driven arcade score-chaser where you juggle dice with a heavy revolver. Built part-time in just one week for the "Devs Under Duress" game jam, this prototype served as an experimental playground for highly tactile, physics-based interactions and crunchy retro aesthetics.
+  A physics based arcade score chaser where you juggle dice with a heavy revolver. Built part-time in just one week for the "[Devs Under Duress](https://itch.io/jam/duds-late-night-art-nov-2025/entries)" game jam, this prototype served as an experimental playground for more tactile interactions and crunchy retro aesthetics.
 </div>
 
 <div class="tony-specs-container">
@@ -308,40 +308,59 @@ toc: true
   </div>
 </div>
 
+<div style="border-radius: 1rem; overflow: hidden; border: 1px solid rgba(255, 255, 255, 0.1); box-shadow: 0 10px 30px rgba(0,0,0,0.5); margin-bottom: 3rem;">
+  {{< youtube T2K1PlExrtQ >}}
+</div>
+
 <div class="tony-highlights-card">
-  <h3><i class="far fa-star"></i> Highlights</h3>
+  <h3><i class="far fa-star"></i> Contributions</h3>
   <ul>
-    <li>Developed and scoped entirely within a <span class="keyword-red">single week</span> on a part-time schedule.</li>
-    <li>Engineered a highly tactile, physics-driven interaction system, featuring <span class="keyword-red">manual weapon mechanics</span> and fully interactable environmental objects.</li>
-    <li>Designed a dual-collision projectile system utilizing "wiff" velocities to allow players to <span class="keyword-red">juggle physics actors</span> dynamically in mid-air.</li>
-    <li>Created the foundational procedural rendering shaders that eventually evolved into the fully-fledged <span class="keyword-red">ProcTex</span> Unreal Engine plugin.</li>
-    <li>Translated complex mouse-to-world-space mathematics to drive custom player controllers and responsive UI elements.</li>
+    <li>Created a custom interaction system, featuring <span class="keyword-red">manual weapon mechanics</span> and fully interactable environmental objects.</li>
+    <li>Designed a triple collision projectile system including "wiff" velocities to allow players to <span class="keyword-red">juggle physics actors</span> mid air.</li>
+    <li>Created the foundations for procedural rendering shaders that eventually evolved into the fully fledged <span class="keyword-red">Unreal Engine plugin.</span></li>
+    <li>Translated mouse to world-space mathematics to drive player controllers and UI elements.</li>
   </ul>
 </div>
 
-## Overview: From Top-Down to Skeet-Shooting
+<div style="margin-bottom: 0.5rem; border-radius: 1rem; overflow: hidden; border: 1px solid rgba(255, 255, 255, 0.1); box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
+  <img src="featured.jpg" alt="Shoot To Die Prototype" style="width: 100%; height: auto; display: block;" />
+</div>
 
-This project was born during the "Devs Under Duress" game jam in November. Our original pitch was a 3D top-down dice-rolling game called "Pay The Toll," where players would try to breach score thresholds across multiple rounds. However, as we started developing, the concept rapidly evolved into something much more kinetic: a 3D first-person arcade shooter where you use a revolver to skeet-shoot dice. It was an incredibly fun pivot, and knowing we only had a week to build it part-time forced us to focus purely on the "feel" of the game. It’s a prototype I am incredibly proud of and absolutely plan to revisit in the future.
+## Overview: Top Down to Skeet Shooting
 
-## An Experiment in Tactility and Physics
+This project was developed for the "Devs Under Duress" game jam in November 2025. Our original pitch was a top down dice rolling game called "Pay The Toll," where players would try to breach score thresholds across multiple rounds (Definitely inspired by Balatro's Ante system!). However, as we started developing, the idea evolved into something much more kinetic: a first person shooter where you use a revolver to skeet shoot dice. It was a really fun last minute pivot, and knowing we only had a week to build it forced us to focus purely on the feel and feedback of mechanics. It’s a prototype I am super proud of and absolutely plan to revisit in the future.
 
-Weirdly enough, this jam was my very first real dip into physics in Unreal Engine. I wanted the game to ooze tactility, communicating a heavy, mechanical feel through both the visual styling and the player mechanics. Almost everything on the player's tool bench and shop is physically interactable. 
+## Experimentation with Tactility and Physics
 
-This philosophy extended directly into our weapon design. Instead of a simple "click-to-shoot" mechanic, the revolver was heavily physicalized:
-* The player has to hold the trigger to manually prime the hammer.
-* You can hold 'R' to tilt the gun and physically check the cylinder for remaining rounds.
+Weirdly enough, this jam was my very first real dip into physics in Unreal. We wanted the game to communicate a heavy mechanical feel through both the visual and the mechanics. Almost everything on the player's tool bench and shop is physically interactable. 
+
+This philosophy extended directly into our weapon design. Instead of a simple click to shoot mechanic, the revolver was heavily physicalised:
+* The player has to hold the trigger to prime the hammer.
+* You can hold R to tilt the gun and physically check the cylinder for remaining rounds.
 * Reloading requires manually ejecting casings and loading bullets one by one. 
 
-## The Mechanics of Juggling
+<div style="margin-bottom: 0.5rem; border-radius: 1rem; overflow: hidden; border: 1px solid rgba(255, 255, 255, 0.1); box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
+  <img src="ShootToDieReload.gif" alt="Shoot To Die Prototype" style="width: 100%; height: auto; display: block;" />
+</div>
 
-The core gameplay loop starts by using your heavy revolver like a hammer to physically smack the dice into the air. From there, a timer starts, and it becomes a juggling act. 
+## Juggling Dice!
 
-To make shooting a tiny, chaotic physics object fun rather than frustrating, I engineered a dual-collision system for the bullets. The inner collision sphere handles direct impact effects, while a much larger outer collision sphere applies "wiff" velocity. This means near-misses will still catch the dice in their wake, propelling it further into the air. 
+The core gameplay loop starts by using your heavy revolver like a hammer to physically smack the dice into the air. From there a timer starts and it becomes a juggling act. 
 
-To maximize the score (Calculated by: *Time in Air* x *Shots Hit* x *Final Landed Number*), players can toss up "Ricochet Mirrors." Shooting these mirrors automatically bounces the bullet toward the dice, exponentially increasing the score multiplier upon a successful hit. 
+<div style="margin-bottom: 0.5rem; border-radius: 1rem; overflow: hidden; border: 1px solid rgba(255, 255, 255, 0.1); box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
+  <img src="DoubleCollision.png" alt="Shoot To Die Prototype" style="width: 100%; height: auto; display: block;" />
+</div>
 
-## Technical Foundations: The Birth of ProcTex
+To make shooting a tiny physics object fun rather than frustrating, I engineered a triple collision system for the bullets. The inner collision sphere handles direct impact effects, while a much larger outer collision sphere applies "wiff" velocity. This means near misses will still catch the dice in their wake, propelling it further into the air, enough to land another shot before the dice falls even lower.
 
-Beyond the physics and gameplay, this jam was a massive learning experience for Tech Art. We wanted a very specific gritty, rusty aesthetic—a crunchy, color-banded, noisy image. During the jam, I experimented with a complex procedural material to achieve this look in real-time. 
+Score is calculated by *Time in Air* x *Shots Hit* x *Final Landed Number*.
 
-While the visual results were incredible, the shader instructions were in the several hundreds, which absolutely tanked performance when applied universally. To solve this, I built a system to bake that procedural math down into flat texture maps. That exact optimization hurdle during this 1-week jam laid the direct foundation for the "ProcTex" texture pipeline plugin I would later build for *SOL CONSTRUCT*!
+{{< blueprint src="DoubleCollision.txt" >}}
+
+## The Birth of ProcTex
+
+Beyond the physics and gameplay, this jam was a huge learning experience for Tech Art. We wanted a very specific gritty, rusty, crunchy, color-banded, noisy image. During the jam, I experimented with a procedural material to achieve this look in real time (which wasn't very wise since performance took a hit, which was a big lesson learned for when it came to rebuilding it in the future).
+
+{{< blueprint src="blueprintmaterial.txt" >}}
+
+While the visual results were pretty cool, the shader instructions were in the several hundreds, which totally tanked performance when applied universally. To solve this, I built a system to bake that procedural math down into flat texture maps. That exact optimisation hurdle during this tiny jam laid the basis for the texture pipeline plugin I would later build for *SOL CONSTRUCT*!

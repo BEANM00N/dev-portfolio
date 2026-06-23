@@ -81,7 +81,7 @@ sections:
         - name: "Software"
           items:
             - name: "UE5"
-              icon: "brands/unreal"
+              icon: "devicon/unrealengine"
             - name: "Blender"
               icon: "devicon/blender"
             - name: "Obsidian"
@@ -91,7 +91,7 @@ sections:
             - name: "Github"
               icon: "devicon/github"
             - name: "Perforce"
-              icon: "assets/media/icons/perforce.svg"
+              icon: "brands/perforce"
     design:
       style: "grid"
       show_levels: false
@@ -219,11 +219,12 @@ sections:
     content:
       title: ""
       text: |
+
         <style>
           /* 1. Full-bleed background image for the Hero Section */
           #hero {
             /* We added a dark linear-gradient overlay before the url() */
-            background-image: linear-gradient(rgba(15, 23, 42, 0.3), rgba(15, 23, 42, 0.4)), url('/hero-bg.jpg') !important; 
+            background-image: linear-gradient(rgba(15, 23, 42, 0.3), rgba(15, 23, 42, 0.4)), url('hero-bg.jpg') !important; 
             background-size: cover !important;
             background-position: center !important;
             background-attachment: fixed !important;
@@ -291,6 +292,7 @@ sections:
             z-index: 20; /* Ensures it sits firmly on top of the text and images */
           }
         </style>
+
     design:
       spacing:
         padding:

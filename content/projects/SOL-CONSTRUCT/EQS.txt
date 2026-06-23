@@ -1,0 +1,83 @@
+Begin Object Class=/Script/EnvironmentQueryEditor.EnvironmentQueryGraphNode_Root Name="EnvironmentQueryGraphNode_Root_0" ExportPath="/Script/EnvironmentQueryEditor.EnvironmentQueryGraphNode_Root'/Game/Actors_And_Blueprints/AI/Pathfinder/EQS_MediumRange.EQS_MediumRange:EnvironmentQueryGraph_0.EnvironmentQueryGraphNode_Root_0'"
+   NodeGuid=EAB75E1144CD0A03605F848966FD25DD
+   CustomProperties Pin (PinId=A7DA97894CF994E17ED22CBB8FC99745,PinName="In",Direction="EGPD_Output",PinType.PinCategory="Transition",PinType.PinSubCategory="",PinType.PinSubCategoryObject=None,PinType.PinSubCategoryMemberReference=(),PinType.PinValueType=(),PinType.ContainerType=None,PinType.bIsReference=False,PinType.bIsConst=False,PinType.bIsWeakPointer=False,PinType.bIsUObjectWrapper=False,PinType.bSerializeAsSinglePrecisionFloat=False,LinkedTo=(EnvironmentQueryGraphNode_Option_6 DB21D4F047E69EC092D94F8B07311804,),PersistentGuid=00000000000000000000000000000000,bHidden=False,bNotConnectable=False,bDefaultValueIsReadOnly=False,bDefaultValueIsIgnored=False,bAdvancedView=False,bOrphanedPin=False,)
+End Object
+Begin Object Class=/Script/EnvironmentQueryEditor.EnvironmentQueryGraphNode_Option Name="EnvironmentQueryGraphNode_Option_6" ExportPath="/Script/EnvironmentQueryEditor.EnvironmentQueryGraphNode_Option'/Game/Actors_And_Blueprints/AI/Pathfinder/EQS_MediumRange.EQS_MediumRange:EnvironmentQueryGraph_0.EnvironmentQueryGraphNode_Option_6'"
+   Begin Object Class=/Script/AIModule.EnvQueryGenerator_Donut Name="EnvQueryGenerator_Donut_0" ExportPath="/Script/AIModule.EnvQueryGenerator_Donut'/Game/Actors_And_Blueprints/AI/Pathfinder/EQS_MediumRange.EQS_MediumRange:EnvironmentQueryGraph_0.EnvironmentQueryGraphNode_Option_6.EnvQueryGenerator_Donut_0'"
+   End Object
+   Begin Object Class=/Script/AIModule.EnvQueryOption Name="EnvQueryOption_0" ExportPath="/Script/AIModule.EnvQueryOption'/Game/Actors_And_Blueprints/AI/Pathfinder/EQS_MediumRange.EQS_MediumRange:EnvironmentQueryGraph_0.EnvironmentQueryGraphNode_Option_6.EnvQueryOption_0'"
+   End Object
+   Begin Object Name="EnvQueryGenerator_Donut_0" ExportPath="/Script/AIModule.EnvQueryGenerator_Donut'/Game/Actors_And_Blueprints/AI/Pathfinder/EQS_MediumRange.EQS_MediumRange:EnvironmentQueryGraph_0.EnvironmentQueryGraphNode_Option_6.EnvQueryGenerator_Donut_0'"
+      InnerRadius=(DefaultValue=150.000000)
+      OuterRadius=(DefaultValue=300.000000)
+      Center="/Script/Engine.BlueprintGeneratedClass'/Game/Actors_And_Blueprints/AI/Pathfinder/EQC_PlayerContext.EQC_PlayerContext_C'"
+      ProjectionData=(VersionNum=1,SerializedChannel=ECC_Visibility)
+      bCanRunAsync=True
+      VerNum=1
+   End Object
+   Begin Object Name="EnvQueryOption_0" ExportPath="/Script/AIModule.EnvQueryOption'/Game/Actors_And_Blueprints/AI/Pathfinder/EQS_MediumRange.EQS_MediumRange:EnvironmentQueryGraph_0.EnvironmentQueryGraphNode_Option_6.EnvQueryOption_0'"
+      Generator="/Script/AIModule.EnvQueryGenerator_Donut'EnvironmentQueryGraphNode_Option_6.EnvQueryGenerator_Donut_0'"
+      Tests(0)="/Script/AIModule.EnvQueryTest_Trace'EnvironmentQueryGraphNode_Test_10.EnvQueryTest_Trace_0'"
+      Tests(1)="/Script/AIModule.EnvQueryTest_Distance'EnvironmentQueryGraphNode_Test_21.EnvQueryTest_Distance_0'"
+      Tests(2)="/Script/AIModule.EnvQueryTest_Dot'EnvironmentQueryGraphNode_Test_32.EnvQueryTest_Dot_0'"
+   End Object
+   ClassData=(ClassName="EnvQueryGenerator_Donut")
+   NodeInstance="/Script/AIModule.EnvQueryOption'EnvQueryOption_0'"
+   SubNodes(0)="/Script/EnvironmentQueryEditor.EnvironmentQueryGraphNode_Test'EnvironmentQueryGraphNode_Test_10'"
+   SubNodes(1)="/Script/EnvironmentQueryEditor.EnvironmentQueryGraphNode_Test'EnvironmentQueryGraphNode_Test_21'"
+   SubNodes(2)="/Script/EnvironmentQueryEditor.EnvironmentQueryGraphNode_Test'EnvironmentQueryGraphNode_Test_32'"
+   CopySubNodeIndex=1
+   NodePosX=-336
+   NodePosY=160
+   NodeGuid=AB6986314665CE4481D4CFB41D7B4394
+   CustomProperties Pin (PinId=DB21D4F047E69EC092D94F8B07311804,PinName="Out",PinType.PinCategory="Transition",PinType.PinSubCategory="",PinType.PinSubCategoryObject=None,PinType.PinSubCategoryMemberReference=(),PinType.PinValueType=(),PinType.ContainerType=None,PinType.bIsReference=False,PinType.bIsConst=False,PinType.bIsWeakPointer=False,PinType.bIsUObjectWrapper=False,PinType.bSerializeAsSinglePrecisionFloat=False,LinkedTo=(EnvironmentQueryGraphNode_Root_0 A7DA97894CF994E17ED22CBB8FC99745,),PersistentGuid=00000000000000000000000000000000,bHidden=False,bNotConnectable=False,bDefaultValueIsReadOnly=False,bDefaultValueIsIgnored=False,bAdvancedView=False,bOrphanedPin=False,)
+End Object
+Begin Object Class=/Script/EnvironmentQueryEditor.EnvironmentQueryGraphNode_Test Name="EnvironmentQueryGraphNode_Test_10" ExportPath="/Script/EnvironmentQueryEditor.EnvironmentQueryGraphNode_Test'/Game/Actors_And_Blueprints/AI/Pathfinder/EQS_MediumRange.EQS_MediumRange:EnvironmentQueryGraph_0.EnvironmentQueryGraphNode_Test_10'"
+   Begin Object Class=/Script/AIModule.EnvQueryTest_Trace Name="EnvQueryTest_Trace_0" ExportPath="/Script/AIModule.EnvQueryTest_Trace'/Game/Actors_And_Blueprints/AI/Pathfinder/EQS_MediumRange.EQS_MediumRange:EnvironmentQueryGraph_0.EnvironmentQueryGraphNode_Test_10.EnvQueryTest_Trace_0'"
+   End Object
+   Begin Object Name="EnvQueryTest_Trace_0" ExportPath="/Script/AIModule.EnvQueryTest_Trace'/Game/Actors_And_Blueprints/AI/Pathfinder/EQS_MediumRange.EQS_MediumRange:EnvironmentQueryGraph_0.EnvironmentQueryGraphNode_Test_10.EnvQueryTest_Trace_0'"
+      TraceData=(VersionNum=1,SerializedChannel=ECC_Visibility)
+      TraceFromContext=(DefaultValue=True)
+      Context="/Script/Engine.BlueprintGeneratedClass'/Game/Actors_And_Blueprints/AI/Pathfinder/EQC_PlayerContext.EQC_PlayerContext_C'"
+      TestPurpose=Filter
+      BoolValue=(DefaultValue=False)
+      VerNum=2
+   End Object
+   TestWeightPct=1.000000
+   ClassData=(ClassName="EnvQueryTest_Trace")
+   NodeInstance="/Script/AIModule.EnvQueryTest_Trace'EnvQueryTest_Trace_0'"
+   CopySubNodeIndex=1
+   NodeGuid=0FAB6B694C89130F1066AC9A692A038D
+End Object
+Begin Object Class=/Script/EnvironmentQueryEditor.EnvironmentQueryGraphNode_Test Name="EnvironmentQueryGraphNode_Test_21" ExportPath="/Script/EnvironmentQueryEditor.EnvironmentQueryGraphNode_Test'/Game/Actors_And_Blueprints/AI/Pathfinder/EQS_MediumRange.EQS_MediumRange:EnvironmentQueryGraph_0.EnvironmentQueryGraphNode_Test_21'"
+   Begin Object Class=/Script/AIModule.EnvQueryTest_Distance Name="EnvQueryTest_Distance_0" ExportPath="/Script/AIModule.EnvQueryTest_Distance'/Game/Actors_And_Blueprints/AI/Pathfinder/EQS_MediumRange.EQS_MediumRange:EnvironmentQueryGraph_0.EnvironmentQueryGraphNode_Test_21.EnvQueryTest_Distance_0'"
+   End Object
+   Begin Object Name="EnvQueryTest_Distance_0" ExportPath="/Script/AIModule.EnvQueryTest_Distance'/Game/Actors_And_Blueprints/AI/Pathfinder/EQS_MediumRange.EQS_MediumRange:EnvironmentQueryGraph_0.EnvironmentQueryGraphNode_Test_21.EnvQueryTest_Distance_0'"
+      TestOrder=1
+      TestPurpose=Score
+      VerNum=2
+   End Object
+   TestWeightPct=1.000000
+   ClassData=(ClassName="EnvQueryTest_Distance")
+   NodeInstance="/Script/AIModule.EnvQueryTest_Distance'EnvQueryTest_Distance_0'"
+   CopySubNodeIndex=1
+   NodeGuid=07C56AD84AE863564D672C81946CAFA8
+End Object
+Begin Object Class=/Script/EnvironmentQueryEditor.EnvironmentQueryGraphNode_Test Name="EnvironmentQueryGraphNode_Test_32" ExportPath="/Script/EnvironmentQueryEditor.EnvironmentQueryGraphNode_Test'/Game/Actors_And_Blueprints/AI/Pathfinder/EQS_MediumRange.EQS_MediumRange:EnvironmentQueryGraph_0.EnvironmentQueryGraphNode_Test_32'"
+   Begin Object Class=/Script/AIModule.EnvQueryTest_Dot Name="EnvQueryTest_Dot_0" ExportPath="/Script/AIModule.EnvQueryTest_Dot'/Game/Actors_And_Blueprints/AI/Pathfinder/EQS_MediumRange.EQS_MediumRange:EnvironmentQueryGraph_0.EnvironmentQueryGraphNode_Test_32.EnvQueryTest_Dot_0'"
+   End Object
+   Begin Object Name="EnvQueryTest_Dot_0" ExportPath="/Script/AIModule.EnvQueryTest_Dot'/Game/Actors_And_Blueprints/AI/Pathfinder/EQS_MediumRange.EQS_MediumRange:EnvironmentQueryGraph_0.EnvironmentQueryGraphNode_Test_32.EnvQueryTest_Dot_0'"
+      LineA=(LineFrom="/Script/Engine.BlueprintGeneratedClass'/Game/Actors_And_Blueprints/AI/Pathfinder/EQC_PlayerContext.EQC_PlayerContext_C'",LineTo="/Script/CoreUObject.Class'/Script/AIModule.EnvQueryContext_Querier'",DirMode=TwoPoints)
+      LineB=(LineFrom="/Script/Engine.BlueprintGeneratedClass'/Game/Actors_And_Blueprints/AI/Pathfinder/EQC_PlayerContext.EQC_PlayerContext_C'")
+      bAbsoluteValue=True
+      TestOrder=2
+      TestPurpose=Score
+      ScoringEquation=InverseLinear
+      VerNum=2
+   End Object
+   TestWeightPct=1.000000
+   ClassData=(ClassName="EnvQueryTest_Dot")
+   NodeInstance="/Script/AIModule.EnvQueryTest_Dot'EnvQueryTest_Dot_0'"
+   CopySubNodeIndex=1
+   NodeGuid=222D20464DCE02F551535485D38A262E
+End Object

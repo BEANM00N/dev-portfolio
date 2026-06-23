@@ -270,6 +270,45 @@ toc: true
     font-size: 0.8rem !important;
     line-height: 1.5 !important;
   }
+  .clean-carousel {
+    display: flex;
+    gap: 1.5rem;
+    overflow-x: auto;
+    padding: 1rem 0;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: thin;
+    scrollbar-color: #e05e5e rgba(255, 255, 255, 0.05);
+  }
+  .clean-carousel a {
+    flex: 0 0 85%;
+    max-width: 600px;
+    scroll-snap-align: center;
+    text-decoration: none !important;
+    display: flex;
+    flex-direction: column;
+  }
+  .clean-carousel img {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+    border-radius: 1rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    transition: transform 0.2s ease, border-color 0.2s ease;
+    margin: 0 !important;
+  }
+  .clean-carousel img:hover {
+    transform: scale(1.02);
+    border-color: #e05e5e;
+  }
+  .clean-carousel-caption {
+    text-align: center;
+    font-size: 0.85rem;
+    color: #94a3b8;
+    font-style: italic;
+    margin-top: 0.75rem;
+  }
+
 </style>
 
 <script>
@@ -315,26 +354,24 @@ A high stakes SinglePlayer Survival Roguelite. Pilot a sentient flight combat ri
   </div>
 </div>
 
-<div class="tony-highlights-card">
-  <h3><i class="far fa-star"></i> Highlights</h3>
-  <ul>
-    <li>Designed and balanced a <span class="keyword-red">synergistic "chess-piece" enemy ecosystem</span> where unit combinations heavily exploit specific player movement mechanics.</li>
-    <li>Overhauled core 6DOF player movement through a tonne of playtesting, removing disorienting axis to create an intuitive flight model.</li>
-    <li>Engineered a highly optimised projectile system using the <span class="keyword-red">FLECS C++ library</span>, simulating 100,000+ projectiles with minimal frame drops.</li>
-    <li>Implemented a custom <span class="keyword-red">Async Pathfinding and Utility EQS</span> (Environment Query System) pipeline for dynamic flying enemy spatial awareness, in an effort to make them feel as real as the player.</li>
-    <li>Developed "ProcTex," an internal Editor Utility Plugin for real time procedural texture generation, drastically reducing asset creation bottlenecks.</li>
-  </ul>
-</div>
-
-## Full Demo Gameplay
-
 <div style="border-radius: 1rem; overflow: hidden; border: 1px solid rgba(255, 255, 255, 0.1); box-shadow: 0 10px 30px rgba(0,0,0,0.5); margin-bottom: 3rem;">
   {{< youtube RBfGwsypPt4 >}}
 </div>
 
+<div class="tony-highlights-card">
+  <h3><i class="far fa-star"></i> Contributions</h3>
+  <ul>
+    <li><span class="keyword-red">Synergistic "chess-piece" enemy ecosystem</span> where unit combinations heavily exploit specific player movement mechanics.</li>
+    <li>Overhauled core 6DOF player movement through a tonne of playtesting, removing disorienting axis to create an intuitive flight model, using a custom replicatable movement component</li>
+    <li>A highly optimised projectile system using the <span class="keyword-red">FLECS C++ library</span>, simulating 100,000+ projectiles with minimal frame drops.</li>
+    <li>A custom <span class="keyword-red">Async Pathfinding and Utility EQS</span> (Environment Query System) pipeline for dynamic flying enemy spatial awareness, in an effort to make them feel as real as the player.</li>
+    <li>Developed "ProcTex," an internal Editor Utility Plugin for real time procedural texture generation, drastically reducing asset creation bottlenecks.</li>
+  </ul>
+</div>
+
 ## Overview
 
-SOL CONSTRUCT is the culmination of nearly years of professional game development, encompassing all the triumphs, failures, and harsh lessons learned along the way. Originally setting out to make a flying game, we explored numerous genres before circling back to our roots, but this time with a hardened design philosophy.
+SOL CONSTRUCT is the culmination of nearly 3 years of professional game development, encompassing all the triumphs, failures, and harsh lessons learned along the way. After oiginally setting out to make a flying game ([SOL DRIFT](http://localhost:1313/dev-portfolio/projects/sol-drift/)), we explored numerous genres before circling back to our roots, but this time with a hardened design philosophy.
 
 As a small team, we had to evaluate every mechanic on a "Bang for Buck" basis. We realised early on that the highest degree of excitement and variation in our gameplay loop would come directly from our enemies. No matter our capacity for level design or weapon crafting, our core pillar became creating AI that dynamically exploits and challenges the player's actions. 
 
@@ -342,11 +379,60 @@ As a small team, we had to evaluate every mechanic on a "Bang for Buck" basis. W
 
 During the first few months of development, player movement was the most heavily debated feature. I originally implemented Gyro Aim and full 6 Degrees of Freedom (6DOF). However, playtests revealed it was even more polarising than Marmite. Some players really grasped it, but many simply spun out. We realised that trying to cram standard flight sim conventions into an arcade action space was actively fighting the player’s intuition, at least in our game. [Delivery Complete](https://store.steampowered.com/app/3639060/DELIVERY_MUST_COMPLETE/) actually managed to implement it in a way that looks so cool, and frankly looks way more satisfying than what we had.
 
-Our solution was to strip it back. We removed "Roll" and the ability to fly completely upside down, pivoting to a movement style akin to Minecraft’s creative mode. While it was tough to say goodbye to true 6DOF, this restriction immediately gave players total, intuitive control over their positioning. We matched this mechanically with a modular ship design. A central frame where wings, thrusters, and turrets attach, heavily utilising procedural animation to make the craft feel responsive and weighty.
+
+<div style="margin-bottom: 0.5rem; border-radius: 1rem; overflow: hidden; border: 1px solid rgba(255, 255, 255, 0.1); box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
+  <img src="Module Spin Sped Up.gif" class="zoomable" alt="Module Randomiser Render" style="width: 100%; height: auto; display: block; margin: 0 !important;" />
+</div>
+
+
+Our solution was to strip it back. We removed roll and the ability to fly completely upside down, pivoting to a movement style akin to Minecraft’s creative mode or Interplay's Descent. While it was tough to say goodbye to true 6DOF, this restriction immediately gave players total, intuitive control over their positioning. We matched this mechanically with a modular ship design. A central frame where wings, thrusters, and turrets attach, heavily utilising procedural animation to make the craft feel responsive and weighty.
+
+You can have a peep on what our anim graph looks like. Nothing too complex, but it adds a lot of juice:
+<details class="code-dropdown">
+  <summary><i class="fas fa-code"></i> Player Mesh Anim BP</summary>
+{{< blueprint src="LFTR Frame Anim BP.txt" >}}
+
+</details>
 
 ## Designing a Flying Enemy Ecosystem
 
-Designing flying enemies is a completely different beast compared to grounded AI. Because they have an entire Z-axis of open space to utilise, restricting them and giving them purpose was my biggest design hurdle. To solve this, I modeled our enemy roster after chess pieces (definetely inspired by DOOM!), categorised by their effective engagement distances: **Stationary, Long Range, Medium, and Close Range**. 
+Designing flying enemies is a completely different beast compared to grounded AI. Because they have an entire Z axis of open space to utilise, restricting them and giving them purpose was my biggest design hurdle. To solve this, I modeled our enemy roster after chess pieces (definitely inspired by DOOM!), categorised by their effective engagement distances: **Stationary, Long Range, Medium, and Close Range**. 
+  
+</style>
+
+<div class="clean-carousel">
+
+<a data-fancybox="gallery" href="riveter.png" data-caption="The Riveter applying localized pressure.">
+    <img src="riveter.png" alt="Riveter">
+    <div class="clean-carousel-caption">The Riveter applying localized pressure.</div>
+  </a>
+
+  <a data-fancybox="gallery" href="rocket drone.png" data-caption="High-mobility Rocket Drone for explosive interception.">
+    <img src="rocket drone.png" alt="Rocket Drone">
+    <div class="clean-carousel-caption">High-mobility Rocket Drone for explosive interception.</div>
+  </a>
+
+  <a data-fancybox="gallery" href="Cannon LFTR.png" data-caption="Heavy artillery Cannon LFTR engaging from a distance.">
+    <img src="Cannon LFTR.png" alt="Cannon LFTR">
+    <div class="clean-carousel-caption">Heavy artillery Cannon LFTR engaging from a distance.</div>
+  </a>
+
+  <a data-fancybox="gallery" href="Saw.png" data-caption="The terrifying close-range Saw enemy designed to embed and disable.">
+    <img src="Saw.png" alt="Saw Enemy">
+    <div class="clean-carousel-caption">The terrifying close-range Saw enemy designed to embed and disable.</div>
+  </a>
+
+  <a data-fancybox="gallery" href="sentry.png" data-caption="The aerial Sentry unit patrolling the perimeter.">
+    <img src="sentry.png" alt="Sentry">
+    <div class="clean-carousel-caption">The aerial Sentry unit patrolling the perimeter.</div>
+  </a>
+
+  <a data-fancybox="gallery" href="HeavyCrawler.png" data-caption="The heavily armored Crawler unit.">
+    <img src="HeavyCrawler.png" alt="Heavy Crawler">
+    <div class="clean-carousel-caption">The heavily armored Crawler unit.</div>
+  </a>
+
+</div>
 
 My golden rule for designing and implementing *every* new enemy was asking: *"What action am I trying to exploit from the player?"*
 
@@ -354,17 +440,43 @@ For example:
 * **Long-range enemies** are designed to encourage and exploit the player's dash.
 * **Short-range enemies** force the player to constantly reconsider their spatial positioning.
 
-Because we always wanted a minimum level of enemy density in encounters, these units had to complement each other. They don't necessarily "communicate" via code, but their roles naturally synergise. For example, I recently implemented a close range "Saw" enemy that embeds itself in the player, dealing tick damage but, more importantly, *disabling the player's dash and dodge*. If left unchecked, this allows the Long-Range sniper enemies (who usually miss a dashing player) to easily land devastating hits. This forces the player to approach encounters strategically, prioritising targets based on the specific restrictions their synergy imposes.
+<div style="margin-bottom: 0.5rem; border-radius: 1rem; overflow: hidden; border: 1px solid rgba(255, 255, 255, 0.1); box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
+  <img src="MeleeDroneSpedUp.gif" class="zoomable" alt="Module Randomiser Render" style="width: 100%; height: auto; display: block; margin: 0 !important;" />
+</div>
 
-## Executing the AI: Frankensteined Pathfinding & EQS
+Because we always wanted a minimum level of enemy density in encounters, these units had to complement each other. They don't necessarily "communicate" via code, but their roles naturally synergise. For example, I recently implemented a close range "Saw" enemy that embeds itself in the player, dealing tick damage but, more importantly, *disabling the player's dash and dodge*. If left unchecked, this allows the Long Range sniper enemies (who usually miss a dashing player) to easily land devastating hits. This encourages the player to approach encounters strategically, prioritising targets based on the specific restrictions their synergy imposes.
 
-To bring these designs to life, the AI needed to understand 3D space. I frankensteined an existing pathfinding plugin combining Sparse Voxel Octrees with A* Pathfinding. 
+<div style="margin-bottom: 0.5rem; border-radius: 1rem; overflow: hidden; border: 1px solid rgba(255, 255, 255, 0.1); box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
+  <img src="EnemyGangSpedUp.gif" class="zoomable" alt="Module Randomiser Render" style="width: 100%; height: auto; display: block; margin: 0 !important;" />
+</div>
+
+## Frankensteined Pathfinding & EQS
+
+To bring these designs to life, the AI needed to understand 3D space. I frankensteined an existing [pathfinding plugin](https://github.com/NonStaticGH/CPathHostProject) combining Sparse Voxel Octrees with A* Pathfinding. 
 
 **The Async Solution:** Initially, synchronous pathfinding calls choked our Game Thread, causing massive stutters if multiple enemies requested paths simultaneously. By moving to an Async solution, I smoothed out the frame rate, carefully tuning the graph update rates to avoid garbage collection hitches.
 
 **EQS Implementation:** I replaced our early, hacky target tracking with a much more robust Environment Query System (EQS). Enemies now transition through Patrolling, Searching, and Attacking states based on true Perception (hearing, damage, visibility). Using Dot product math, I programmed enemies to evaluate points based on the player's orientation, allowing them to intelligently flank or close distance dynamically based on their role. This single feature completely blew our minds and gave us so much motivation to move forward.
 
+<div style="margin-bottom: 2.5rem; border-radius: 1rem; overflow: hidden; border: 1px solid rgba(255, 255, 255, 0.1); box-shadow: 0 10px 30px rgba(0,0,0,0.5); background-color: rgba(15, 23, 42, 0.4);">
+  <img src="EQS.png" class="zoomable" alt="Module Randomiser Render" style="width: 100%; height: auto; display: block; margin: 0 !important;" />
+  <div style="padding: 0.75rem 1rem; text-align: center; font-size: 0.85rem; color: #94a3b8; font-style: italic;">
+    *Query used by medium range enemies.*
+  </div>
+</div>
+
+<details class="code-dropdown">
+  <summary>EQS Medium Range Query breakdown</summary>
+
+
+**Volumetric grid Generation:** The query generates a large 3D spherical grid of potential movement locations (a 3000-unit radius with 500-unit spacing), giving the flying AI a full 6 Degrees of Freedom (6DOF) spatial canvas to evaluate.
+
+E**nvironmental & Range Filtering:** It utilizes a boolean Trace test to immediately cull any points obstructed by world geometry (ensuring a clear line of sight to the player) alongside a strict Distance filter to discard points outside the enemy's effective combat range.
+
+**"Smart" Positioning via Dot Product:** The remaining viable points are scored using an Inverse Linear Distance modifier and a Dot Product test. This mathematically evaluates points relative to the player's facing direction, driving the AI to intelligently flank or prioritize specific angles of attack rather than simply flying straight at the target.
+</details>
 
 ## Streamlining the Pipeline (ProcTex Plugin)
 
 To get that crunchy aesthetic without bottlenecking production, I developed a custom Editor Utility Plugin. Rather than going in and out of Substance Painter for every asset, ProcTex allows us to down res, posterize, and manipulate textures with a real time 3D preview directly inside the Unreal Editor. This tool single handedly sped up our asset creation pipeline, allowing the team to generate game ready materials in minutes. You can find more deets on it [here](https://beanm00n.github.io/dev-portfolio/projects/procedural-texture-baker/).
+
