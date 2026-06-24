@@ -361,11 +361,13 @@ A high stakes SinglePlayer Survival Roguelite. Pilot a sentient flight combat ri
 <div class="tony-highlights-card">
   <h3><i class="far fa-star"></i> Contributions</h3>
   <ul>
-    <li><span class="keyword-red">Synergistic "chess-piece" enemy ecosystem</span> where unit combinations heavily exploit specific player movement mechanics.</li>
-    <li>Overhauled core 6DOF player movement through a tonne of playtesting, removing disorienting axis to create an intuitive flight model, using a custom replicatable movement component</li>
-    <li>A highly optimised projectile system using the <span class="keyword-red">FLECS C++ library</span>, simulating 100,000+ projectiles with minimal frame drops.</li>
-    <li>A custom <span class="keyword-red">Async Pathfinding and Utility EQS</span> (Environment Query System) pipeline for dynamic flying enemy spatial awareness, in an effort to make them feel as real as the player.</li>
-    <li>Developed "ProcTex," an internal Editor Utility Plugin for real time procedural texture generation, drastically reducing asset creation bottlenecks.</li>
+    <li><span class="keyword-red">Custom Enemy ecosystem</span> with air and ground units.</li>
+    <li>Core player flight, built with a tonne of playtesting, removing disorienting axis to create an intuitive flight model, using a custom replicatable movement component</li>
+    <li>A super optimised projectile system using the <span class="keyword-red">FLECS C++ library</span>.</li>
+    <li>An <span class="keyword-red">Async Pathfinding and Utility EQS</span> implementation for dynamic flight awareness.</li>
+    <li>Developed an internal Plugin for procedural texture generation.</li>
+    <li>Enemy <span class="keyword-red">behaviour, models, animation blueprints, weapons, health/armor components</span>.</li>
+    <li>Artyle iteration and <span class="keyword-red">3D Art Tests</span>.</li>
   </ul>
 </div>
 
@@ -459,7 +461,7 @@ To bring these designs to life, the AI needed to understand 3D space. I frankens
 **EQS Implementation:** I replaced our early, hacky target tracking with a much more robust Environment Query System (EQS). Enemies now transition through Patrolling, Searching, and Attacking states based on true Perception (hearing, damage, visibility). Using Dot product math, I programmed enemies to evaluate points based on the player's orientation, allowing them to intelligently flank or close distance dynamically based on their role. This single feature completely blew our minds and gave us so much motivation to move forward.
 
 <div style="margin-bottom: 2.5rem; border-radius: 1rem; overflow: hidden; border: 1px solid rgba(255, 255, 255, 0.1); box-shadow: 0 10px 30px rgba(0,0,0,0.5); background-color: rgba(15, 23, 42, 0.4);">
-  <img src="EQS.png" class="zoomable" alt="Module Randomiser Render" style="width: 100%; height: auto; display: block; margin: 0 !important;" />
+  <img src="eqsnode.png" class="zoomable" alt="Module Randomiser Render" style="width: 100%; height: auto; display: block; margin: 0 !important;" />
   <div style="padding: 0.75rem 1rem; text-align: center; font-size: 0.85rem; color: #94a3b8; font-style: italic;">
     *Query used by medium range enemies.*
   </div>
