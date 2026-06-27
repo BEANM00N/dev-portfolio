@@ -109,4 +109,20 @@ I ripped Mass out entirely and integrated FLECS, a lightweight C/C++ ECS. I repl
 
 The spawn code alone went from this:
 
+<div style="margin-bottom: 2.5rem; border-radius: 1rem; overflow: hidden; border: 1px solid rgba(255, 255, 255, 0.1); box-shadow: 0 10px 30px rgba(0,0,0,0.5); background-color: rgba(15, 23, 42, 0.4);">
+  <img src="Old.png" class="zoomable" alt="EQS breakdown" style="width: 100%; height: auto; display: block; margin: 0 !important;" />
+  <div style="padding: 0.75rem 1rem; text-align: center; font-size: 0.85rem; color: #94a3b8; font-style: italic;">
+    *Query used by medium range enemies.*
+  </div>
+</div>
+
+To this!
+
+<div style="margin-bottom: 2.5rem; border-radius: 1rem; overflow: hidden; border: 1px solid rgba(255, 255, 255, 0.1); box-shadow: 0 10px 30px rgba(0,0,0,0.5); background-color: rgba(15, 23, 42, 0.4);">
+  <img src="new.png" class="zoomable" alt="EQS breakdown" style="width: 100%; height: auto; display: block; margin: 0 !important;" />
+  <div style="padding: 0.75rem 1rem; text-align: center; font-size: 0.85rem; color: #94a3b8; font-style: italic;">
+    *Query used by medium range enemies.*
+  </div>
+</div>
+
 The actual code that needed to be written is a single Subsystem!!!!! It’s made our lives so much easier and allowed us to send more “traditional” projectile data. Objects like Damage Causers and Instigators and even Damage Types were easily send across using Weak Pointers so the Multi-threading remained stable, and time Niagara had no issues assigning Particle ID’s! This Projectile Saga is easily the most complex system I’ve ever worked with, and I still feel like the rest of the industry is using something that’s even beyond this. But for now, FLECS will be more than enough to serve our needs!

@@ -1,7 +1,8 @@
 ---
 title: SOL DRIFT
 date: 2024-02-16
-summary: Starfox meets Doom. a fusion of the classic arcade flight genre and the modern arena shooter.
+summary: Starfox meets Doom. a fusion of the classic arcade flight genre and the
+  modern arena shooter.
 tags:
   - Games
   - Unreal Engine
@@ -9,6 +10,8 @@ tags:
   - Tech Art
 image:
   preview_only: true
+draft: true
+
 ---
 
 <style>
@@ -298,7 +301,7 @@ rebuild to survive.</div>
 ## Gameplay Trailer
 
 <div style="border-radius: 1rem; overflow: hidden; border: 1px solid rgba(255, 255, 255, 0.1); box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
-  {{< youtube RBfGwsypPt4 >}}
+  {{< youtube K3Rr8c1v0k0 >}}
 </div>
 
 ## Full Demo Gameplay

@@ -86,6 +86,8 @@ sections:
               icon: "devicon/blender"
             - name: "Obsidian"
               icon: "brands/obsidian"
+            - name: "FMOD"
+              icon: "brands/fmod"
         - name: "Source"
           items:
             - name: "Github"

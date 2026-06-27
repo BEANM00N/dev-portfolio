@@ -24,9 +24,10 @@ interests:
 education:
   - degree: "Games Design BDes (Hons) "
     institution: "Ulster University"
+    grade: First Class Honours
     start: "2021-09-20"
     end: "2026-05-06"
-    summary: "learned.\n"
+    summary: "Awarded Academic Excellence reward for highest grade in the course.\n"
     button:
       text: "View Dissertation"
       url: "https://drive.google.com/file/d/16Td_qokedhmdSj0rU0_FCwcCKTpfwWnB/preview"
@@ -43,7 +44,7 @@ experience:
     location: 'Northern Ireland'
     date_start: '2023-05-01'
     date_end: '2024-08-20'
-    summary: "Secured an industrial placement year leading to the award of a Diploma in Professional Practice. Focused heavily on tool engineering, blueprint architecture, and shipping plugin assets.\n"
+    summary: "Aquired an industrial placement year leading to the award of a Diploma in Professional Practice. Focused on rapid prototyping as an Unreal Generalist, making mechanics both functional and polished for public facing demos.\n"
 skills:
   - name: "Development"
     items:

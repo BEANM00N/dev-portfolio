@@ -366,9 +366,35 @@ A high stakes SinglePlayer Survival Roguelite. Pilot a sentient flight combat ri
     <li>A super optimised projectile system using the <span class="keyword-red">FLECS C++ library</span>.</li>
     <li>An <span class="keyword-red">Async Pathfinding and Utility EQS</span> implementation for dynamic flight awareness.</li>
     <li>Developed an internal Plugin for procedural texture generation.</li>
-    <li>Enemy <span class="keyword-red">behaviour, models, animation blueprints, weapons, health/armor components</span>.</li>
-    <li>Artyle iteration and <span class="keyword-red">3D Art Tests</span>.</li>
+<li>Full enemy implementation, including behavior trees, modular skeleton frames, animation BPs, and health/armor components.</li>
+    <li>Led art direction translation, screen space shader creation, and 3D art pipeline iterations.</li>
   </ul>
+
+<div style="border-top: 1px solid rgba(255, 255, 255, 0.1); margin: 1.5rem 0 1rem 0; padding-top: 1rem;">
+    <h4 style="color: white; font-size: 1rem; font-weight: 600; margin-bottom: 0.75rem; letter-spacing: 0.05em; text-transform: uppercase; opacity: 0.8;">
+      <i class="fas fa-tools" style="font-size: 0.85rem; margin-right: 0.4rem; color: #e05e5e;"></i>Honorable Mentions:
+    </h4>
+    <ul style="list-style-type: none !important; padding-left: 0 !important; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 0.6rem;">
+      <li style="font-size: 0.85rem !important; color: #94a3b8 !important; display: flex; align-items: flex-start; gap: 0.5rem; margin-bottom: 0 !important;">
+        <span style="color: #e05e5e;">▪</span> C++ projection vectors for various projectile shapes (Like Returnal's bullet hell!).
+      </li>
+      <li style="font-size: 0.85rem !important; color: #94a3b8 !important; display: flex; align-items: flex-start; gap: 0.5rem; margin-bottom: 0 !important;">
+        <span style="color: #e05e5e;">▪</span> Niagara integration rendering off raw FLECS ECS entity data.
+      </li>
+      <li style="font-size: 0.85rem !important; color: #94a3b8 !important; display: flex; align-items: flex-start; gap: 0.5rem; margin-bottom: 0 !important;">
+        <span style="color: #e05e5e;">▪</span> completely Material based Lidar Scanner XRay mechanic.
+      </li>
+      <li style="font-size: 0.85rem !important; color: #94a3b8 !important; display: flex; align-items: flex-start; gap: 0.5rem; margin-bottom: 0 !important;">
+        <span style="color: #e05e5e;">▪</span>Procedural weapon recoil, accuracy and bloom.
+      </li>
+      <li style="font-size: 0.85rem !important; color: #94a3b8 !important; display: flex; align-items: flex-start; gap: 0.5rem; margin-bottom: 0 !important;">
+        <span style="color: #e05e5e;">▪</span> Automated target tracking and lock on crosshair, using a single widget to render dozens of screen space icons.
+      </li>
+      <li style="font-size: 0.85rem !important; color: #94a3b8 !important; display: flex; align-items: flex-start; gap: 0.5rem; margin-bottom: 0 !important;">
+        <span style="color: #e05e5e;">▪</span> Survival Gameplay loops incorporating harvestable world drops and furnace mechanics.
+      </li>
+    </ul>
+  </div>
 </div>
 
 ## Overview
@@ -461,7 +487,7 @@ To bring these designs to life, the AI needed to understand 3D space. I frankens
 **EQS Implementation:** I replaced our early, hacky target tracking with a much more robust Environment Query System (EQS). Enemies now transition through Patrolling, Searching, and Attacking states based on true Perception (hearing, damage, visibility). Using Dot product math, I programmed enemies to evaluate points based on the player's orientation, allowing them to intelligently flank or close distance dynamically based on their role. This single feature completely blew our minds and gave us so much motivation to move forward.
 
 <div style="margin-bottom: 2.5rem; border-radius: 1rem; overflow: hidden; border: 1px solid rgba(255, 255, 255, 0.1); box-shadow: 0 10px 30px rgba(0,0,0,0.5); background-color: rgba(15, 23, 42, 0.4);">
-  <img src="eqsnode.png" class="zoomable" alt="Module Randomiser Render" style="width: 100%; height: auto; display: block; margin: 0 !important;" />
+  <img src="eqsnode.png" class="zoomable" alt="EQS breakdown" style="width: 100%; height: auto; display: block; margin: 0 !important;" />
   <div style="padding: 0.75rem 1rem; text-align: center; font-size: 0.85rem; color: #94a3b8; font-style: italic;">
     *Query used by medium range enemies.*
   </div>
