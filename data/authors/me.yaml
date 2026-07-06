@@ -31,7 +31,7 @@ education:
     button:
       text: "View Dissertation"
       url: "https://drive.google.com/file/d/16Td_qokedhmdSj0rU0_FCwcCKTpfwWnB/preview"
-      icon: "brands/google-drive"
+      icon: "devicon/chrome"
 experience:
   - role: "Technical Game Designer & Co-Director"
     org: "Mad Moon Studios"

@@ -10,7 +10,7 @@ tags:
   - Tech Art
 image:
   preview_only: true
-draft: true
+toc: true
 
 ---
 
@@ -235,6 +235,13 @@ draft: true
     color: #e05e5e;
     font-weight: 600;
   }
+
+  article p, 
+  article li {
+    font-size: 0.95rem !important; 
+    line-height: 1.6 !important;   
+  }
+
 </style>
 
 <script>
@@ -263,52 +270,97 @@ draft: true
 </a>
 
 <div class="tony-blurb">
-A high stakes SinglePlayer Survival Roguelite. Pilot a
-sentient flight combat rig built for survival in a decaying
-metal world. Obliterate your foes, harvest their scrap, and
-rebuild to survive.</div>
+  Engage in lightning-fast omnidirectional vehicle dogfights inside a colossal decaying mechanism. Secure rare blueprints, deploy active countermeasures, and extract your stash via cargo drones before the automated system adapts.
+</div>
 
 <div class="tony-specs-container">
   <div class="tony-spec-row">
     <i class="fas fa-desktop"></i>
-    <span class="tony-pill blue">Windows</span>
+    <span class="tony-pill blue">Windows (PC)</span>
   </div>
   
   <div class="tony-spec-row">
     <i class="fas fa-code"></i>
-    <span class="tony-pill blue">C++</span>
     <span class="tony-pill blue">Blueprints</span>
+    <span class="tony-pill blue">FMOD Integration</span>
+    <span class="tony-pill blue">GPU Shaders</span>
   </div>
   
   <div class="tony-spec-row">
     <i class="fas fa-laptop-code"></i>
     <span class="tony-pill black">Unreal Engine 5</span>
-    <span class="tony-pill blue">FMOD</span>
+    <span class="tony-pill black">Niagara Particles</span>
+    <span class="tony-pill black">Vehicle Physics</span>
   </div>
 </div>
 
 <div class="tony-highlights-card">
-  <h3><i class="far fa-star"></i> Highlights</h3>
+  <h3><i class="far fa-star"></i> Contributions</h3>
   <ul>
-    <li>Extended Unreal Engine’s Gameplay Ability System to work with turn-based abilities and effects</li>
-    <li>Implemented a custom <span class="keyword-red">Utility AI plugin</span> for modeling the behavior of creatures in combat</li>
-    <li>Developed a reusable solution for <span class="keyword-red">inventory</span> management across multiple game systems</li>
-    <li>Created tools for streamlining the creation process for character assets</li>
+    <li>Experimented with a <span class="keyword-red">Niagara GPU Projectile Pooling system</span>, optimising bullet hell density and shapes with a 90% gain in performance.</li>
+    <li>Migrated movement into a custom <span class="keyword-red">weighty, momentum driven flight Pawn script</span>, giving us full control over game feel.</li>
+    <li>Programmed spatial <span class="keyword-red">3D obstacle detection systems</span> and reactive countermeasure logic loop, all used in behaviour trees.</li>
+    <li>Developed the full meta progression loop featuring an integrated <span class="keyword-red">\"C.A.R.D. Upgrade Architecture\"</span>, localised stat scoreboard saves, and level selections.</li>
+    <li>Designed the structural logic for a comprehensive <span class="keyword-red">modular garage setup terminal</span> to safely equip nose, wing, armor, and utility modules between runs, as well as store puzzles, cyphers and world interactions.</li>
   </ul>
+
+  <div style="border-top: 1px solid rgba(255, 255, 255, 0.1); margin: 1.5rem 0 1rem 0; padding-top: 1rem;">
+    <h4 style="color: white; font-size: 1rem; font-weight: 600; margin-bottom: 0.75rem; letter-spacing: 0.05em; text-transform: uppercase; opacity: 0.8;">
+      <i class="fas fa-tools" style="font-size: 0.85rem; margin-right: 0.4rem; color: #e05e5e;"></i>Honorable Mentions:
+    </h4>
+    <ul style="list-style-type: none !important; padding-left: 0 !important; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 0.6rem;">
+      <li style="font-size: 0.85rem !important; color: #94a3b8 !important; display: flex; align-items: flex-start; gap: 0.5rem; margin-bottom: 0 !important;">
+        <span style="color: #e05e5e;">▪</span> Native material code driving real time raymarched volumetrics.
+      </li>
+      <li style="font-size: 0.85rem !important; color: #94a3b8 !important; display: flex; align-items: flex-start; gap: 0.5rem; margin-bottom: 0 !important;">
+        <span style="color: #e05e5e;">▪</span> Automated gimbal aiming and  crosshair stabilisation parameters.
+      </li>
+      <li style="font-size: 0.85rem !important; color: #94a3b8 !important; display: flex; align-items: flex-start; gap: 0.5rem; margin-bottom: 0 !important;">
+        <span style="color: #e05e5e;">▪</span> Automated countermeasure responses like Chaff, Mines, Drone Swarms.
+      </li>
+      <li style="font-size: 0.85rem !important; color: #94a3b8 !important; display: flex; align-items: flex-start; gap: 0.5rem; margin-bottom: 0 !important;">
+        <span style="color: #e05e5e;">▪</span> FMOD links implementing paramterised dynamic jet thruster events.
+      </li>
+      <li style="font-size: 0.85rem !important; color: #94a3b8 !important; display: flex; align-items: flex-start; gap: 0.5rem; margin-bottom: 0 !important;">
+        <span style="color: #e05e5e;">▪</span> Responsive curved UI shader effects wrapping around the primary player screen viewport.
+      </li>
+    </ul>
+  </div>
 </div>
 
+Every system inside SOL DRIFT has been iteratively tuned against physical playtesting datasets across numerous live convention show floors, resulting in a hyper-focused movement pipeline.
 
-## Gameplay Trailer
+## Engineering the S.O.L Fighter: Weighty Physics Pawn & Omnidirectional Flight
 
-<div style="border-radius: 1rem; overflow: hidden; border: 1px solid rgba(255, 255, 255, 0.1); box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
-  {{< youtube K3Rr8c1v0k0 >}}
-</div>
+To fulfill the vision of a vehicle that captures both mechanical weight and arcade agility, we abandoned standard engine character movement components in favor of a specialized physics-driven **Flight Pawn** blueprint. Shifting away from rigid directional vectors allowed the ship to dynamically interact with architectural boundaries using true momentum-preserving equations:
+* **True 12-Axis Autonomy:** Programmed fully un-blocked movement trees supporting simultaneous forward, horizontal, and vertical displacement.
+* **Drift Rotation Mechanics:** Developed custom dampening forces that slide the craft smoothly through corners during high-speed thruster maneuvers, providing a distinct feeling of drift inertia.
+* **Kinetic Refinements:** Eliminated mechanical springarm deadzones and added custom screen-space recoil shifts that physically jar the vehicle hull during heavy output bursts.
 
-## Full Demo Gameplay
-<div style="height: 600px; background: rgba(255,255,255,0.05); border-radius: 1rem; padding: 2rem;">Pretend this is a huge block of text describing the demo!</div>
+<details class="code-dropdown">
+  <summary><i class="fas fa-code"></i> View Blueprint Architecture: Velocity Decay & Thruster Interpolation</summary>
+```json
+// Logic detailing physics impulse handling for momentum preservation loops
 
-## Overview
-<div style="height: 600px; background: rgba(255,255,255,0.05); border-radius: 1rem; padding: 2rem;">Shoot to Die is a fast-paced incremental game...</div>
+</details>
 
-## Combat Design
-<div style="height: 600px; background: rgba(255,255,255,0.05); border-radius: 1rem; padding: 2rem;">We focused heavily on dice mechanics...</div>
+## High-Density Combat: Niagara GPU Projectile Pooling
+
+To support our bullet-hell design pillars without dragging down frame rates on standard hardware, standard actor-spawning loops were entirely replaced with a centralized **Universal Projectile Pooling Engine**. Spawning thousands of individual laser actors quickly bottlenecked the CPU thread due to heavy garbage collection polling and component initialization cycles.
+
+Our optimized solution shifts calculation weights directly onto background calculation groups:
+* **GPU-Bound Projectiles:** Weapon arrays fire directly into a unified projectile pool that interfaces seamlessly with Niagara particles.
+* **Per-Particle Life Cycles:** Hit evaluation, environmental trace calculations, and damage events are linked right into Niagara scratchpad memory addresses, allowing for accurate spatial collision lookups.
+* **Muzzle Optimization:** Bullet structures are handled in a single execution queue, containing automated minigun loop parameters and weapon dispersion logic that scales based on active movement velocity values.
+
+## Adaptive AI: Voxel Obstacle Detection & Autonomous Drones
+
+To ensure that enemies navigating open three-dimensional spaces felt smart, aggressive, and highly reactive, we built a custom behavior tree network from the ground up. Flying AI requires complex spatial lookups to prevent units from constantly colliding with internal superstructure geometry.
+
+To solve this, we implemented a dedicated **3D Obstacle Detection System**. Drone sensors continuously cast raycasts into a predictive movement arc, allowing the AI to automatically bank away from geometry or find tight access channels during active combat loops. This intelligence layer drives a highly specialized roster of drone archetypes modeled closely after chess rules—highlighted by defensive hunter-killer arrays, automated sentries, and tactical decoy drones that deploy countermeasures to redirect player fire parameters.
+
+## Atmospheric Rendering: Raymarched Lighting & Retro Shaders
+
+To establish our visual direction of a grim, mechanical industrial wasteland, I built a custom post-processing post-rendering stack. Instead of basic skybox spheres, we developed a mathematical, **Shader-Driven SkyAtmosphere System**. This system utilizes real-time raymarched volumetric lighting calculations to scatter light realistically through heavy post-industrial dust and dense spatial nebulas.
+
+To give the UI a tactile, industrial look, we implemented a screen-space pixel shader that creates a vintage **Curved CRT Screen Distortion** directly on the player's viewport. This retro-futuristic styling was optimized alongside our gameplay indicators—including dynamic damage vignettes and a radial target locking reticle that stretches and tracks bounding targets instantly across the screen.

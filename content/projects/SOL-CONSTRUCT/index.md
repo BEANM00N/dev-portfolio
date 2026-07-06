@@ -17,7 +17,7 @@ toc: true
 <style>
   /* 1. Set the fixed, darkened background image for the whole page */
   body {
-    background-image: linear-gradient(rgba(15, 23, 42, 0.45), rgba(15, 23, 42, 0.55)), url('featured.jpg') !important;
+    background-image: linear-gradient(rgba(15, 23, 42, 0.45), rgba(15, 23, 42, 0.55)), url('featured.webp') !important;
     background-size: cover !important;
     background-attachment: fixed !important;
     background-position: center !important;
@@ -409,9 +409,10 @@ During the first few months of development, player movement was the most heavily
 
 
 <div style="margin-bottom: 0.5rem; border-radius: 1rem; overflow: hidden; border: 1px solid rgba(255, 255, 255, 0.1); box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
-  <img src="Module Spin Sped Up.gif" class="zoomable" alt="Module Randomiser Render" style="width: 100%; height: auto; display: block; margin: 0 !important;" />
+  <video autoplay loop muted playsinline style="width: 100%; height: auto; display: block; margin: 0 !important;">
+    <source src="Module Spin Sped Up.webm" type="video/webm">
+  </video>
 </div>
-
 
 Our solution was to strip it back. We removed roll and the ability to fly completely upside down, pivoting to a movement style akin to Minecraft’s creative mode or Interplay's Descent. While it was tough to say goodbye to true 6DOF, this restriction immediately gave players total, intuitive control over their positioning. We matched this mechanically with a modular ship design. A central frame where wings, thrusters, and turrets attach, heavily utilising procedural animation to make the craft feel responsive and weighty.
 
@@ -469,13 +470,17 @@ For example:
 * **Short-range enemies** force the player to constantly reconsider their spatial positioning.
 
 <div style="margin-bottom: 0.5rem; border-radius: 1rem; overflow: hidden; border: 1px solid rgba(255, 255, 255, 0.1); box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
-  <img src="MeleeDroneSpedUp.gif" class="zoomable" alt="Module Randomiser Render" style="width: 100%; height: auto; display: block; margin: 0 !important;" />
+  <video autoplay loop muted playsinline style="width: 100%; height: auto; display: block; margin: 0 !important;">
+    <source src="Meleedronespedup.webm" type="video/webm">
+  </video>
 </div>
 
 Because we always wanted a minimum level of enemy density in encounters, these units had to complement each other. They don't necessarily "communicate" via code, but their roles naturally synergise. For example, I recently implemented a close range "Saw" enemy that embeds itself in the player, dealing tick damage but, more importantly, *disabling the player's dash and dodge*. If left unchecked, this allows the Long Range sniper enemies (who usually miss a dashing player) to easily land devastating hits. This encourages the player to approach encounters strategically, prioritising targets based on the specific restrictions their synergy imposes.
 
 <div style="margin-bottom: 0.5rem; border-radius: 1rem; overflow: hidden; border: 1px solid rgba(255, 255, 255, 0.1); box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
-  <img src="EnemyGangSpedUp.gif" class="zoomable" alt="Module Randomiser Render" style="width: 100%; height: auto; display: block; margin: 0 !important;" />
+  <video autoplay loop muted playsinline style="width: 100%; height: auto; display: block; margin: 0 !important;">
+    <source src="Enemygangspedup.webm" type="video/webm">
+  </video>
 </div>
 
 ## Frankensteined Pathfinding & EQS

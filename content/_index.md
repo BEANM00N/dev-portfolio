@@ -226,7 +226,7 @@ sections:
           /* 1. Full-bleed background image for the Hero Section */
           #hero {
             /* We added a dark linear-gradient overlay before the url() */
-            background-image: linear-gradient(rgba(15, 23, 42, 0.3), rgba(15, 23, 42, 0.4)), url('hero-bg.jpg') !important; 
+            background-image: linear-gradient(rgba(15, 23, 42, 0.3), rgba(15, 23, 42, 0.4)), url('hero-bg.webp') !important; 
             background-size: cover !important;
             background-position: center !important;
             background-attachment: fixed !important;
