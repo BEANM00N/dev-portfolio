@@ -504,7 +504,11 @@ To bring these designs to life, the AI needed to understand 3D space. I frankens
 
 **Volumetric grid Generation:** The query generates a large 3D spherical grid of potential movement locations (a 3000-unit radius with 500-unit spacing), giving the flying AI a full 6 Degrees of Freedom (6DOF) spatial canvas to evaluate.
 
-E**nvironmental & Range Filtering:** It utilizes a boolean Trace test to immediately cull any points obstructed by world geometry (ensuring a clear line of sight to the player) alongside a strict Distance filter to discard points outside the enemy's effective combat range.
+<div style="margin-bottom: 0.5rem; border-radius: 1rem; overflow: hidden; border: 1px solid rgba(255, 255, 255, 0.1); box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
+  <img src="3D Volume.webp" class="zoomable" alt="Module Randomiser Render" style="width: 100%; height: auto; display: block; margin: 0 !important;" />
+</div>
+
+**Environmental & Range Filtering:** It utilizes a boolean Trace test to immediately cull any points obstructed by world geometry (ensuring a clear line of sight to the player) alongside a strict Distance filter to discard points outside the enemy's effective combat range.
 
 **"Smart" Positioning via Dot Product:** The remaining viable points are scored using an Inverse Linear Distance modifier and a Dot Product test. This mathematically evaluates points relative to the player's facing direction, driving the AI to intelligently flank or prioritize specific angles of attack rather than simply flying straight at the target.
 </details>

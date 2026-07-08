@@ -11,6 +11,7 @@ tags:
 image:
   preview_only: true
 toc: true
+draft: true
 
 ---
 
@@ -297,10 +298,10 @@ toc: true
 <div class="tony-highlights-card">
   <h3><i class="far fa-star"></i> Contributions</h3>
   <ul>
-    <li>Experimented with a <span class="keyword-red">Niagara GPU Projectile Pooling system</span>, optimising bullet hell density and shapes with a 90% gain in performance.</li>
+    <li><span class="keyword-red">Niagara GPU Projectile Pooling system</span>, optimising bullet hell density and shapes with a 90% gain in performance.</li>
     <li>Migrated movement into a custom <span class="keyword-red">weighty, momentum driven flight Pawn script</span>, giving us full control over game feel.</li>
-    <li>Programmed spatial <span class="keyword-red">3D obstacle detection systems</span> and reactive countermeasure logic loop, all used in behaviour trees.</li>
-    <li>Developed the full meta progression loop featuring an integrated <span class="keyword-red">\"C.A.R.D. Upgrade Architecture\"</span>, localised stat scoreboard saves, and level selections.</li>
+    <li>Spatial <span class="keyword-red">3D obstacle detection systems</span> and reactive countermeasure logic loop, all used in behaviour trees.</li>
+    <li>Full meta progression loop featuring an integrated <span class="keyword-red">\"C.A.R.D. Upgrade Architecture\"</span>, localised stat scoreboard saves, and level selections.</li>
     <li>Designed the structural logic for a comprehensive <span class="keyword-red">modular garage setup terminal</span> to safely equip nose, wing, armor, and utility modules between runs, as well as store puzzles, cyphers and world interactions.</li>
   </ul>
 
@@ -313,29 +314,25 @@ toc: true
         <span style="color: #e05e5e;">▪</span> Native material code driving real time raymarched volumetrics.
       </li>
       <li style="font-size: 0.85rem !important; color: #94a3b8 !important; display: flex; align-items: flex-start; gap: 0.5rem; margin-bottom: 0 !important;">
-        <span style="color: #e05e5e;">▪</span> Automated gimbal aiming and  crosshair stabilisation parameters.
-      </li>
-      <li style="font-size: 0.85rem !important; color: #94a3b8 !important; display: flex; align-items: flex-start; gap: 0.5rem; margin-bottom: 0 !important;">
         <span style="color: #e05e5e;">▪</span> Automated countermeasure responses like Chaff, Mines, Drone Swarms.
       </li>
       <li style="font-size: 0.85rem !important; color: #94a3b8 !important; display: flex; align-items: flex-start; gap: 0.5rem; margin-bottom: 0 !important;">
         <span style="color: #e05e5e;">▪</span> FMOD links implementing paramterised dynamic jet thruster events.
       </li>
       <li style="font-size: 0.85rem !important; color: #94a3b8 !important; display: flex; align-items: flex-start; gap: 0.5rem; margin-bottom: 0 !important;">
-        <span style="color: #e05e5e;">▪</span> Responsive curved UI shader effects wrapping around the primary player screen viewport.
+        <span style="color: #e05e5e;">▪</span> Various UI shaders (Curved HUD, Glowing UI, Hover and Press States, etc.)
       </li>
     </ul>
   </div>
 </div>
 
-Every system inside SOL DRIFT has been iteratively tuned against physical playtesting datasets across numerous live convention show floors, resulting in a hyper-focused movement pipeline.
+Every system inside SOL DRIFT has been iteratively tuned against physical playtesting datasets across numerous live convention show floors, resulting in a very fast prototyping pipeline.
 
-## Engineering the S.O.L Fighter: Weighty Physics Pawn & Omnidirectional Flight
+## Faking momentum & Omnidirectional Flight
 
-To fulfill the vision of a vehicle that captures both mechanical weight and arcade agility, we abandoned standard engine character movement components in favor of a specialized physics-driven **Flight Pawn** blueprint. Shifting away from rigid directional vectors allowed the ship to dynamically interact with architectural boundaries using true momentum-preserving equations:
-* **True 12-Axis Autonomy:** Programmed fully un-blocked movement trees supporting simultaneous forward, horizontal, and vertical displacement.
-* **Drift Rotation Mechanics:** Developed custom dampening forces that slide the craft smoothly through corners during high-speed thruster maneuvers, providing a distinct feeling of drift inertia.
-* **Kinetic Refinements:** Eliminated mechanical springarm deadzones and added custom screen-space recoil shifts that physically jar the vehicle hull during heavy output bursts.
+To fulfill the vision of a vehicle that captures both mechanical weight and arcade agility, we abandoned standard unreal engine character movement components in favor of a specialised math driven **Flight Pawn** blueprint. This customisation allowed me to do the following:
+* **12 Axis Autonomy:** Programmed fully un-blocked movement trees supporting simultaneous forward, horizontal, and vertical displacement.
+* **Drift Rotation Mechanics:** Dampening forces that slide the craft smoothly through corners during high speed maneuvers, providing that distinct feeling of drift inertia we know and love in racing games.
 
 <details class="code-dropdown">
   <summary><i class="fas fa-code"></i> View Blueprint Architecture: Velocity Decay & Thruster Interpolation</summary>
@@ -344,22 +341,18 @@ To fulfill the vision of a vehicle that captures both mechanical weight and arca
 
 </details>
 
-## High-Density Combat: Niagara GPU Projectile Pooling
+## Niagara GPU Projectile Pooling
 
-To support our bullet-hell design pillars without dragging down frame rates on standard hardware, standard actor-spawning loops were entirely replaced with a centralized **Universal Projectile Pooling Engine**. Spawning thousands of individual laser actors quickly bottlenecked the CPU thread due to heavy garbage collection polling and component initialization cycles.
+To support our bullet hell design pillars without dragging down frame rates on standard hardware, standard actor spawning loops were entirely replaced with a centralised **Universal Projectile Pooling System**. Spawning thousands of individual laser actors quickly bottlenecked the CPU thread due to heavy garbage collection polling and component initialisation cycles.This solution wasn't great, but it laid the ground work for how I approached Projectiles in the future, so it was more an excercise in what compromises can be made for performance.
 
-Our optimized solution shifts calculation weights directly onto background calculation groups:
-* **GPU-Bound Projectiles:** Weapon arrays fire directly into a unified projectile pool that interfaces seamlessly with Niagara particles.
-* **Per-Particle Life Cycles:** Hit evaluation, environmental trace calculations, and damage events are linked right into Niagara scratchpad memory addresses, allowing for accurate spatial collision lookups.
-* **Muzzle Optimization:** Bullet structures are handled in a single execution queue, containing automated minigun loop parameters and weapon dispersion logic that scales based on active movement velocity values.
+Our optimised solution shifts all math directly onto background systems:
+* **GPU Bound Projectiles:** Weapon arrays fire directly into a unified projectile pool that interfaces seamlessly with Niagara particles.
+* **Per Particle Life Cycles:** Hit evaluation, environmental trace calculations, and damage events are linked right into Niagara scratchpad memory addresses, allowing for accurate spatial collision lookups.
+* **Muzzle Optimisation:** Bullet structures are handled in a single execution queue, containing automated minigun loop parameters and weapon dispersion logic that scales based on active movement velocity values.
 
-## Adaptive AI: Voxel Obstacle Detection & Autonomous Drones
+Sadly what made this eventually prove to be unusable was the simple Frame Delay, since the PCIE bus can't send data from the CPU to the GPU and back to the CPU in a single frame. This was a real bummer but thankfully I was able to learn just how far I can push Niagara for Gameplay events.
 
-To ensure that enemies navigating open three-dimensional spaces felt smart, aggressive, and highly reactive, we built a custom behavior tree network from the ground up. Flying AI requires complex spatial lookups to prevent units from constantly colliding with internal superstructure geometry.
-
-To solve this, we implemented a dedicated **3D Obstacle Detection System**. Drone sensors continuously cast raycasts into a predictive movement arc, allowing the AI to automatically bank away from geometry or find tight access channels during active combat loops. This intelligence layer drives a highly specialized roster of drone archetypes modeled closely after chess rules—highlighted by defensive hunter-killer arrays, automated sentries, and tactical decoy drones that deploy countermeasures to redirect player fire parameters.
-
-## Atmospheric Rendering: Raymarched Lighting & Retro Shaders
+## Atmospheric Rendering:
 
 To establish our visual direction of a grim, mechanical industrial wasteland, I built a custom post-processing post-rendering stack. Instead of basic skybox spheres, we developed a mathematical, **Shader-Driven SkyAtmosphere System**. This system utilizes real-time raymarched volumetric lighting calculations to scatter light realistically through heavy post-industrial dust and dense spatial nebulas.
 
