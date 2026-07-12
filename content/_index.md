@@ -58,7 +58,7 @@ sections:
       background:
         color:
           light: "#ffffff"
-          dark: "#0d0d12"
+          dark: "#12151d"
       spacing:
         padding:
           - "4rem"
@@ -81,7 +81,7 @@ sections:
         - name: "Software"
           items:
             - name: "UE5"
-              icon: "devicon/unrealengine"
+              icon: "brands/unrealengine"
             - name: "Blender"
               icon: "devicon/blender"
             - name: "Obsidian"
@@ -100,7 +100,7 @@ sections:
       background:
         color:
           light: "#f5f5f5"
-          dark: "#08080c"
+          dark: "#12151d"
       spacing:
         padding:
           - "4rem"
@@ -156,7 +156,7 @@ sections:
       background:
         color:
           light: "#ffffff"
-          dark: "#0d0d12"
+          dark: "#12151d"
       spacing:
         padding:
           - "4rem"
@@ -183,7 +183,7 @@ sections:
       background:
         color:
           light: "#f5f5f5"
-          dark: "#08080c"
+          dark: "#12151d"
       spacing:
         padding:
           - "4rem"
@@ -207,7 +207,7 @@ sections:
       background:
         color:
           light: "#ffffff"
-          dark: "#0d0d12"
+          dark: "#12151d"
       spacing:
         padding:
           - "4rem"
@@ -226,7 +226,7 @@ sections:
           /* 1. Full-bleed background image for the Hero Section */
           #hero {
             /* We added a dark linear-gradient overlay before the url() */
-            background-image: linear-gradient(rgba(15, 23, 42, 0.3), rgba(15, 23, 42, 0.4)), url('hero-bg.webp') !important; 
+            background-image: linear-gradient(rgba(15, 23, 42, 0.3), rgba(15, 23, 42, 0.4)), url('hero-bg.jpg') !important; 
             background-size: cover !important;
             background-position: center !important;
             background-attachment: fixed !important;
