@@ -313,32 +313,30 @@ toc: true
   /* MOBILE RESPONSIVENESS PATCH                */
   /* ========================================== */
   @media (max-width: 768px) {
-    /* Reclaim horizontal screen real estate */
+    /* Maximize horizontal screen real estate */
     article {
-      padding: 1.5rem 1rem !important;  /* Drops side padding from 3rem down to 1rem */
-      margin-top: 1rem !important;
-      margin-bottom: 1rem !important;
-      border-radius: 1rem !important;   /* Slightly tighter rounding for small screens */
+      padding: 1rem 0.5rem !important;  /* Tighter padding: 1rem top/bottom, 0.5rem left/right */
+      margin-top: 0.5rem !important;    /* Tighter top margin */
+      margin-bottom: 0.5rem !important; /* Tighter bottom margin */
+      border-radius: 0.75rem !important;/* Slightly sharper corners for maximum space */
     }
 
-    /* Prevent the intro blurb from feeling too spaced out */
+    /* Keep the rest of your mobile rules here... */
     .tony-blurb {
-      padding-left: 1rem !important;
-      margin-bottom: 1.5rem !important;
-      font-size: 1rem !important;
+      padding-left: 0.75rem !important;
+      margin-bottom: 1.25rem !important;
+      font-size: 0.95rem !important;
     }
+    
+    article h1 { font-size: 1.7rem !important; }
+    article h2 { font-size: 1.3rem !important; }
+    article h3 { font-size: 1.15rem !important; }
 
-    /* Shrink headings slightly so they don't break awkwardly across lines */
-    article h1 { font-size: 1.8rem !important; }
-    article h2 { font-size: 1.4rem !important; }
-    article h3 { font-size: 1.2rem !important; }
-
-    /* Adjust the image carousel item size so cards aren't overly microscopic */
     .clean-carousel a {
-      flex: 0 0 92% !important; /* Lets cards stretch wider across the screen */
+      flex: 0 0 95% !important; 
     }
     .clean-carousel img {
-      height: 240px !important;  /* Lower height profile for mobile viewports */
+      height: 220px !important;  
     }
   }
 
