@@ -414,9 +414,9 @@ During the first few months of development, player movement was the most heavily
   </video>
 </div>
 
-Our solution was to strip it back. We removed roll and the ability to fly completely upside down, pivoting to a movement style akin to Minecraft’s creative mode or Interplay's Descent. While it was tough to say goodbye to true 6DOF, this restriction immediately gave players total, intuitive control over their positioning. We matched this mechanically with a modular ship design. A central frame where wings, thrusters, and turrets attach, heavily utilising procedural animation to make the craft feel responsive and weighty.
+My solution was to strip it back. I removed roll and the ability to fly completely upside down, pivoting to a movement style akin to Minecraft’s creative mode or Interplay's Descent. While it was tough to say goodbye to true 6DOF, this restriction immediately gave players total, intuitive control over their positioning. I matched this mechanically with a modular ship design. A central frame where wings, thrusters, and turrets attach, heavily utilising procedural animation to make the craft feel responsive and weighty.
 
-You can have a peep on what our anim graph looks like. Nothing too complex, but it adds a lot of juice:
+You can have a peep on what my anim graph looks like. Nothing too complex, but it adds a lot of juice:
 <details class="code-dropdown">
   <summary><i class="fas fa-code"></i> Player Mesh Anim BP</summary>
 {{< blueprint src="LFTR Frame Anim BP.txt" >}}
@@ -463,6 +463,8 @@ Designing flying enemies is a completely different beast compared to grounded AI
 
 </div>
 
+I also did the 3D modelling for these guys, trying to maintain as many reusable and modular parts.
+
 My golden rule for designing and implementing *every* new enemy was asking: *"What action am I trying to exploit from the player?"*
 
 For example:
@@ -492,7 +494,7 @@ To bring these designs to life, the AI needed to understand 3D space. I frankens
 **EQS Implementation:** I replaced our early, hacky target tracking with a much more robust Environment Query System (EQS). Enemies now transition through Patrolling, Searching, and Attacking states based on true Perception (hearing, damage, visibility). Using Dot product math, I programmed enemies to evaluate points based on the player's orientation, allowing them to intelligently flank or close distance dynamically based on their role. This single feature completely blew our minds and gave us so much motivation to move forward.
 
 <div style="margin-bottom: 2.5rem; border-radius: 1rem; overflow: hidden; border: 1px solid rgba(255, 255, 255, 0.1); box-shadow: 0 10px 30px rgba(0,0,0,0.5); background-color: rgba(15, 23, 42, 0.4);">
-  <img src="eqsnode.png" class="zoomable" alt="EQS breakdown" style="width: 100%; height: auto; display: block; margin: 0 !important;" />
+  <img src="eqsnode.PNG" class="zoomable" alt="EQS breakdown" style="width: 100%; height: auto; display: block; margin: 0 !important;" />
   <div style="padding: 0.75rem 1rem; text-align: center; font-size: 0.85rem; color: #94a3b8; font-style: italic;">
     *Query used by medium range enemies.*
   </div>

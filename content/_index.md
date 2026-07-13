@@ -15,6 +15,9 @@ sections:
         - text: "Check out my Work!"
           url: "#projects"
           icon: "arrow-down"
+        - text: "Download CV"              # <--- Add this new button block
+          url: "uploads/Josh McCamley Technical Game Designer.pdf"        # <--- Points to your static file
+          icon: "hero/document-arrow-down"
       links:
         - icon: "brands/linkedin"
           url: "https://www.linkedin.com/in/joshmccamley/"
@@ -198,8 +201,7 @@ sections:
       title: "Get In Touch"
       subtitle: "Let's chat!"
       text: |-
-        I'm always interested in hearing about new projects and opportunities.
-        Whether you're looking to hire, collaborate, or just want to say hi, feel free to reach out!
+       Whether you're looking to fill a technical design role or you just want to talk engine architecture and game feel over a virtual coffee, my inbox is open. Hit me up on LinkedIn, or drop a direct email. Always down to chat!
       email: "josh@madmoonstudios.co.uk"
       autolink: true
     design:
