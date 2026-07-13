@@ -445,7 +445,7 @@ During the first few months of development, player movement was the most heavily
   </video>
 </div>
 
-My solution was to strip it back. I removed roll and the ability to fly completely upside down, pivoting to a movement style akin to Minecraft’s creative mode or Interplay's Descent. While it was tough to say goodbye to true 6DOF, this restriction immediately gave players total, intuitive control over their positioning. I matched this mechanically with a modular ship design. A central frame where wings, thrusters, and turrets attach, heavily utilising procedural animation to make the craft feel responsive and weighty.
+My solution was to strip it back. I removed roll and the ability to fly completely upside down, pivoting to a movement style akin to Minecraft’s creative mode or Interplay's Descent. While it was tough to say goodbye to true 6DOF, this restriction immediately gave players total, intuitive control over their positioning. I matched this mechanically with a modular ship design. A central frame where wings, thrusters, and turrets attach, heavily utilising procedural animation to make the craft feel responsive and weighty. You can read more about the new Frame and Modules in my Blog post [Creating the LFTR](https://josh-mccamley.com/blog/creating-the-lftr/)!
 
 You can have a peep on what my anim graph looks like. Nothing too complex, but it adds a lot of juice:
 <details class="code-dropdown">

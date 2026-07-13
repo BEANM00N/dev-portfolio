@@ -295,6 +295,38 @@ sections:
             height: 100%;
             z-index: 20; /* Ensures it sits firmly on top of the text and images */
           }
+
+        /* ========================================== */
+          /* MOBILE RESPONSIVENESS PATCH                */
+          /* ========================================== */
+          @media (max-width: 768px) {
+            /* Maximize horizontal screen real estate */
+            article {
+              padding: 1rem 0.5rem !important;  /* Tighter padding: 1rem top/bottom, 0.5rem left/right */
+              margin-top: 0.5rem !important;    /* Tighter top margin */
+              margin-bottom: 0.5rem !important; /* Tighter bottom margin */
+              border-radius: 0.75rem !important;/* Slightly sharper corners for maximum space */
+            }
+
+            /* Keep the rest of your mobile rules here... */
+            .tony-blurb {
+              padding-left: 0.75rem !important;
+              margin-bottom: 1.25rem !important;
+              font-size: 0.95rem !important;
+            }
+            
+            article h1 { font-size: 1.7rem !important; }
+            article h2 { font-size: 1.3rem !important; }
+            article h3 { font-size: 1.15rem !important; }
+
+            .clean-carousel a {
+              flex: 0 0 95% !important; 
+            }
+            .clean-carousel img {
+              height: 220px !important;  
+            }
+          }
+
         </style>
 
     design:
