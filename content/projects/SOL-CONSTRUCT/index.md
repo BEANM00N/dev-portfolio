@@ -309,6 +309,39 @@ toc: true
     margin-top: 0.75rem;
   }
 
+/* ========================================== */
+  /* MOBILE RESPONSIVENESS PATCH                */
+  /* ========================================== */
+  @media (max-width: 768px) {
+    /* Reclaim horizontal screen real estate */
+    article {
+      padding: 1.5rem 1rem !important;  /* Drops side padding from 3rem down to 1rem */
+      margin-top: 1rem !important;
+      margin-bottom: 1rem !important;
+      border-radius: 1rem !important;   /* Slightly tighter rounding for small screens */
+    }
+
+    /* Prevent the intro blurb from feeling too spaced out */
+    .tony-blurb {
+      padding-left: 1rem !important;
+      margin-bottom: 1.5rem !important;
+      font-size: 1rem !important;
+    }
+
+    /* Shrink headings slightly so they don't break awkwardly across lines */
+    article h1 { font-size: 1.8rem !important; }
+    article h2 { font-size: 1.4rem !important; }
+    article h3 { font-size: 1.2rem !important; }
+
+    /* Adjust the image carousel item size so cards aren't overly microscopic */
+    .clean-carousel a {
+      flex: 0 0 92% !important; /* Lets cards stretch wider across the screen */
+    }
+    .clean-carousel img {
+      height: 240px !important;  /* Lower height profile for mobile viewports */
+    }
+  }
+
 </style>
 
 <script>
