@@ -202,7 +202,7 @@ sections:
       subtitle: "Let's chat!"
       text: |-
        Whether you're looking to fill a technical design role or you just want to talk engine architecture and game feel over a virtual coffee, my inbox is open. Hit me up on LinkedIn, or drop a direct email. Always down to chat!
-      email: "josh@madmoonstudios.co.uk"
+      email: "joshmccamley@gmail.com"
       autolink: true
     design:
       columns: "1"
@@ -248,6 +248,14 @@ sections:
             margin: 0 auto !important; 
             box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5) !important; 
           }
+
+          #hero h1 {
+            font-size: 3.8rem !important;
+            line-height: 1.2 !important;
+            margin-top: 1rem !important;
+            margin-bottom: 0.5rem !important;
+          }
+
           /* 4. Resize the Profile Picture AND its circular mask */
           #hero img {
             width: 200px !important; 

@@ -9,14 +9,14 @@ postnominals: []
 status:
   icon: "💻"
 role: "Technical Game Designer"
-email: "Josh@madmoonstudios.co.uk"
-bio: "Co-Director and Game Developer at Mad Moon Studios"
+email: "Joshmccamley@gmail.com"
+bio: "Game Developer at Mad Moon Studios"
 affiliations:
   - name: "Tech Corp"
     url: "https://techcorp.example.com"
 links:
   - icon: "hero/at-symbol"
-    url: "Josh@madmoonstudios.co.uk"
+    url: "Joshmccamley@gmail.com"
     label: "Email"
   - icon: "brands/linkedin"
     url: "https://www.linkedin.com/in/joshmccamley/"
