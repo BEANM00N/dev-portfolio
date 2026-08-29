@@ -2,6 +2,18 @@
 title: SOL CONSTRUCT
 date: 2026-06-14
 summary: Pilot a Scrappy Aerial Combat Rig in a Rusty Survival Roguelite
+  <ul class="card-achievements">
+    <li><span class="keyword-red">Top to Bottom Weapon System;</span> FLECS Projectiles, Procedural Recoil, Accuracy & Bloom, Weapon Meshes, Rigs & AnimBP's.</li>
+    <li><span class="keyword-red">Flight-based AI Ecosystem;</span> A* Pathfinding, EQS, Behaviour Trees, Enemy Meshes, Rigs & Procedural AnimBP's.</li>
+    <li><span class="keyword-red">Persistent Quest Subsystem;</span> Custom Graph Nodes, compiled into lightweight CSV's.</li>
+    <li>Data-Oriented <span class="keyword-red">Runtime Editable, Grid-based</span> Inventory.</li>
+
+  </ul>
+  <div class="card-status-container">
+    <span class="status-tag status-in-dev">In Development</span>
+  </div>
+# Optional: reference your webm file directly in front matter for JS targeting
+preview_video: "Module Spin Sped Up.webm"
 tags:
   - Games
   - Unreal Engine
@@ -358,6 +370,73 @@ toc: true
     }, { rootMargin: '-20% 0px -70% 0px' });
 
     document.querySelectorAll('article h2, article h3').forEach(h => observer.observe(h));
+
+
+    // 2. Auto-Injecting Lightbox (Handles both Images & Videos)
+    let modal = document.getElementById('lightbox-modal');
+    let modalImg = document.getElementById('lightbox-img');
+    let modalVideo = document.getElementById('lightbox-video');
+
+    if (!modal) {
+      modal = document.createElement('div');
+      modal.id = 'lightbox-modal';
+
+      modalImg = document.createElement('img');
+      modalImg.id = 'lightbox-img';
+
+      modalVideo = document.createElement('video');
+      modalVideo.id = 'lightbox-video';
+      modalVideo.autoplay = true;
+      modalVideo.loop = true;
+      modalVideo.muted = true;
+      modalVideo.playsInline = true;
+      modalVideo.controls = true; // Gives native play/pause/fullscreen controls in the modal
+
+      modal.appendChild(modalImg);
+      modal.appendChild(modalVideo);
+      document.body.appendChild(modal);
+    }
+
+    // Attach click events to all article IMAGES
+    document.querySelectorAll('article img').forEach(img => {
+      img.style.cursor = 'pointer';
+      img.addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        modalVideo.style.display = 'none';
+        modalVideo.pause();
+        modalImg.src = img.src;
+        modalImg.style.display = 'block';
+        modal.classList.add('lightbox-visible');
+      });
+    });
+
+    // Attach click events to all article VIDEOS
+    document.querySelectorAll('article video').forEach(video => {
+      video.style.cursor = 'pointer';
+      video.addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        const src = video.currentSrc || video.querySelector('source')?.src;
+        if (src) {
+          modalImg.style.display = 'none';
+          modalVideo.src = src;
+          modalVideo.style.display = 'block';
+          modalVideo.play();
+          modal.classList.add('lightbox-visible');
+        }
+      });
+    });
+
+    // Close modal and reset video playback on click anywhere
+    modal.addEventListener('click', () => {
+      modal.classList.remove('lightbox-visible');
+      if (modalVideo) {
+        modalVideo.pause();
+        modalVideo.src = '';
+      }
+    });
+  });
   });
 </script>
 
@@ -390,7 +469,7 @@ A high stakes SinglePlayer Survival Roguelite. Pilot a sentient flight combat ri
 </div>
 
 <div class="tony-highlights-card">
-  <h3><i class="far fa-star"></i> Contributions</h3>
+  <h3><i class="far fa-star"></i>Extended Contributions</h3>
   <ul>
     <li><span class="keyword-red">Custom Enemy ecosystem</span> with air and ground units.</li>
     <li>Core player flight, built with a tonne of playtesting, removing disorienting axis to create an intuitive flight model, using a custom replicatable movement component</li>

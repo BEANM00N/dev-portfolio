@@ -1,7 +1,19 @@
 ---
 title: "Shoot To Die"
 date: 2025-11-10
-summary: "A frantic, physically-driven arcade score-chaser where you juggle dice with a heavy revolver."
+summary: A frantic, physically-driven arcade score-chaser where you juggle dice with a heavy revolver.
+  <ul class="card-achievements">
+    <li><span class="keyword-red">Manual Weapon Mechanics</span>; Firing, Single Bullet Reloading, Unloading, Ammo Checking, along with weapon rigging, texturing and animation.</li>
+    <li><span class="keyword-red">Dice Juggling Physics</span>.</li>
+    <li><span class="keyword-red">Procedural Materials</span>, that allowed game-wide tuning of Retro effects; Pixelisation, Posterisation, Noise, etc.</li>
+  </ul>
+  <div class="card-status-container">
+    <span class="status-tag status-prototype">Prototype</span>
+    <span class="status-tag status-jam">Game Jam</span>
+
+  </div>
+# Optional: reference your webm file directly in front matter for JS targeting
+preview_video: "Module Spin Sped Up.webm"
 tags:
   - Games
   - Unreal Engine
@@ -345,7 +357,7 @@ toc: true
 </div>
 
 <div class="tony-highlights-card">
-  <h3><i class="far fa-star"></i> Contributions</h3>
+  <h3><i class="far fa-star"></i>Extended Contributions</h3>
   <ul>
     <li>Created a custom interaction system, featuring <span class="keyword-red">manual weapon mechanics</span> and fully interactable environmental objects.</li>
     <li>Designed a triple collision projectile system including "wiff" velocities to allow players to <span class="keyword-red">juggle physics actors</span> mid air.</li>

@@ -2,6 +2,20 @@
 title: Perforce Live Feed on Nextcloud
 date: 2026-02-06
 summary: A custom Nextcloud app for easier debugging and diffing of Perforce files.
+  <ul class="card-achievements">
+    <li>Hooks into <span class="keyword-red">Perforce via CLI shell scripts</span>.</li>
+    <li><span class="keyword-red">Local JSON Chaching</span> for better web performance.</li>
+    <li><span class="keyword-red">Searchable Activity Feed</span>.</li>
+    <li>Data-Oriented <span class="keyword-red">Solo Built</span> using Nextcloud's App framework and some custom CSS and Controllers.</li>
+
+  </ul>
+  <div class="card-status-container">
+    <span class="status-tag status-proprietary">Proprietary</span>
+    <span class="status-tag status-alpha">Alpha</span>
+
+  </div>
+# Optional: reference your webm file directly in front matter for JS targeting
+preview_video: "Module Spin Sped Up.webm"
 tags:
   - Tools
   - Web Dev
@@ -476,7 +490,7 @@ image:
 </div>
 
 <div class="tony-highlights-card">
-  <h3><i class="far fa-star"></i> Highlights</h3>
+  <h3><i class="far fa-star"></i>Extended Highlights</h3>
   <ul>
     <li>Built a custom Nextcloud Live App that hooks into <span class="keyword-red">Perforce via CLI shell scripts</span>, stripping away P4V's clunky interface for a clean web dashboard.</li>
     <li>Solved performance lag by adding a <span class="keyword-red">Local JSON Cache and custom PHP env wrappers</span> to handle heavy P4 queries seamlessly.</li>

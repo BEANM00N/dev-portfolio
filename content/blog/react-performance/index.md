@@ -11,7 +11,7 @@ tags:
 authors:
   - me
 featured: true
-draft: false
+draft: true
 toc: true
 ---
 

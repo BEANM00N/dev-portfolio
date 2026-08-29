@@ -2,6 +2,18 @@
 title: ProcTex Plugin
 date: 2026-02-06
 summary: Texture Pixelizer Plugin for Unreal Engine
+  <ul class="card-achievements">
+    <li><span class="keyword-red">C++ Editor tool</span> with Native UI Integration.</li>
+    <li>Live 3D Previewer supporting <span class="keyword-red">all Mesh Types</span>.</li>
+    <li>All Parameters <span class="keyword-red">exposed for Customisation</span>.</li>
+  </ul>
+  <div class="card-status-container">
+    <span class="status-tag status-released">Released</span>
+    <span class="status-tag status-alpha">Alpha</span>
+
+  </div>
+# Optional: reference your webm file directly in front matter for JS targeting
+preview_video: "Module Spin Sped Up.webm"
 tags:
   - Tools
   - Unreal Engine
@@ -472,7 +484,7 @@ image:
 </div>
 
 <div class="tony-highlights-card">
-  <h3><i class="far fa-star"></i> Highlights</h3>
+  <h3><i class="far fa-star"></i>Extended Highlights</h3>
   <ul>
     <li>Created a custom C++ Editor tool with <span class="keyword-red">Native UI Integration</span> directly into the main Level Editor toolbar.</li>
     <li>Added a general 3D previewer supporting both <span class="keyword-red">Static Meshes and Skeletal Meshes</span> inside a custom environment.</li>

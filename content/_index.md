@@ -15,8 +15,8 @@ sections:
         - text: "Check out my Work!"
           url: "#projects"
           icon: "arrow-down"
-        - text: "Download CV"              # <--- Add this new button block
-          url: "uploads/Josh McCamley Technical Game Designer.pdf"        # <--- Points to your static file
+        - text: "Download CV"
+          url: "uploads/Josh McCamley Technical Game Designer.pdf"
           icon: "hero/document-arrow-down"
       links:
         - icon: "brands/linkedin"
@@ -223,11 +223,9 @@ sections:
     content:
       title: ""
       text: |
-
         <style>
           /* 1. Full-bleed background image for the Hero Section */
           #hero {
-            /* We added a dark linear-gradient overlay before the url() */
             background-image: linear-gradient(rgba(15, 23, 42, 0.3), rgba(15, 23, 42, 0.4)), url('hero-bg.jpg') !important; 
             background-size: cover !important;
             background-position: center !important;
@@ -236,15 +234,15 @@ sections:
             border-bottom: 1px solid rgba(255, 255, 255, 0.1);
           }
 
-        /* 2. Turn ONLY the content container into a centered Glass Island */
+          /* 2. Turn ONLY the content container into a centered Glass Island */
           #hero > div:has(h1) {
             background-color: rgba(30, 41, 59, 0.75) !important;
             backdrop-filter: blur(12px);
             -webkit-backdrop-filter: blur(12px);
             border: 1px solid rgba(255, 255, 255, 0.1) !important;
             border-radius: 2rem !important;
-            padding: 3.5rem 2rem !important;
-            max-width: 600px !important; 
+            padding: 0rem 2rem !important;
+            max-width: 720px !important; 
             margin: 0 auto !important; 
             box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5) !important; 
           }
@@ -261,7 +259,7 @@ sections:
             width: 200px !important; 
             height: 200px !important; 
             max-width: none !important;
-            object-fit: cover !important; /* Ensures the image doesn't stretch weirdly */
+            object-fit: cover !important;
           }
 
           /* Target the invisible wrapper container */
@@ -271,27 +269,26 @@ sections:
             width: 200px !important;
             height: 200px !important;
             max-width: 200px !important;
-            border-radius: 50% !important; /* Enforces the perfect circle */
-            overflow: hidden !important;   /* Clips anything outside the circle */
-            margin: 0 auto !important;     /* Keeps the avatar perfectly centered */
+            border-radius: 50% !important;
+            overflow: hidden !important;
+            margin: 0 auto !important;
           }
+
           /* Force the Unreal Engine logo to be pure white */
           [class*="unrealengine"], 
           img[src*="unrealengine"], 
           svg:has([id*="unrealengine"]) {
             color: white !important;
             fill: white !important;
-            filter: brightness(0) invert(1) !important; /* Turns any color/black asset pure white */
+            filter: brightness(0) invert(1) !important;
           }
-          /* --- FIX: Make the entire Project Card clickable --- */
-          
-          /* 1. Set the boundary for the clickable area without breaking native animations */
+
+          /* Make the entire Project Card clickable */
           #projects .group,
           #projects .card {
             position: relative !important;
           }
 
-          /* 2. Stretch the title/image link to completely cover the card */
           #projects .group h2 a::after,
           #projects .group h3 a::after,
           #projects .group a:first-of-type::after {
@@ -301,22 +298,18 @@ sections:
             left: 0;
             width: 100%;
             height: 100%;
-            z-index: 20; /* Ensures it sits firmly on top of the text and images */
+            z-index: 20;
           }
 
-        /* ========================================== */
-          /* MOBILE RESPONSIVENESS PATCH                */
-          /* ========================================== */
+          /* MOBILE RESPONSIVENESS PATCH */
           @media (max-width: 768px) {
-            /* Maximize horizontal screen real estate */
             article {
-              padding: 1rem 0.5rem !important;  /* Tighter padding: 1rem top/bottom, 0.5rem left/right */
-              margin-top: 0.5rem !important;    /* Tighter top margin */
-              margin-bottom: 0.5rem !important; /* Tighter bottom margin */
-              border-radius: 0.75rem !important;/* Slightly sharper corners for maximum space */
+              padding: 1rem 0.5rem !important;
+              margin-top: 0.5rem !important;
+              margin-bottom: 0.5rem !important;
+              border-radius: 0.75rem !important;
             }
 
-            /* Keep the rest of your mobile rules here... */
             .tony-blurb {
               padding-left: 0.75rem !important;
               margin-bottom: 1.25rem !important;
@@ -335,8 +328,121 @@ sections:
             }
           }
 
+          /* --- Achievement Bullets --- */
+          .card-achievements {
+            list-style-type: disc !important;
+            padding-left: 1.2rem !important;
+            margin-top: 0.75rem !important;
+            margin-bottom: 0.75rem !important;
+            font-size: 0.85rem !important;
+            color: #94a3b8 !important;
+          }
+          .card-achievements li {
+            margin-bottom: 0.25rem !important;
+            line-height: 1.35 !important;
+          }
+
+          /* --- Big Status Tags --- */
+          .card-status-container {
+            margin-top: 1rem;
+            margin-bottom: 0.5rem;
+          }
+          .status-tag {
+            display: inline-block;
+            padding: 0.35rem 0.85rem;
+            font-size: 0.75rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            border-radius: 0.5rem;
+          }
+          .status-in-dev     { background: rgba(224, 94, 94, 0.15); border: 1.5px solid #e05e5e; color: #f87171; }
+          .status-prototype  { background: rgba(245, 158, 11, 0.15); border: 1.5px solid #f59e0b; color: #fbbf24; }
+          .status-jam       { background: rgba(59, 130, 246, 0.15);  border: 1.5px solid #3b82f6; color: #60a5fa; }
+          .status-released   { background: rgba(16, 185, 129, 0.15); border: 1.5px solid #10b981; color: #34d399; }
+          .status-proprietary { background: rgba(139, 92, 246, 0.15); border: 1.5px solid #8b5cf6; color: #a78bfa; }
+          .status-alpha { background: rgba(92, 246, 195, 0.15); border: 1.5px solid #5cf6c8; color: #8bfacf; }
+
+
+          /* --- Seamless WebM Video Hover Preview --- */
+          #projects .featured-image-wrapper,
+          #projects article div:has(> img),
+          #projects .group a:has(> img) {
+            position: relative !important;
+            overflow: hidden !important;
+          }
+
+          .card-video-preview {
+            position: absolute !important;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0;
+            transition: opacity 0.3s ease-in-out;
+            pointer-events: none;
+            z-index: 10;
+          }
+
+          .keyword-red {
+          color: #e0ac5e;
+          font-weight: 600;
+          }
+
+
+          #projects article:hover .card-video-preview,
+          #projects .group:hover .card-video-preview {
+            opacity: 1;
+          }
+
+          
         </style>
 
+        <script>
+        document.addEventListener('DOMContentLoaded', () => {
+        const projectVideos = {
+          'sol-construct': 'Module Spin Sped Up.webm',
+          'perforce-live-app': 'PerforceLiveApp.webm',
+          'self-hosted-dev-infrastructure': 'FBXViewerExample.webm'
+        };
+
+        document.querySelectorAll('#projects article, #projects .group').forEach(card => {
+        const link = card.querySelector('a[href*="/projects/"]');
+        if (!link) return;
+
+        const href = link.getAttribute('href') || '';
+        const key = Object.keys(projectVideos).find(k => href.toLowerCase().includes(k.toLowerCase()));
+        if (!key) return;
+
+        const imgWrapper = card.querySelector('div:has(> img)') || card.querySelector('a:has(> img)');
+        if (!imgWrapper) return;
+
+        // Construct absolute path to the project bundle asset and encode spaces
+        const videoFilename = projectVideos[key];
+        const videoSrc = href.replace(/\/$/, '') + '/' + encodeURI(videoFilename);
+
+        const video = document.createElement('video');
+        video.className = 'card-video-preview';
+        video.src = videoSrc;
+        video.loop = true;
+        video.muted = true;
+        video.playsInline = true;
+        video.preload = 'metadata';
+        imgWrapper.appendChild(video);
+
+        card.addEventListener('mouseenter', () => {
+          video.play().catch(() => {});
+        });
+        card.addEventListener('mouseleave', () => {
+          video.pause();
+          video.currentTime = 0;
+        });
+          });
+        });
+
+  
+          </script>
     design:
       spacing:
         padding:

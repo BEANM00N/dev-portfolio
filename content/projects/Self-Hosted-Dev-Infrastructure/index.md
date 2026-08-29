@@ -2,6 +2,18 @@
 title: Self Hosted Developement Environment
 date: 2026-02-06
 summary: Centralised Nextcloud and Perforce server environment.
+  <ul class="card-achievements">
+    <li><span class="keyword-red">Perforce & Nextcloud</span>, running in containers on a Local TrueNAS server.</li>
+    <li>Bypassed WAN TCP limitations by chaining <span class="keyword-red">Cloudflared Tunnels with NGINX SSL</span>.</li>
+    <li>Nextcloud Asset Hub featuring <span class="keyword-red">in-browser 3D FBX inspection</span>.</li>
+  </ul>
+  <div class="card-status-container">
+    <span class="status-tag status-proprietary">Proprietary</span>
+    <span class="status-tag status-alpha">Alpha</span>
+
+  </div>
+# Optional: reference your webm file directly in front matter for JS targeting
+preview_video: "Module Spin Sped Up.webm"
 tags:
   - Tools
   - Web Dev
@@ -480,7 +492,7 @@ image:
 </div>
 
 <div class="tony-highlights-card">
-  <h3><i class="far fa-star"></i> Highlights</h3>
+  <h3><i class="far fa-star"></i>Extended Highlights</h3>
   <ul>
     <li>Built a custom <span class="keyword-red">TrueNAS & Perforce Server</span> from spare office PC parts, completely eliminating Git LFS merge nightmares and monthly cloud subscription fees.</li>
     <li>Bypassed WAN TCP limitations by chaining <span class="keyword-red">Cloudflared Tunnels with NGINX SSL</span>, granting the remote team seamless, secure access without finicky VPNs.</li>
