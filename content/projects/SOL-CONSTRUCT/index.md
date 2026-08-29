@@ -321,19 +321,17 @@ toc: true
     margin-top: 0.75rem;
   }
 
-/* ========================================== */
+  /* ========================================== */
   /* MOBILE RESPONSIVENESS PATCH                */
   /* ========================================== */
   @media (max-width: 768px) {
-    /* Maximize horizontal screen real estate */
     article {
-      padding: 1rem 0.5rem !important;  /* Tighter padding: 1rem top/bottom, 0.5rem left/right */
-      margin-top: 0.5rem !important;    /* Tighter top margin */
-      margin-bottom: 0.5rem !important; /* Tighter bottom margin */
-      border-radius: 0.75rem !important;/* Slightly sharper corners for maximum space */
+      padding: 1rem 0.5rem !important;
+      margin-top: 0.5rem !important;
+      margin-bottom: 0.5rem !important;
+      border-radius: 0.75rem !important;
     }
 
-    /* Keep the rest of your mobile rules here... */
     .tony-blurb {
       padding-left: 0.75rem !important;
       margin-bottom: 1.25rem !important;
@@ -351,7 +349,6 @@ toc: true
       height: 220px !important;  
     }
   }
-
 </style>
 
 <script>
@@ -371,7 +368,6 @@ toc: true
 
     document.querySelectorAll('article h2, article h3').forEach(h => observer.observe(h));
 
-
     // 2. Auto-Injecting Lightbox (Handles both Images & Videos)
     let modal = document.getElementById('lightbox-modal');
     let modalImg = document.getElementById('lightbox-img');
@@ -390,7 +386,7 @@ toc: true
       modalVideo.loop = true;
       modalVideo.muted = true;
       modalVideo.playsInline = true;
-      modalVideo.controls = true; // Gives native play/pause/fullscreen controls in the modal
+      modalVideo.controls = true;
 
       modal.appendChild(modalImg);
       modal.appendChild(modalVideo);
@@ -437,7 +433,6 @@ toc: true
       }
     });
   });
-  });
 </script>
 
 <div class="tony-blurb">
@@ -476,11 +471,11 @@ A high stakes SinglePlayer Survival Roguelite. Pilot a sentient flight combat ri
     <li>A super optimised projectile system using the <span class="keyword-red">FLECS C++ library</span>.</li>
     <li>An <span class="keyword-red">Async Pathfinding and Utility EQS</span> implementation for dynamic flight awareness.</li>
     <li>Developed an internal Plugin for procedural texture generation.</li>
-<li>Full enemy implementation, including behavior trees, modular skeleton frames, animation BPs, and health/armor components.</li>
+    <li>Full enemy implementation, including behavior trees, modular skeleton frames, animation BPs, and health/armor components.</li>
     <li>Led art direction translation, screen space shader creation, and 3D art pipeline iterations.</li>
   </ul>
 
-<div style="border-top: 1px solid rgba(255, 255, 255, 0.1); margin: 1.5rem 0 1rem 0; padding-top: 1rem;">
+  <div style="border-top: 1px solid rgba(255, 255, 255, 0.1); margin: 1.5rem 0 1rem 0; padding-top: 1rem;">
     <h4 style="color: white; font-size: 1rem; font-weight: 600; margin-bottom: 0.75rem; letter-spacing: 0.05em; text-transform: uppercase; opacity: 0.8;">
       <i class="fas fa-tools" style="font-size: 0.85rem; margin-right: 0.4rem; color: #e05e5e;"></i>Honorable Mentions:
     </h4>
@@ -517,7 +512,6 @@ As a small team, we had to evaluate every mechanic on a "Bang for Buck" basis. W
 
 During the first few months of development, player movement was the most heavily debated feature. I originally implemented Gyro Aim and full 6 Degrees of Freedom (6DOF). However, playtests revealed it was even more polarising than Marmite. Some players really grasped it, but many simply spun out. We realised that trying to cram standard flight sim conventions into an arcade action space was actively fighting the player’s intuition, at least in our game. [Delivery Complete](https://store.steampowered.com/app/3639060/DELIVERY_MUST_COMPLETE/) actually managed to implement it in a way that looks so cool, and frankly looks way more satisfying than what we had.
 
-
 <div style="margin-bottom: 0.5rem; border-radius: 1rem; overflow: hidden; border: 1px solid rgba(255, 255, 255, 0.1); box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
   <video autoplay loop muted playsinline style="width: 100%; height: auto; display: block; margin: 0 !important;">
     <source src="Module Spin Sped Up.webm" type="video/webm">
@@ -530,18 +524,14 @@ You can have a peep on what my anim graph looks like. Nothing too complex, but i
 <details class="code-dropdown">
   <summary><i class="fas fa-code"></i> Player Mesh Anim BP</summary>
 {{< blueprint src="LFTR Frame Anim BP.txt" >}}
-
 </details>
 
 ## Designing a Flying Enemy Ecosystem
 
-Designing flying enemies is a completely different beast compared to grounded AI. Because they have an entire Z axis of open space to utilise, restricting them and giving them purpose was my biggest design hurdle. To solve this, I modeled our enemy roster after chess pieces (definitely inspired by DOOM!), categorised by their effective engagement distances: **Stationary, Long Range, Medium, and Close Range**. 
-  
-</style>
+Designing flying enemies is a completely different beast compared to grounded AI. Because they have an entire Z axis of open space to utilise, restricting them and giving them purpose was my biggest design hurdle. To solve this, I modeled our enemy roster after chess pieces (definitely inspired by DOOM!), categorised by their effective engagement distances: **Stationary, Long Range, Medium, and Close Range**.
 
 <div class="clean-carousel">
-
-<a data-fancybox="gallery" href="riveter.png" data-caption="The Riveter applying localized pressure.">
+  <a data-fancybox="gallery" href="riveter.png" data-caption="The Riveter applying localized pressure.">
     <img src="riveter.png" alt="Riveter">
     <div class="clean-carousel-caption">The Riveter applying localized pressure.</div>
   </a>
@@ -570,7 +560,6 @@ Designing flying enemies is a completely different beast compared to grounded AI
     <img src="HeavyCrawler.png" alt="Heavy Crawler">
     <div class="clean-carousel-caption">The heavily armored Crawler unit.</div>
   </a>
-
 </div>
 
 I also did the 3D modelling for these guys, trying to maintain as many reusable and modular parts.
@@ -613,7 +602,6 @@ To bring these designs to life, the AI needed to understand 3D space. I frankens
 <details class="code-dropdown">
   <summary>EQS Medium Range Query breakdown</summary>
 
-
 **Volumetric grid Generation:** The query generates a large 3D spherical grid of potential movement locations (a 3000-unit radius with 500-unit spacing), giving the flying AI a full 6 Degrees of Freedom (6DOF) spatial canvas to evaluate.
 
 <div style="margin-bottom: 0.5rem; border-radius: 1rem; overflow: hidden; border: 1px solid rgba(255, 255, 255, 0.1); box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
@@ -628,4 +616,3 @@ To bring these designs to life, the AI needed to understand 3D space. I frankens
 ## Streamlining the Pipeline (ProcTex Plugin)
 
 To get that crunchy aesthetic without bottlenecking production, I developed a custom Editor Utility Plugin. Rather than going in and out of Substance Painter for every asset, ProcTex allows us to down res, posterize, and manipulate textures with a real time 3D preview directly inside the Unreal Editor. This tool single handedly sped up our asset creation pipeline, allowing the team to generate game ready materials in minutes. You can find more deets on it [here](https://beanm00n.github.io/dev-portfolio/projects/procedural-texture-baker/).
-
