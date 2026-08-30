@@ -1,27 +1,38 @@
 ---
 title: SOL DRIFT
-date: 2024-02-16
-summary: Starfox meets Doom. a fusion of the classic arcade flight genre and the
-  modern arena shooter.
+date: 2026-02-06
+summary: Starfox meets Doom. a fusion of the classic arcade flight genre and the modern arena shooter.
+  <ul class="card-achievements">
+    <li><span class="keyword-red">Player Movement:</span> Momentum, Drifting, Boosting, Dodging.</li>
+    <li><span class="keyword-red">Enemy Logic:</span> Flight Pathing, Behaviour Trees, Attacks, Defenses.</li>
+    <li><span class="keyword-red">All 3D Modelling and Texturing</span>.</li>
+    <li>In-Game and Website <span class="keyword-red">Live Online Leaderboard.</span></li>
+
+  </ul>
+  <div class="card-status-container">
+    <span class="status-tag status-prototype">Prototype</span>
+  </div>
+preview_video: "Module Spin Sped Up.webm"
 tags:
   - Games
   - Unreal Engine
   - Blueprints
   - Tech Art
+  - C++
+  - AI
 image:
+  focal_point: "top"
   preview_only: true
-toc: true
 draft: true
-
 ---
 
 <style>
   /* 1. Set the fixed, darkened background image for the whole page */
   body {
-    background-image: linear-gradient(rgba(15, 23, 42, 0.45), rgba(15, 23, 42, 0.55)), url('featured.png') !important;
+    background-image: linear-gradient(rgba(15, 23, 42, 0.55), rgba(15, 23, 42, 0.85)), url('featured.jpg') !important;
     background-size: cover !important;
     background-attachment: fixed !important;
-    background-position: center !important;
+    background-position: top !important;
   }
 
   /* 2. Wrap your content in a premium "glass" card */
@@ -34,37 +45,10 @@ draft: true
     padding: 3rem;
     margin-top: 3rem;
     margin-bottom: 3rem;
-  }
-
-  /* 3. Custom Action Button */
-  .custom-play-btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.6rem;
-    padding: 0.6rem 1.25rem; 
-    border: 2px solid #e05e5e; 
-    border-radius: 0.5rem;
-    color: white !important;
-    text-decoration: none !important;
-    font-weight: 600;
-    font-size: 1.1rem;
-    line-height: 1 !important; 
-    background-color: transparent;
-    transition: all 0.2s ease-in-out;
-    margin-bottom: 2rem;
-  }
-  
-  .custom-play-btn:hover {
-    background-color: #e05e5e; 
-    color: white !important;
-  }
-  
-  .custom-play-btn img {
-    width: 1.25rem !important;
-    height: 1.25rem !important;
-    object-fit: contain;
-    display: block;
-    margin: 0 !important; 
+    width: 100% !important;
+    max-width: 900px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
   }
 
   /* Prevent browser anchor jumps from overshooting */
@@ -72,7 +56,7 @@ draft: true
     scroll-margin-top: 120px !important;
   }
 
-  /* 4. Table of Contents - Glass Card & Links */
+  /* 3. Table of Contents - Glass Card & Links */
   .hb-toc > div {
     background-color: rgba(30, 41, 59, 0.6) !important;
     backdrop-filter: blur(12px);
@@ -119,7 +103,6 @@ draft: true
     background-color: rgba(255, 255, 255, 0.05) !important;
   }
 
-  /* --- GUARANTEED RED PILL ACTIVE STATE --- */
   .hb-toc a.red-pill-active {
     color: white !important;
     border: 1px solid #e05e5e !important; 
@@ -130,25 +113,22 @@ draft: true
   /* TONY'S HIGHLIGHTS & TAGS CSS               */
   /* ========================================== */
 
-  /* Hide the native Hugo Blox tags block at the very bottom */
   .article-tags, 
   .pub-tags, 
   div:has(> a[href*="/tags/"]) {
     display: none !important;
   }
 
-  /* Indented Blurb Styling */
   .tony-blurb {
     border-left: 4px solid #e05e5e;
     padding-left: 1.5rem;
     margin: 1.5rem 0 2.5rem 0;
-    font-size: 1.15rem;
+    font-size: 1.05rem !important;
     line-height: 1.6;
     color: #94a3b8;
     font-style: italic;
   }
 
-  /* Specs & Tech Tag Rows */
   .tony-specs-container {
     display: flex;
     flex-direction: column;
@@ -170,7 +150,6 @@ draft: true
     color: #cbd5e1;
   }
 
-  /* Custom Pill Buttons */
   .tony-pill {
     padding: 0.25rem 0.8rem;
     border-radius: 0.35rem;
@@ -190,7 +169,6 @@ draft: true
     border: 1px solid rgba(255, 255, 255, 0.15);
   }
 
-  /* Highlights Card Box */
   .tony-highlights-card {
     background-color: rgba(30, 41, 59, 0.2);
     border: 2px solid rgba(224, 94, 94, 0.35);
@@ -231,28 +209,179 @@ draft: true
     margin-bottom: 0 !important;
   }
 
-  /* Specific Keyword Highlight Text */
   .keyword-red {
     color: #e05e5e;
     font-weight: 600;
   }
 
-  article p, 
-  article li {
-    font-size: 0.95rem !important; 
-    line-height: 1.6 !important;   
+  /* ========================================== */
+  /* GLASS IMAGE CAROUSEL CSS                   */
+  /* ========================================== */
+  .glass-carousel {
+    display: flex;
+    gap: 1rem;
+    overflow-x: auto;
+    padding-bottom: 1rem;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: thin;
+    scrollbar-color: #e05e5e rgba(255, 255, 255, 0.05);
   }
 
+  .glass-carousel::-webkit-scrollbar {
+    height: 8px;
+  }
+  .glass-carousel::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 4px;
+  }
+  .glass-carousel::-webkit-scrollbar-thumb {
+    background: #e05e5e;
+    border-radius: 4px;
+  }
+
+  .glass-carousel img {
+    height: 300px; 
+    width: auto;
+    border-radius: 0.8rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    scroll-snap-align: start;
+    flex-shrink: 0;
+    object-fit: cover;
+    background-color: rgba(0, 0, 0, 0.5); 
+    cursor: pointer;
+    transition: transform 0.2s ease, border-color 0.2s ease;
+  }
+
+  .glass-carousel img:hover {
+    transform: scale(1.02);
+    border-color: #e05e5e;
+  }
+
+/* ========================================== */
+  /* GLOBAL GLASS LIGHTBOX OVERRIDE             */
+  /* ========================================== */
+  #lightbox-modal {
+    position: fixed !important;
+    z-index: 999999 !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100vw !important;
+    height: 100vh !important;
+    background-color: rgba(15, 23, 42, 0.88) !important;
+    backdrop-filter: blur(12px) !important;
+    -webkit-backdrop-filter: blur(12px) !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s ease-in-out;
+  }
+
+  #lightbox-modal.lightbox-visible {
+    opacity: 1 !important;
+    pointer-events: auto !important;
+  }
+
+  /* Targets both images and videos inside the modal */
+  #lightbox-modal img,
+  #lightbox-modal video {
+    max-width: 85vw !important;
+    max-height: 80vh !important;
+    border-radius: 1rem !important;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.8) !important;
+    border: 1px solid rgba(255, 255, 255, 0.15) !important;
+    object-fit: contain !important;
+  }
+
+  /* ========================================== */
+  /* COLLAPSIBLE CODE BLOCKS CSS                */
+  /* ========================================== */
+  details.code-dropdown {
+    background: rgba(30, 41, 59, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 0.5rem;
+    margin-top: 1rem;
+    margin-bottom: 1.5rem;
+    overflow: hidden;
+  }
+
+  details.code-dropdown summary {
+    padding: 1rem;
+    font-weight: 600;
+    color: #e05e5e;
+    cursor: pointer;
+    user-select: none;
+    outline: none;
+    transition: background 0.2s ease;
+  }
+
+  details.code-dropdown summary:hover {
+    background: rgba(255, 255, 255, 0.05);
+  }
+
+  details.code-dropdown .highlight {
+    margin: 0 !important;
+    border-radius: 0 0 0.5rem 0.5rem;
+  }
+
+  details.code-dropdown .highlight pre {
+    background-color: rgba(10, 15, 24, 0.95) !important;
+    padding: 1.25rem !important;
+  }
+
+  details.code-dropdown .highlight code {
+    font-size: 0.8rem !important;
+    line-height: 1.5 !important;
+  }
+
+  article p, 
+  article li {
+    font-size: 0.95rem !important;
+    line-height: 1.6 !important;
+  }
+
+  /* ========================================== */
+  /* MOBILE RESPONSIVENESS PATCH                */
+  /* ========================================== */
+  @media (max-width: 768px) {
+    article {
+      padding: 1rem 0.5rem !important;
+      margin-top: 0.5rem !important;
+      margin-bottom: 0.5rem !important;
+      border-radius: 0.75rem !important;
+    }
+
+    .tony-blurb {
+      padding-left: 0.75rem !important;
+      margin-bottom: 1.25rem !important;
+      font-size: 0.95rem !important;
+    }
+    
+    article h1 { font-size: 1.7rem !important; }
+    article h2 { font-size: 1.3rem !important; }
+    article h3 { font-size: 1.15rem !important; }
+
+    .clean-carousel a {
+      flex: 0 0 95% !important; 
+    }
+    .clean-carousel img {
+      height: 220px !important;  
+    }
+  }
 </style>
 
 <script>
   document.addEventListener('DOMContentLoaded', () => {
+    // 1. Table of Contents Scroll Highlighting
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         const id = entry.target.getAttribute('id');
         const link = document.querySelector(`.hb-toc a[href="#${id}"]`);
         
-        // When a heading enters the view, highlight its link
         if (entry.isIntersecting && link) {
           document.querySelectorAll('.hb-toc a').forEach(l => l.classList.remove('red-pill-active'));
           link.classList.add('red-pill-active');
@@ -260,100 +389,134 @@ draft: true
       });
     }, { rootMargin: '-20% 0px -70% 0px' });
 
-    // Track all H2 and H3 headings inside the article
     document.querySelectorAll('article h2, article h3').forEach(h => observer.observe(h));
+
+    // 2. Auto-Injecting Lightbox (Handles both Images & Videos)
+    let modal = document.getElementById('lightbox-modal');
+    let modalImg = document.getElementById('lightbox-img');
+    let modalVideo = document.getElementById('lightbox-video');
+
+    if (!modal) {
+      modal = document.createElement('div');
+      modal.id = 'lightbox-modal';
+
+      modalImg = document.createElement('img');
+      modalImg.id = 'lightbox-img';
+
+      modalVideo = document.createElement('video');
+      modalVideo.id = 'lightbox-video';
+      modalVideo.autoplay = true;
+      modalVideo.loop = true;
+      modalVideo.muted = true;
+      modalVideo.playsInline = true;
+      modalVideo.controls = true; // Gives native play/pause/fullscreen controls in the modal
+
+      modal.appendChild(modalImg);
+      modal.appendChild(modalVideo);
+      document.body.appendChild(modal);
+    }
+
+    // Attach click events to all article IMAGES
+    document.querySelectorAll('article img').forEach(img => {
+      img.style.cursor = 'pointer';
+      img.addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        modalVideo.style.display = 'none';
+        modalVideo.pause();
+        modalImg.src = img.src;
+        modalImg.style.display = 'block';
+        modal.classList.add('lightbox-visible');
+      });
+    });
+
+    // Attach click events to all article VIDEOS
+    document.querySelectorAll('article video').forEach(video => {
+      video.style.cursor = 'pointer';
+      video.addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        const src = video.currentSrc || video.querySelector('source')?.src;
+        if (src) {
+          modalImg.style.display = 'none';
+          modalVideo.src = src;
+          modalVideo.style.display = 'block';
+          modalVideo.play();
+          modal.classList.add('lightbox-visible');
+        }
+      });
+    });
+
+    // Close modal and reset video playback on click anywhere
+    modal.addEventListener('click', () => {
+      modal.classList.remove('lightbox-visible');
+      if (modalVideo) {
+        modalVideo.pause();
+        modalVideo.src = '';
+      }
+    });
   });
 </script>
 
-<a href="https://mad-moon-studios.itch.io/shoot-to-die" class="custom-play-btn" target="_blank">
-  <img src="https://static.itch.io/images/itchio-textless-white.svg" alt="Itch.io logo">
-  Play
-</a>
-
 <div class="tony-blurb">
-  Engage in lightning-fast omnidirectional vehicle dogfights inside a colossal decaying mechanism. Secure rare blueprints, deploy active countermeasures, and extract your stash via cargo drones before the automated system adapts.
+  A Nextcloud app that provides a fully searchable, live feed of checked out files and pending changelists, minimising workflow overlap and accelerating file debugging and diffing, instantly becoming a daily tool the team relies upon.
 </div>
 
 <div class="tony-specs-container">
   <div class="tony-spec-row">
     <i class="fas fa-desktop"></i>
-    <span class="tony-pill blue">Windows (PC)</span>
+    <span class="tony-pill blue">Linux</span>
   </div>
   
   <div class="tony-spec-row">
     <i class="fas fa-code"></i>
-    <span class="tony-pill blue">Blueprints</span>
-    <span class="tony-pill blue">FMOD Integration</span>
-    <span class="tony-pill blue">GPU Shaders</span>
+    <span class="tony-pill blue">Web Dev</span>
+    <span class="tony-pill blue">Perforce</span>
+    <span class="tony-pill blue">Nextcloud</span>
   </div>
   
   <div class="tony-spec-row">
     <i class="fas fa-laptop-code"></i>
-    <span class="tony-pill black">Unreal Engine 5</span>
-    <span class="tony-pill black">Niagara Particles</span>
-    <span class="tony-pill black">Vehicle Physics</span>
+    <span class="tony-pill black">CSS</span>
+    <span class="tony-pill black">Optimisation</span>
+    <span class="tony-pill black">Tools</span>
   </div>
+</div>
+
+<div style="margin-bottom: 2.5rem; border-radius: 1rem; overflow: hidden; border: 1px solid rgba(255, 255, 255, 0.1); box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
+  <a data-fancybox="gallery" href="featured.jpg" data-caption="TrueNAS Apps Interface">
+  <img src="featured.jpg" alt="ProcTex Plugin Interface" style="width: 100%; height: auto; display: block;" />
+    </a>
 </div>
 
 <div class="tony-highlights-card">
-  <h3><i class="far fa-star"></i> Contributions</h3>
+  <h3><i class="far fa-star"></i>Extended Highlights</h3>
   <ul>
-    <li><span class="keyword-red">Niagara GPU Projectile Pooling system</span>, optimising bullet hell density and shapes with a 90% gain in performance.</li>
-    <li>Migrated movement into a custom <span class="keyword-red">weighty, momentum driven flight Pawn script</span>, giving us full control over game feel.</li>
-    <li>Spatial <span class="keyword-red">3D obstacle detection systems</span> and reactive countermeasure logic loop, all used in behaviour trees.</li>
-    <li>Full meta progression loop featuring an integrated <span class="keyword-red">\"C.A.R.D. Upgrade Architecture\"</span>, localised stat scoreboard saves, and level selections.</li>
-    <li>Designed the structural logic for a comprehensive <span class="keyword-red">modular garage setup terminal</span> to safely equip nose, wing, armor, and utility modules between runs, as well as store puzzles, cyphers and world interactions.</li>
+    <li>Built a custom Nextcloud Live App that hooks into <span class="keyword-red">Perforce via CLI shell scripts</span>, stripping away P4V's clunky interface for a clean web dashboard.</li>
+    <li>Solved performance lag by adding a <span class="keyword-red">Local JSON Cache and custom PHP env wrappers</span> to handle heavy P4 queries seamlessly.</li>
+    <li>Cleared team visibility bottlenecks with a <span class="keyword-red">Searchable Activity Feed</span>, turning raw CLI logs into live updates on who is editing what.</li>
+    <li>Turned a brand new workflow into an essential <span class="keyword-red">Daily Routine</span>, helping everyone jump into work fully prepared with instant context.</li>
   </ul>
-
-  <div style="border-top: 1px solid rgba(255, 255, 255, 0.1); margin: 1.5rem 0 1rem 0; padding-top: 1rem;">
-    <h4 style="color: white; font-size: 1rem; font-weight: 600; margin-bottom: 0.75rem; letter-spacing: 0.05em; text-transform: uppercase; opacity: 0.8;">
-      <i class="fas fa-tools" style="font-size: 0.85rem; margin-right: 0.4rem; color: #e05e5e;"></i>Honorable Mentions:
-    </h4>
-    <ul style="list-style-type: none !important; padding-left: 0 !important; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 0.6rem;">
-      <li style="font-size: 0.85rem !important; color: #94a3b8 !important; display: flex; align-items: flex-start; gap: 0.5rem; margin-bottom: 0 !important;">
-        <span style="color: #e05e5e;">▪</span> Native material code driving real time raymarched volumetrics.
-      </li>
-      <li style="font-size: 0.85rem !important; color: #94a3b8 !important; display: flex; align-items: flex-start; gap: 0.5rem; margin-bottom: 0 !important;">
-        <span style="color: #e05e5e;">▪</span> Automated countermeasure responses like Chaff, Mines, Drone Swarms.
-      </li>
-      <li style="font-size: 0.85rem !important; color: #94a3b8 !important; display: flex; align-items: flex-start; gap: 0.5rem; margin-bottom: 0 !important;">
-        <span style="color: #e05e5e;">▪</span> FMOD links implementing paramterised dynamic jet thruster events.
-      </li>
-      <li style="font-size: 0.85rem !important; color: #94a3b8 !important; display: flex; align-items: flex-start; gap: 0.5rem; margin-bottom: 0 !important;">
-        <span style="color: #e05e5e;">▪</span> Various UI shaders (Curved HUD, Glowing UI, Hover and Press States, etc.)
-      </li>
-    </ul>
-  </div>
 </div>
 
-Every system inside SOL DRIFT has been iteratively tuned against physical playtesting datasets across numerous live convention show floors, resulting in a very fast prototyping pipeline.
+## Making Perforce a little more Accessible
 
-## Faking momentum & Omnidirectional Flight
+While Perforce is an industry standard, its interface and visibility felt a little too complex for the team. They would frequently start their day unaware of exactly what others were working on or which files were currently locked, especially in the early days of getting everyone onboarded to Perforce.
 
-To fulfill the vision of a vehicle that captures both mechanical weight and arcade agility, we abandoned standard unreal engine character movement components in favor of a specialised math driven **Flight Pawn** blueprint. This customisation allowed me to do the following:
-* **12 Axis Autonomy:** Programmed fully un-blocked movement trees supporting simultaneous forward, horizontal, and vertical displacement.
-* **Drift Rotation Mechanics:** Dampening forces that slide the craft smoothly through corners during high speed maneuvers, providing that distinct feeling of drift inertia we know and love in racing games.
+To solve this, I developed a custom Nextcloud application that ties directly into our Perforce server. This integration provides a live feed of project activity right in the browser, completely removing the friction of traditional clients, and lets you see checked out files without opening the engine! 
 
-<details class="code-dropdown">
-  <summary><i class="fas fa-code"></i> View Blueprint Architecture: Velocity Decay & Thruster Interpolation</summary>
-```json
-// Logic detailing physics impulse handling for momentum preservation loops
+<div style="margin-bottom: 0.5rem; border-radius: 1rem; overflow: hidden; border: 1px solid rgba(255, 255, 255, 0.1); box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
+  <video autoplay loop muted playsinline style="width: 100%; height: auto; display: block; margin: 0 !important;">
+    <source src="PerforceLiveApp.webm" type="video/webm">
+  </video>
+</div>
 
-</details>
+## Live Tracking & Preparation
 
-## Niagara GPU Projectile Pooling
+By exposing Perforce data through Nextcloud, the app instantly transformed how the team worked:
 
-To support our bullet hell design pillars without dragging down frame rates on standard hardware, standard actor spawning loops were entirely replaced with a centralised **Universal Projectile Pooling System**. Spawning thousands of individual laser actors quickly bottlenecked the CPU thread due to heavy garbage collection polling and component initialisation cycles.This solution wasn't great, but it laid the ground work for how I approached Projectiles in the future, so it was more an excercise in what compromises can be made for performance.
+* **Live Activity Feed:** Team members can see exactly what files are checked out and view pending changelists in real time. This lets everyone feel more prepared starting their day, with full awareness of ongoing work.
 
-Our optimised solution shifts all math directly onto background systems:
-* **GPU Bound Projectiles:** Weapon arrays fire directly into a unified projectile pool that interfaces seamlessly with Niagara particles.
-* **Per Particle Life Cycles:** Hit evaluation, environmental trace calculations, and damage events are linked right into Niagara scratchpad memory addresses, allowing for accurate spatial collision lookups.
-* **Muzzle Optimisation:** Bullet structures are handled in a single execution queue, containing automated minigun loop parameters and weapon dispersion logic that scales based on active movement velocity values.
+* **Proper Search:** Fully searchable submissions and pending changelists allowed anyone to quickly find when specific revisions happened.
 
-Sadly what made this eventually prove to be unusable was the simple Frame Delay, since the PCIE bus can't send data from the CPU to the GPU and back to the CPU in a single frame. This was a real bummer but thankfully I was able to learn just how far I can push Niagara for Gameplay events.
-
-## Atmospheric Rendering:
-
-To establish our visual direction of a grim, mechanical industrial wasteland, I built a custom post-processing post-rendering stack. Instead of basic skybox spheres, we developed a mathematical, **Shader-Driven SkyAtmosphere System**. This system utilizes real-time raymarched volumetric lighting calculations to scatter light realistically through heavy post-industrial dust and dense spatial nebulas.
-
-To give the UI a tactile, industrial look, we implemented a screen-space pixel shader that creates a vintage **Curved CRT Screen Distortion** directly on the player's viewport. This retro-futuristic styling was optimized alongside our gameplay indicators—including dynamic damage vignettes and a radial target locking reticle that stretches and tracks bounding targets instantly across the screen.
+* **Better Context:** Having a highly searchable, web based history provides immediate context when diffing files or debugging tricky issues.

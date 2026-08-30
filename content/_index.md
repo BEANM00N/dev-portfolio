@@ -113,62 +113,62 @@ sections:
     ce: "section-skills"
     id: "skills"
     As: "section-03113be1"
-  - block: "resume-experience"
-    content:
-      title: "Experience"
-      date_format: "Jan 2006"
-      items:
-        - title: "Senior Software Engineer"
-          company: "Tech Corp"
-          company_url: ""
-          company_logo: ""
-          location: "San Francisco, CA"
-          date_start: "2023-01-01"
-          date_end: ""
-          description: |-
-            * Lead development of microservices architecture serving 1M+ users
-            * Improved API response time by 40% through optimization
-            * Mentored team of 5 junior developers
-            * Tech stack: React, Node.js, PostgreSQL, AWS
-        - title: "Full-Stack Developer"
-          company: "Startup Inc"
-          company_url: ""
-          company_logo: ""
-          location: "Remote"
-          date_start: "2021-06-01"
-          date_end: "2022-12-31"
-          description: |-
-            * Built and deployed 3 production applications from scratch
-            * Implemented CI/CD pipeline reducing deployment time by 60%
-            * Collaborated with design team on UI/UX improvements
-            * Tech stack: Next.js, Express, MongoDB, Docker
-        - title: "Junior Developer"
-          company: "Web Agency"
-          company_url: ""
-          company_logo: ""
-          location: "New York, NY"
-          date_start: "2020-01-01"
-          date_end: "2021-05-31"
-          description: |-
-            * Developed client websites using modern web technologies
-            * Maintained and updated legacy codebases
-            * Participated in code reviews and agile ceremonies
-            * Tech stack: React, WordPress, PHP, MySQL
-    design:
-      columns: "1"
-      background:
-        color:
-          light: "#ffffff"
-          dark: "#12151d"
-      spacing:
-        padding:
-          - "4rem"
-          - "0"
-          - "4rem"
-          - "0"
-    ce: "section-experience"
-    id: "experience"
-    As: "section-82dbc876"
+  # - block: "resume-experience"
+  #   content:
+  #     title: "Experience"
+  #     date_format: "Jan 2006"
+  #     items:
+  #       - title: "Senior Software Engineer"
+  #         company: "Tech Corp"
+  #         company_url: ""
+  #         company_logo: ""
+  #         location: "San Francisco, CA"
+  #         date_start: "2023-01-01"
+  #         date_end: ""
+  #         description: |-
+  #           * Lead development of microservices architecture serving 1M+ users
+  #           * Improved API response time by 40% through optimization
+  #           * Mentored team of 5 junior developers
+  #           * Tech stack: React, Node.js, PostgreSQL, AWS
+  #       - title: "Full-Stack Developer"
+  #         company: "Startup Inc"
+  #         company_url: ""
+  #         company_logo: ""
+  #         location: "Remote"
+  #         date_start: "2021-06-01"
+  #         date_end: "2022-12-31"
+  #         description: |-
+  #           * Built and deployed 3 production applications from scratch
+  #           * Implemented CI/CD pipeline reducing deployment time by 60%
+  #           * Collaborated with design team on UI/UX improvements
+  #           * Tech stack: Next.js, Express, MongoDB, Docker
+  #       - title: "Junior Developer"
+  #         company: "Web Agency"
+  #         company_url: ""
+  #         company_logo: ""
+  #         location: "New York, NY"
+  #         date_start: "2020-01-01"
+  #         date_end: "2021-05-31"
+  #         description: |-
+  #           * Developed client websites using modern web technologies
+  #           * Maintained and updated legacy codebases
+  #           * Participated in code reviews and agile ceremonies
+  #           * Tech stack: React, WordPress, PHP, MySQL
+  #   design:
+  #     columns: "1"
+  #     background:
+  #       color:
+  #         light: "#ffffff"
+  #         dark: "#12151d"
+  #     spacing:
+  #       padding:
+  #         - "4rem"
+  #         - "0"
+  #         - "4rem"
+  #         - "0"
+  #   ce: "section-experience"
+  #   id: "experience"
+  #   As: "section-82dbc876"
   - block: "collection"
     content:
       title: "Recent Posts"
@@ -287,6 +287,7 @@ sections:
           #projects .group,
           #projects .card {
             position: relative !important;
+            transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease !important;
           }
 
           #projects .group h2 a::after,
@@ -358,13 +359,12 @@ sections:
           }
           .status-in-dev     { background: rgba(224, 94, 94, 0.15); border: 1.5px solid #e05e5e; color: #f87171; }
           .status-prototype  { background: rgba(245, 158, 11, 0.15); border: 1.5px solid #f59e0b; color: #fbbf24; }
-          .status-jam       { background: rgba(59, 130, 246, 0.15);  border: 1.5px solid #3b82f6; color: #60a5fa; }
+          .status-jam        { background: rgba(59, 130, 246, 0.15);  border: 1.5px solid #3b82f6; color: #60a5fa; }
           .status-released   { background: rgba(16, 185, 129, 0.15); border: 1.5px solid #10b981; color: #34d399; }
           .status-proprietary { background: rgba(139, 92, 246, 0.15); border: 1.5px solid #8b5cf6; color: #a78bfa; }
-          .status-alpha { background: rgba(92, 246, 195, 0.15); border: 1.5px solid #5cf6c8; color: #8bfacf; }
+          .status-alpha       { background: rgba(92, 246, 195, 0.15); border: 1.5px solid #5cf6c8; color: #8bfacf; }
 
-
-          /* --- Seamless WebM Video Hover Preview --- */
+          /* --- Seamless WebM Video Preview --- */
           #projects .featured-image-wrapper,
           #projects article div:has(> img),
           #projects .group a:has(> img) {
@@ -386,63 +386,102 @@ sections:
           }
 
           .keyword-red {
-          color: #e0ac5e;
-          font-weight: 600;
+            color: #e0ac5e;
+            font-weight: 600;
           }
 
+          /* --- Shared Hover & Scroll-Active Animation --- */
+          #projects article:hover,
+          #projects .group:hover,
+          #projects article.is-hovered,
+          #projects .group.is-hovered {
+            transform: translateY(-6px) scale(1.015) !important;
+            box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.6), 0 0 15px rgba(224, 94, 94, 0.25) !important;
+            border-color: rgba(224, 94, 94, 0.6) !important;
+          }
 
+          /* Reveal video preview on desktop hover OR mobile scroll active */
           #projects article:hover .card-video-preview,
-          #projects .group:hover .card-video-preview {
-            opacity: 1;
+          #projects .group:hover .card-video-preview,
+          #projects article.is-hovered .card-video-preview,
+          #projects .group.is-hovered .card-video-preview {
+            opacity: 1 !important;
           }
-
-          
         </style>
 
         <script>
-        document.addEventListener('DOMContentLoaded', () => {
-        const projectVideos = {
-          'sol-construct': 'Module Spin Sped Up.webm',
-          'perforce-live-app': 'PerforceLiveApp.webm',
-          'self-hosted-dev-infrastructure': 'FBXViewerExample.webm'
-        };
+          document.addEventListener('DOMContentLoaded', () => {
+            const projectVideos = {
+              'sol-construct': 'Module Spin Sped Up.webm',
+              'perforce-live-app': 'PerforceLiveApp.webm',
+              'self-hosted-dev-infrastructure': 'FBXViewerExample.webm'
+            };
 
-        document.querySelectorAll('#projects article, #projects .group').forEach(card => {
-        const link = card.querySelector('a[href*="/projects/"]');
-        if (!link) return;
+            const isMobile = window.innerWidth <= 768 || 'ontouchstart' in window;
 
-        const href = link.getAttribute('href') || '';
-        const key = Object.keys(projectVideos).find(k => href.toLowerCase().includes(k.toLowerCase()));
-        if (!key) return;
+            // IntersectionObserver triggers card hover state & video play on mobile
+            const mobileCardObserver = new IntersectionObserver((entries) => {
+              entries.forEach(entry => {
+                const card = entry.target;
+                const video = card.querySelector('.card-video-preview');
 
-        const imgWrapper = card.querySelector('div:has(> img)') || card.querySelector('a:has(> img)');
-        if (!imgWrapper) return;
+                if (entry.isIntersecting) {
+                  card.classList.add('is-hovered');
+                  if (video) video.play().catch(() => {});
+                } else {
+                  card.classList.remove('is-hovered');
+                  if (video) {
+                    video.pause();
+                    video.currentTime = 0;
+                  }
+                }
+              });
+            }, {
+              threshold: 0.60 // Triggers when card is 60% in view on mobile
+            });
 
-        // Construct absolute path to the project bundle asset and encode spaces
-        const videoFilename = projectVideos[key];
-        const videoSrc = href.replace(/\/$/, '') + '/' + encodeURI(videoFilename);
+            document.querySelectorAll('#projects article, #projects .group').forEach(card => {
+              const link = card.querySelector('a[href*="/projects/"]');
+              if (!link) return;
 
-        const video = document.createElement('video');
-        video.className = 'card-video-preview';
-        video.src = videoSrc;
-        video.loop = true;
-        video.muted = true;
-        video.playsInline = true;
-        video.preload = 'metadata';
-        imgWrapper.appendChild(video);
+              const href = link.getAttribute('href') || '';
+              const key = Object.keys(projectVideos).find(k => href.toLowerCase().includes(k.toLowerCase()));
+              if (!key) return;
 
-        card.addEventListener('mouseenter', () => {
-          video.play().catch(() => {});
-        });
-        card.addEventListener('mouseleave', () => {
-          video.pause();
-          video.currentTime = 0;
-        });
+              const imgWrapper = card.querySelector('div:has(> img)') || card.querySelector('a:has(> img)');
+              if (!imgWrapper) return;
+
+              // Construct path to bundle asset and encode spaces
+              const videoFilename = projectVideos[key];
+              const videoSrc = href.replace(/\/$/, '') + '/' + encodeURI(videoFilename);
+
+              const video = document.createElement('video');
+              video.className = 'card-video-preview';
+              video.src = videoSrc;
+              video.loop = true;
+              video.muted = true;
+              video.playsInline = true;
+              video.preload = 'metadata';
+              imgWrapper.appendChild(video);
+
+              // Desktop hover events
+              card.addEventListener('mouseenter', () => {
+                if (!isMobile) video.play().catch(() => {});
+              });
+              card.addEventListener('mouseleave', () => {
+                if (!isMobile) {
+                  video.pause();
+                  video.currentTime = 0;
+                }
+              });
+
+              // Mobile scroll visibility trigger
+              if (isMobile) {
+                mobileCardObserver.observe(card);
+              }
+            });
           });
-        });
-
-  
-          </script>
+        </script>
     design:
       spacing:
         padding:
