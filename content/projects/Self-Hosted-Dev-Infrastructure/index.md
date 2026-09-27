@@ -509,8 +509,8 @@ To minimise these bottlenecks, I built a dedicated server using spare PC parts s
 
 ## Asset Management with TrueNAS & Nextcloud
 
-<div style="margin-bottom: 2.5rem; border-radius: 1rem; overflow: hidden; border: 1px solid rgba(255, 255, 255, 0.1); box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
-  <img src="TruenasApps.jpg" alt="TrueNAS Apps Interface" style="width: 100%; height: auto; display: block;" />
+<div style="margin-bottom: 0.5rem; border-radius: 1rem; overflow: hidden; border: 1px solid rgba(255, 255, 255, 0.1); box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
+  <img src="TruenasApps.webp" class="zoomable" alt="Website Leaderboard" style="width: 100%; height: auto; display: block; margin: 0 !important;" />
 </div>
 
 The foundation was built on TrueNAS hosting Nextcloud to handle general asset storage. To make local services accessible anywhere without exposing vulnerable ports raw to the internet, we implemented Cloudflared tunneling and reverse proxies.

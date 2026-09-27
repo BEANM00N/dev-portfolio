@@ -394,7 +394,7 @@ This philosophy extended directly into our weapon design. Instead of a simple cl
 The core gameplay loop starts by using your heavy revolver like a hammer to physically smack the dice into the air. From there a timer starts and it becomes a juggling act. 
 
 <div style="margin-bottom: 0.5rem; border-radius: 1rem; overflow: hidden; border: 1px solid rgba(255, 255, 255, 0.1); box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
-  <img src="DoubleCollision.png" alt="Shoot To Die Prototype" style="width: 100%; height: auto; display: block;" />
+  <img src="DoubleCollision.webp" alt="Shoot To Die Prototype" style="width: 100%; height: auto; display: block;" />
 </div>
 
 To make shooting a tiny physics object fun rather than frustrating, I engineered a triple collision system for the bullets. The inner collision sphere handles direct impact effects, while a much larger outer collision sphere applies "wiff" velocity. This means near misses will still catch the dice in their wake, propelling it further into the air, enough to land another shot before the dice falls even lower.
