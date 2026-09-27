@@ -1,7 +1,7 @@
 ---
 title: ""
 summary: ""
-date: "2026-01-05"
+date: "2026-01-04"
 type: "landing"
 sections:
   - block: "dev-hero"
@@ -79,6 +79,8 @@ sections:
       categories:
         - name: "Languages"
           items:
+            - name: "Blueprints/Visual Scripting"
+              icon: "brands/unrealengine"
             - name: "C++"
               icon: "devicon/cplusplus"
         - name: "Software"
@@ -91,6 +93,10 @@ sections:
               icon: "brands/obsidian"
             - name: "FMOD"
               icon: "brands/fmod"
+            - name: "Visual Studio"
+              icon: "brands/visualstudio"
+            - name: "Jet Brains Rider"
+              icon: "brands/rider"
         - name: "Source"
           items:
             - name: "Github"
@@ -358,6 +364,7 @@ sections:
             border-radius: 0.5rem;
           }
           .status-in-dev     { background: rgba(224, 94, 94, 0.15); border: 1.5px solid #e05e5e; color: #f87171; }
+          .status-vertical-slice     { background: rgba(224, 142, 94, 0.15); border: 1.5px solid #e0835e; color: #f8a371; }
           .status-prototype  { background: rgba(245, 158, 11, 0.15); border: 1.5px solid #f59e0b; color: #fbbf24; }
           .status-jam        { background: rgba(59, 130, 246, 0.15);  border: 1.5px solid #3b82f6; color: #60a5fa; }
           .status-released   { background: rgba(16, 185, 129, 0.15); border: 1.5px solid #10b981; color: #34d399; }
@@ -414,7 +421,9 @@ sections:
             const projectVideos = {
               'sol-construct': 'Module Spin Sped Up.webm',
               'perforce-live-app': 'PerforceLiveApp.webm',
-              'self-hosted-dev-infrastructure': 'FBXViewerExample.webm'
+              'self-hosted-dev-infrastructure': 'FBXViewerExample.webm',
+              'sol-drift': 'SOL DRIFT Preview.webm',
+              'shoot-to-die': 'ShootToDieReload.webm'
             };
 
             const isMobile = window.innerWidth <= 768 || 'ontouchstart' in window;

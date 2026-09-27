@@ -1,0 +1,11 @@
+{{ $src := .Get "src" }}
+{{ $lang := .Get "lang" | default "cpp" }}
+{{ $title := .Get "title" | default "View Code" }}
+
+{{ $filePath := print .Page.File.Dir $src }}
+{{ $fileContent := readFile $filePath }}
+
+<details class="code-dropdown">
+  <summary><i class="fas fa-code"></i> {{ $title }}</summary>
+  {{ highlight $fileContent $lang "" }}
+</details>

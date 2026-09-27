@@ -1,7 +1,7 @@
 ---
 title: SOL DRIFT
-date: 2026-02-06
-summary: Starfox meets Doom. a fusion of the classic arcade flight genre and the modern arena shooter.
+date: 2025-08-08
+summary: Judge Dredd in a Jet. A Roguelite Jet fueled Shooter.
   <ul class="card-achievements">
     <li><span class="keyword-red">Player Movement:</span> Momentum, Drifting, Boosting, Dodging.</li>
     <li><span class="keyword-red">Enemy Logic:</span> Flight Pathing, Behaviour Trees, Attacks, Defenses.</li>
@@ -10,9 +10,9 @@ summary: Starfox meets Doom. a fusion of the classic arcade flight genre and the
 
   </ul>
   <div class="card-status-container">
-    <span class="status-tag status-prototype">Prototype</span>
+    <span class="status-tag status-vertical-slice">Vertical Slice</span>
   </div>
-preview_video: "Module Spin Sped Up.webm"
+preview_video: "SOL DRIFT Preview.webm"
 tags:
   - Games
   - Unreal Engine
@@ -23,13 +23,13 @@ tags:
 image:
   focal_point: "top"
   preview_only: true
-draft: true
+draft: false
 ---
 
 <style>
   /* 1. Set the fixed, darkened background image for the whole page */
   body {
-    background-image: linear-gradient(rgba(15, 23, 42, 0.55), rgba(15, 23, 42, 0.85)), url('featured.jpg') !important;
+    background-image: linear-gradient(rgba(15, 23, 42, 0.55), rgba(15, 23, 42, 0.85)), url('featured.webp') !important;
     background-size: cover !important;
     background-attachment: fixed !important;
     background-position: top !important;
@@ -459,64 +459,75 @@ draft: true
 </script>
 
 <div class="tony-blurb">
-  A Nextcloud app that provides a fully searchable, live feed of checked out files and pending changelists, minimising workflow overlap and accelerating file debugging and diffing, instantly becoming a daily tool the team relies upon.
+  A Flight Shooter where perpetual, aggressive movement is your primary weapon and defense. Success depends on chaining an arsenal of movement abilities to evade death and create openings for attack.
 </div>
 
 <div class="tony-specs-container">
   <div class="tony-spec-row">
     <i class="fas fa-desktop"></i>
-    <span class="tony-pill blue">Linux</span>
+    <span class="tony-pill blue">Windows</span>
   </div>
   
   <div class="tony-spec-row">
     <i class="fas fa-code"></i>
-    <span class="tony-pill blue">Web Dev</span>
-    <span class="tony-pill blue">Perforce</span>
-    <span class="tony-pill blue">Nextcloud</span>
+    <span class="tony-pill blue">Blueprints</span>
+    <span class="tony-pill blue">Mass Entity ECS</span>
   </div>
   
   <div class="tony-spec-row">
     <i class="fas fa-laptop-code"></i>
-    <span class="tony-pill black">CSS</span>
-    <span class="tony-pill black">Optimisation</span>
-    <span class="tony-pill black">Tools</span>
+    <span class="tony-pill black">Unreal Engine 5</span>
+    <span class="tony-pill black">AI & Pathfinding</span>
+    <span class="tony-pill black">Tech Art</span>
   </div>
 </div>
 
-<div style="margin-bottom: 2.5rem; border-radius: 1rem; overflow: hidden; border: 1px solid rgba(255, 255, 255, 0.1); box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
-  <a data-fancybox="gallery" href="featured.jpg" data-caption="TrueNAS Apps Interface">
-  <img src="featured.jpg" alt="ProcTex Plugin Interface" style="width: 100%; height: auto; display: block;" />
-    </a>
-</div>
-
-<div class="tony-highlights-card">
-  <h3><i class="far fa-star"></i>Extended Highlights</h3>
-  <ul>
-    <li>Built a custom Nextcloud Live App that hooks into <span class="keyword-red">Perforce via CLI shell scripts</span>, stripping away P4V's clunky interface for a clean web dashboard.</li>
-    <li>Solved performance lag by adding a <span class="keyword-red">Local JSON Cache and custom PHP env wrappers</span> to handle heavy P4 queries seamlessly.</li>
-    <li>Cleared team visibility bottlenecks with a <span class="keyword-red">Searchable Activity Feed</span>, turning raw CLI logs into live updates on who is editing what.</li>
-    <li>Turned a brand new workflow into an essential <span class="keyword-red">Daily Routine</span>, helping everyone jump into work fully prepared with instant context.</li>
-  </ul>
-</div>
-
-## Making Perforce a little more Accessible
-
-While Perforce is an industry standard, its interface and visibility felt a little too complex for the team. They would frequently start their day unaware of exactly what others were working on or which files were currently locked, especially in the early days of getting everyone onboarded to Perforce.
-
-To solve this, I developed a custom Nextcloud application that ties directly into our Perforce server. This integration provides a live feed of project activity right in the browser, completely removing the friction of traditional clients, and lets you see checked out files without opening the engine! 
-
 <div style="margin-bottom: 0.5rem; border-radius: 1rem; overflow: hidden; border: 1px solid rgba(255, 255, 255, 0.1); box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
   <video autoplay loop muted playsinline style="width: 100%; height: auto; display: block; margin: 0 !important;">
-    <source src="PerforceLiveApp.webm" type="video/webm">
+    <source src="SOL DRIFT Preview 720p.webm" type="video/webm">
   </video>
 </div>
 
-## Live Tracking & Preparation
+<div class="tony-highlights-card">
+  <h3><i class="far fa-star"></i>Extended Contributions</h3>
+  <ul>
+    <li><span class="keyword-red">Radial Upgrade Menu</span>, procedurally updated based on amount of rewards. .</li>
+    <li><span class="keyword-red">Full Player Movement integration,</span> creating "Faked" momentum for customisable game feel.</li>
+    <li><span class="keyword-red">Full Enemy Implementation</span>; Curve based flight paths, Behaviour Trees, Weaponry, Defenses (Chaff, Smoke, etc.).</li>
+    <li>Every single <span class="keyword-red">3D Asset and associated Textures</span> and most animations.</li>
+    <li>"Gyroscopic" Camera movement using <span class="keyword-red">Mouse Position and Curve based Sensitivity</span>.</li>
+    <li><span class="keyword-red">Online Leaderboard Test:</span> Http Post/Get for sending and receiving data, hosted on a website using Google Firebase as backend for Testing.</li>
+  </ul>
+</div>
 
-By exposing Perforce data through Nextcloud, the app instantly transformed how the team worked:
+## Radial Menu
 
-* **Live Activity Feed:** Team members can see exactly what files are checked out and view pending changelists in real time. This lets everyone feel more prepared starting their day, with full awareness of ongoing work.
+<div style="margin-bottom: 0.5rem; border-radius: 1rem; overflow: hidden; border: 1px solid rgba(255, 255, 255, 0.1); box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
+  <video autoplay loop muted playsinline style="width: 100%; height: auto; display: block; margin: 0 !important;">
+    <source src="SOL DRIFT Radial Menu.webm" type="video/webm">
+  </video>
+</div>
 
-* **Proper Search:** Fully searchable submissions and pending changelists allowed anyone to quickly find when specific revisions happened.
+Materials and UMG working hand-in-hand to generate a set of upgrades in a radial wheel, expandable to as many slices as you'd like or to whatever size text you're capable of reading! Fun solution to a problem that didn't quite have a determined direction, hence the procedural nature of it. It was also the first time I tried messing with generating SDF shapes in Materials, a trial that would come in handy in many future material endeavours. 
 
-* **Better Context:** Having a highly searchable, web based history provides immediate context when diffing files or debugging tricky issues.
+## Realtime Leaderboard
+
+One of the coolest mixes of tech and game I got to experiment with. It never made it beyond the initial prototyping stages, but taught me heaps on how external data can be stored, streamed, updated and even influence gameplay!
+
+<div style="margin-bottom: 0.5rem; border-radius: 1rem; overflow: hidden; border: 1px solid rgba(255, 255, 255, 0.1); box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
+  <img src="FirebaseSetup.webp" class="zoomable" alt="Firebase Setup" style="width: 100%; height: auto; display: block; margin: 0 !important;" />
+</div>
+
+I needed a foundation to work with - one that could help with in-engine implementation and then be upgraded to a more secure and faster storage method - and with that in mind I decided to try Google Firebase's Realtime Databases. Before testing it in engine, I used simple services like Postman to test HTTPS Posting and Getting, a process that turned out to be a lot easier than I was expecting.
+
+<div style="margin-bottom: 0.5rem; border-radius: 1rem; overflow: hidden; border: 1px solid rgba(255, 255, 255, 0.1); box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
+  <img src="GameLeaderboard.webp" class="zoomable" alt="In-Game Leaderboard" style="width: 100%; height: auto; display: block; margin: 0 !important;" />
+</div>
+
+Next came Engine Implementation using some simple Maps and sorting based on score. Beyond just scoreboard data like Name and Score, we tested sending some other values, like ENTIRE save structs! That was a weird experiment, but bore some exceptionally useful fruit, allowing us to make changes on the fly during gameplay, unlocking ships, soft locks, and even adjust numbers on the fly for balancing. It ended up being the PERFECT playtesting tool, allowing live adjustments and comparisons across hundreds of players. We certaintly pushed this method to its limits, making our in game leaderboard take up to 2 minutes to load in game, just because of the sheer amount of data we were moving. Ended up being more of an online save system rather than solely a leaderboard if I'm honest.
+
+<div style="margin-bottom: 0.5rem; border-radius: 1rem; overflow: hidden; border: 1px solid rgba(255, 255, 255, 0.1); box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
+  <img src="WebsiteLeaderboard.webp" class="zoomable" alt="Website Leaderboard" style="width: 100%; height: auto; display: block; margin: 0 !important;" />
+</div>
+
+Since it was just a database stored somewhere somewhere on the internet, how much work could it be to render it somewhere that's accessible to anyone? Well a lot actually, especially if you don't have a lot of experience parsing data in html, nevermind stying it too! But in the end it was incredibly worth it. At in-person playtests we were able to set up a small screen in the middle of two rigs, incentivising players to engage in some social competition.

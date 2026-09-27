@@ -1,0 +1,362 @@
+Begin Object Class=/Script/BehaviorTreeEditor.BehaviorTreeGraphNode_Root Name="BehaviorTreeGraphNode_Root_0" ExportPath="/Script/BehaviorTreeEditor.BehaviorTreeGraphNode_Root'/Game/Actors_And_Blueprints/AI/Enemies/Enemies/Riveter/BT_Riveter.BT_Riveter:Behavior Tree.BehaviorTreeGraphNode_Root_0'"
+   BlackboardAsset="/Script/AIModule.BlackboardData'/Game/Actors_And_Blueprints/AI/Enemies/Enemies/Enemy_AI_BlackBoard.Enemy_AI_BlackBoard'"
+   NodePosX=-16
+   NodePosY=-64
+   NodeGuid=BB1F82F941C02787C4AEBFA195DC246B
+   CustomProperties Pin (PinId=9450CF9E43B76514FB234496E10AAE16,PinName="In",Direction="EGPD_Output",PinType.PinCategory="SingleComposite",PinType.PinSubCategory="",PinType.PinSubCategoryObject=None,PinType.PinSubCategoryMemberReference=(),PinType.PinValueType=(),PinType.ContainerType=None,PinType.bIsReference=False,PinType.bIsConst=False,PinType.bIsWeakPointer=False,PinType.bIsUObjectWrapper=False,PinType.bSerializeAsSinglePrecisionFloat=False,LinkedTo=(BehaviorTreeGraphNode_Composite_5 C077158F4E36C3D6CF2164A9D40E519F,),PersistentGuid=00000000000000000000000000000000,bHidden=False,bNotConnectable=False,bDefaultValueIsReadOnly=False,bDefaultValueIsIgnored=False,bAdvancedView=False,bOrphanedPin=False,)
+End Object
+Begin Object Class=/Script/BehaviorTreeEditor.BehaviorTreeGraphNode_Task Name="BehaviorTreeGraphNode_Task_0" ExportPath="/Script/BehaviorTreeEditor.BehaviorTreeGraphNode_Task'/Game/Actors_And_Blueprints/AI/Enemies/Enemies/Riveter/BT_Riveter.BT_Riveter:Behavior Tree.BehaviorTreeGraphNode_Task_0'"
+   Begin Object Class=/Game/Actors_And_Blueprints/AI/Enemies/Enemies/Riveter/EstablishReferences.EstablishReferences_C Name="EstablishReferences_C_0" ExportPath="/Game/Actors_And_Blueprints/AI/Enemies/Enemies/Riveter/EstablishReferences.EstablishReferences_C'/Game/Actors_And_Blueprints/AI/Enemies/Enemies/Riveter/BT_Riveter.BT_Riveter:Behavior Tree.BehaviorTreeGraphNode_Task_0.EstablishReferences_C_0'"
+   End Object
+   Begin Object Name="EstablishReferences_C_0" ExportPath="/Game/Actors_And_Blueprints/AI/Enemies/Enemies/Riveter/EstablishReferences.EstablishReferences_C'/Game/Actors_And_Blueprints/AI/Enemies/Enemies/Riveter/BT_Riveter.BT_Riveter:Behavior Tree.BehaviorTreeGraphNode_Task_0.EstablishReferences_C_0'"
+      TreeAsset="/Script/AIModule.BehaviorTree'/Game/Actors_And_Blueprints/AI/Enemies/Enemies/Riveter/BT_Riveter.BT_Riveter'"
+      ParentNode="/Script/AIModule.BTComposite_Sequence'BehaviorTreeGraphNode_Composite_2.BTComposite_Sequence_1'"
+   End Object
+   ClassData=(AssetName="EstablishReferences",GeneratedClassPackage="/Game/Actors_And_Blueprints/AI/Enemies/Enemies/Riveter/EstablishReferences",ClassName="EstablishReferences_C")
+   NodeInstance="/Game/Actors_And_Blueprints/AI/Enemies/Enemies/Riveter/EstablishReferences.EstablishReferences_C'EstablishReferences_C_0'"
+   CopySubNodeIndex=1
+   NodePosX=704
+   NodePosY=784
+   NodeGuid=F79609694E5A3BDD918AAD92BF2D69F5
+   CustomProperties Pin (PinId=3B2179A745606CD44E16BF9D92276736,PinName="In",PinType.PinCategory="SingleComposite",PinType.PinSubCategory="",PinType.PinSubCategoryObject=None,PinType.PinSubCategoryMemberReference=(),PinType.PinValueType=(),PinType.ContainerType=None,PinType.bIsReference=False,PinType.bIsConst=False,PinType.bIsWeakPointer=False,PinType.bIsUObjectWrapper=False,PinType.bSerializeAsSinglePrecisionFloat=False,LinkedTo=(BehaviorTreeGraphNode_Composite_2 E53C5A9348E17C5F032BDA86A3317CC7,),PersistentGuid=00000000000000000000000000000000,bHidden=False,bNotConnectable=False,bDefaultValueIsReadOnly=False,bDefaultValueIsIgnored=False,bAdvancedView=False,bOrphanedPin=False,)
+End Object
+Begin Object Class=/Script/BehaviorTreeEditor.BehaviorTreeGraphNode_Composite Name="BehaviorTreeGraphNode_Composite_2" ExportPath="/Script/BehaviorTreeEditor.BehaviorTreeGraphNode_Composite'/Game/Actors_And_Blueprints/AI/Enemies/Enemies/Riveter/BT_Riveter.BT_Riveter:Behavior Tree.BehaviorTreeGraphNode_Composite_2'"
+   Begin Object Class=/Script/AIModule.BTComposite_Sequence Name="BTComposite_Sequence_1" ExportPath="/Script/AIModule.BTComposite_Sequence'/Game/Actors_And_Blueprints/AI/Enemies/Enemies/Riveter/BT_Riveter.BT_Riveter:Behavior Tree.BehaviorTreeGraphNode_Composite_2.BTComposite_Sequence_1'"
+   End Object
+   Begin Object Name="BTComposite_Sequence_1" ExportPath="/Script/AIModule.BTComposite_Sequence'/Game/Actors_And_Blueprints/AI/Enemies/Enemies/Riveter/BT_Riveter.BT_Riveter:Behavior Tree.BehaviorTreeGraphNode_Composite_2.BTComposite_Sequence_1'"
+      Children(0)=(ChildTask="/Game/Actors_And_Blueprints/AI/Enemies/Enemies/Riveter/EstablishReferences.EstablishReferences_C'BehaviorTreeGraphNode_Task_0.EstablishReferences_C_0'")
+      Children(1)=(ChildTask="/Script/AIModule.BTTask_RunBehaviorDynamic'BehaviorTreeGraphNode_Task_4.BTTask_RunBehaviorDynamic_0'")
+      Services(0)="/Game/Actors_And_Blueprints/AI/Enemies/Enemies/BTS_BurstMachineGun.BTS_BurstMachineGun_C'BehaviorTreeGraphNode_Service_9.BTS_BurstMachineGun_C_1'"
+      TreeAsset="/Script/AIModule.BehaviorTree'/Game/Actors_And_Blueprints/AI/Enemies/Enemies/Riveter/BT_Riveter.BT_Riveter'"
+      ParentNode="/Script/AIModule.BTComposite_Selector'BehaviorTreeGraphNode_Composite_5.BTComposite_Selector_0'"
+   End Object
+   Decorators(0)="/Script/BehaviorTreeEditor.BehaviorTreeGraphNode_Decorator'BehaviorTreeGraphNode_Decorator_0'"
+   Services(0)="/Script/BehaviorTreeEditor.BehaviorTreeGraphNode_Service'BehaviorTreeGraphNode_Service_9'"
+   ClassData=(ClassName="BTComposite_Sequence")
+   NodeInstance="/Script/AIModule.BTComposite_Sequence'BTComposite_Sequence_1'"
+   SubNodes(0)="/Script/BehaviorTreeEditor.BehaviorTreeGraphNode_Service'BehaviorTreeGraphNode_Service_9'"
+   SubNodes(1)="/Script/BehaviorTreeEditor.BehaviorTreeGraphNode_Decorator'BehaviorTreeGraphNode_Decorator_0'"
+   CopySubNodeIndex=2
+   NodePosX=800
+   NodePosY=448
+   NodeGuid=1DA01D6643CD92276949AEA33DDFE6F1
+   CustomProperties Pin (PinId=8F9044C840EFF28C98C7719A9379B27B,PinName="In",PinType.PinCategory="MultipleNodes",PinType.PinSubCategory="",PinType.PinSubCategoryObject=None,PinType.PinSubCategoryMemberReference=(),PinType.PinValueType=(),PinType.ContainerType=None,PinType.bIsReference=False,PinType.bIsConst=False,PinType.bIsWeakPointer=False,PinType.bIsUObjectWrapper=False,PinType.bSerializeAsSinglePrecisionFloat=False,LinkedTo=(BehaviorTreeGraphNode_Composite_5 9881739F4AD5D410ADFC5E854ECBF1F0,),PersistentGuid=00000000000000000000000000000000,bHidden=False,bNotConnectable=False,bDefaultValueIsReadOnly=False,bDefaultValueIsIgnored=False,bAdvancedView=False,bOrphanedPin=False,)
+   CustomProperties Pin (PinId=E53C5A9348E17C5F032BDA86A3317CC7,PinName="Out",Direction="EGPD_Output",PinType.PinCategory="MultipleNodes",PinType.PinSubCategory="",PinType.PinSubCategoryObject=None,PinType.PinSubCategoryMemberReference=(),PinType.PinValueType=(),PinType.ContainerType=None,PinType.bIsReference=False,PinType.bIsConst=False,PinType.bIsWeakPointer=False,PinType.bIsUObjectWrapper=False,PinType.bSerializeAsSinglePrecisionFloat=False,LinkedTo=(BehaviorTreeGraphNode_Task_0 3B2179A745606CD44E16BF9D92276736,BehaviorTreeGraphNode_Task_4 3EE2D2B14F466B75839B578EF53BE728,),PersistentGuid=00000000000000000000000000000000,bHidden=False,bNotConnectable=False,bDefaultValueIsReadOnly=False,bDefaultValueIsIgnored=False,bAdvancedView=False,bOrphanedPin=False,)
+End Object
+Begin Object Class=/Script/BehaviorTreeEditor.BehaviorTreeGraphNode_Composite Name="BehaviorTreeGraphNode_Composite_0" ExportPath="/Script/BehaviorTreeEditor.BehaviorTreeGraphNode_Composite'/Game/Actors_And_Blueprints/AI/Enemies/Enemies/Riveter/BT_Riveter.BT_Riveter:Behavior Tree.BehaviorTreeGraphNode_Composite_0'"
+   Begin Object Class=/Script/AIModule.BTComposite_Sequence Name="BTComposite_Sequence_5" ExportPath="/Script/AIModule.BTComposite_Sequence'/Game/Actors_And_Blueprints/AI/Enemies/Enemies/Riveter/BT_Riveter.BT_Riveter:Behavior Tree.BehaviorTreeGraphNode_Composite_0.BTComposite_Sequence_5'"
+   End Object
+   Begin Object Name="BTComposite_Sequence_5" ExportPath="/Script/AIModule.BTComposite_Sequence'/Game/Actors_And_Blueprints/AI/Enemies/Enemies/Riveter/BT_Riveter.BT_Riveter:Behavior Tree.BehaviorTreeGraphNode_Composite_0.BTComposite_Sequence_5'"
+      Children(0)=(ChildTask="/Game/Actors_And_Blueprints/AI/Enemies/Enemies/BTT_Find_Patrol_Point.BTT_Find_Patrol_Point_C'BehaviorTreeGraphNode_Task_10.BTT_Find_Patrol_Point_C_0'")
+      Children(1)=(ChildTask="/Game/Actors_And_Blueprints/AI/Enemies/Enemies/Riveter/BTTask_VoxelMoveToSingle.BTTask_VoxelMoveToSingle_C'BehaviorTreeGraphNode_Task_6.BTTask_VoxelMoveToSingle_C_0'")
+      Children(2)=(ChildComposite="/Script/AIModule.BTComposite_Sequence'BehaviorTreeGraphNode_Composite_8.BTComposite_Sequence_7'",Decorators=("/Script/AIModule.BTDecorator_Loop'BehaviorTreeGraphNode_Decorator_5.BTDecorator_Loop_1'"))
+      TreeAsset="/Script/AIModule.BehaviorTree'/Game/Actors_And_Blueprints/AI/Enemies/Enemies/Riveter/BT_Riveter.BT_Riveter'"
+      ParentNode="/Script/AIModule.BTComposite_Selector'BehaviorTreeGraphNode_Composite_5.BTComposite_Selector_0'"
+   End Object
+   Decorators(0)="/Script/BehaviorTreeEditor.BehaviorTreeGraphNode_Decorator'BehaviorTreeGraphNode_Decorator_4'"
+   ClassData=(ClassName="BTComposite_Sequence")
+   NodeInstance="/Script/AIModule.BTComposite_Sequence'BTComposite_Sequence_5'"
+   SubNodes(0)="/Script/BehaviorTreeEditor.BehaviorTreeGraphNode_Decorator'BehaviorTreeGraphNode_Decorator_4'"
+   CopySubNodeIndex=3
+   NodePosX=-544
+   NodePosY=336
+   NodeGuid=5BC4DD1147B1BD52E70482881181C000
+   CustomProperties Pin (PinId=8F9044C840EFF28C98C7719A9379B27B,PinName="In",PinType.PinCategory="MultipleNodes",PinType.PinSubCategory="",PinType.PinSubCategoryObject=None,PinType.PinSubCategoryMemberReference=(),PinType.PinValueType=(),PinType.ContainerType=None,PinType.bIsReference=False,PinType.bIsConst=False,PinType.bIsWeakPointer=False,PinType.bIsUObjectWrapper=False,PinType.bSerializeAsSinglePrecisionFloat=False,LinkedTo=(BehaviorTreeGraphNode_Composite_5 9881739F4AD5D410ADFC5E854ECBF1F0,),PersistentGuid=00000000000000000000000000000000,bHidden=False,bNotConnectable=False,bDefaultValueIsReadOnly=False,bDefaultValueIsIgnored=False,bAdvancedView=False,bOrphanedPin=False,)
+   CustomProperties Pin (PinId=E53C5A9348E17C5F032BDA86A3317CC7,PinName="Out",Direction="EGPD_Output",PinType.PinCategory="MultipleNodes",PinType.PinSubCategory="",PinType.PinSubCategoryObject=None,PinType.PinSubCategoryMemberReference=(),PinType.PinValueType=(),PinType.ContainerType=None,PinType.bIsReference=False,PinType.bIsConst=False,PinType.bIsWeakPointer=False,PinType.bIsUObjectWrapper=False,PinType.bSerializeAsSinglePrecisionFloat=False,LinkedTo=(BehaviorTreeGraphNode_Task_10 30792B2A45DD3C0B0E175EAE3D932ED6,BehaviorTreeGraphNode_Task_6 58920560466888D1A64648BF52B4AB70,BehaviorTreeGraphNode_Composite_8 35E95B5A41355327AB75CF9651B24183,),PersistentGuid=00000000000000000000000000000000,bHidden=False,bNotConnectable=False,bDefaultValueIsReadOnly=False,bDefaultValueIsIgnored=False,bAdvancedView=False,bOrphanedPin=False,)
+End Object
+Begin Object Class=/Script/BehaviorTreeEditor.BehaviorTreeGraphNode_Task Name="BehaviorTreeGraphNode_Task_4" ExportPath="/Script/BehaviorTreeEditor.BehaviorTreeGraphNode_Task'/Game/Actors_And_Blueprints/AI/Enemies/Enemies/Riveter/BT_Riveter.BT_Riveter:Behavior Tree.BehaviorTreeGraphNode_Task_4'"
+   Begin Object Class=/Script/AIModule.BTTask_RunBehaviorDynamic Name="BTTask_RunBehaviorDynamic_0" ExportPath="/Script/AIModule.BTTask_RunBehaviorDynamic'/Game/Actors_And_Blueprints/AI/Enemies/Enemies/Riveter/BT_Riveter.BT_Riveter:Behavior Tree.BehaviorTreeGraphNode_Task_4.BTTask_RunBehaviorDynamic_0'"
+   End Object
+   Begin Object Name="BTTask_RunBehaviorDynamic_0" ExportPath="/Script/AIModule.BTTask_RunBehaviorDynamic'/Game/Actors_And_Blueprints/AI/Enemies/Enemies/Riveter/BT_Riveter.BT_Riveter:Behavior Tree.BehaviorTreeGraphNode_Task_4.BTTask_RunBehaviorDynamic_0'"
+      DefaultBehaviorAsset="/Script/AIModule.BehaviorTree'/Game/Actors_And_Blueprints/AI/Enemies/Enemies/BT_Medium_Range.BT_Medium_Range'"
+      TreeAsset="/Script/AIModule.BehaviorTree'/Game/Actors_And_Blueprints/AI/Enemies/Enemies/Riveter/BT_Riveter.BT_Riveter'"
+      ParentNode="/Script/AIModule.BTComposite_Sequence'BehaviorTreeGraphNode_Composite_2.BTComposite_Sequence_1'"
+   End Object
+   ClassData=(ClassName="BTTask_RunBehaviorDynamic")
+   NodeInstance="/Script/AIModule.BTTask_RunBehaviorDynamic'BTTask_RunBehaviorDynamic_0'"
+   CopySubNodeIndex=4
+   NodePosX=944
+   NodePosY=784
+   NodeGuid=B8A3CC054BE029CDB7803DA8A13118A7
+   CustomProperties Pin (PinId=3EE2D2B14F466B75839B578EF53BE728,PinName="In",PinType.PinCategory="SingleComposite",PinType.PinSubCategory="",PinType.PinSubCategoryObject=None,PinType.PinSubCategoryMemberReference=(),PinType.PinValueType=(),PinType.ContainerType=None,PinType.bIsReference=False,PinType.bIsConst=False,PinType.bIsWeakPointer=False,PinType.bIsUObjectWrapper=False,PinType.bSerializeAsSinglePrecisionFloat=False,LinkedTo=(BehaviorTreeGraphNode_Composite_2 E53C5A9348E17C5F032BDA86A3317CC7,),PersistentGuid=00000000000000000000000000000000,bHidden=False,bNotConnectable=False,bDefaultValueIsReadOnly=False,bDefaultValueIsIgnored=False,bAdvancedView=False,bOrphanedPin=False,)
+End Object
+Begin Object Class=/Script/BehaviorTreeEditor.BehaviorTreeGraphNode_Composite Name="BehaviorTreeGraphNode_Composite_5" ExportPath="/Script/BehaviorTreeEditor.BehaviorTreeGraphNode_Composite'/Game/Actors_And_Blueprints/AI/Enemies/Enemies/Riveter/BT_Riveter.BT_Riveter:Behavior Tree.BehaviorTreeGraphNode_Composite_5'"
+   Begin Object Class=/Script/AIModule.BTComposite_Selector Name="BTComposite_Selector_0" ExportPath="/Script/AIModule.BTComposite_Selector'/Game/Actors_And_Blueprints/AI/Enemies/Enemies/Riveter/BT_Riveter.BT_Riveter:Behavior Tree.BehaviorTreeGraphNode_Composite_5.BTComposite_Selector_0'"
+   End Object
+   Begin Object Name="BTComposite_Selector_0" ExportPath="/Script/AIModule.BTComposite_Selector'/Game/Actors_And_Blueprints/AI/Enemies/Enemies/Riveter/BT_Riveter.BT_Riveter:Behavior Tree.BehaviorTreeGraphNode_Composite_5.BTComposite_Selector_0'"
+      Children(0)=(ChildComposite="/Script/AIModule.BTComposite_Sequence'BehaviorTreeGraphNode_Composite_0.BTComposite_Sequence_5'",Decorators=("/Script/AIModule.BTDecorator_Blackboard'BehaviorTreeGraphNode_Decorator_4.BTDecorator_Blackboard_4'"))
+      Children(1)=(ChildComposite="/Script/AIModule.BTComposite_Sequence'BehaviorTreeGraphNode_Composite_2.BTComposite_Sequence_1'",Decorators=("/Script/AIModule.BTDecorator_Blackboard'BehaviorTreeGraphNode_Decorator_0.BTDecorator_Blackboard_0'"))
+      Services(0)="/Game/Actors_And_Blueprints/AI/Enemies/Enemies/BTS_Find_Target.BTS_Find_Target_C'BehaviorTreeGraphNode_Service_2.BTS_Find_Target_C_2'"
+      TreeAsset="/Script/AIModule.BehaviorTree'/Game/Actors_And_Blueprints/AI/Enemies/Enemies/Riveter/BT_Riveter.BT_Riveter'"
+   End Object
+   Services(0)="/Script/BehaviorTreeEditor.BehaviorTreeGraphNode_Service'BehaviorTreeGraphNode_Service_2'"
+   ClassData=(ClassName="BTComposite_Selector")
+   NodeInstance="/Script/AIModule.BTComposite_Selector'BTComposite_Selector_0'"
+   SubNodes(0)="/Script/BehaviorTreeEditor.BehaviorTreeGraphNode_Service'BehaviorTreeGraphNode_Service_2'"
+   CopySubNodeIndex=5
+   NodePosX=-64
+   NodePosY=48
+   NodeGuid=6D2AA99342E47631DBBA4598160C02BE
+   CustomProperties Pin (PinId=C077158F4E36C3D6CF2164A9D40E519F,PinName="In",PinType.PinCategory="MultipleNodes",PinType.PinSubCategory="",PinType.PinSubCategoryObject=None,PinType.PinSubCategoryMemberReference=(),PinType.PinValueType=(),PinType.ContainerType=None,PinType.bIsReference=False,PinType.bIsConst=False,PinType.bIsWeakPointer=False,PinType.bIsUObjectWrapper=False,PinType.bSerializeAsSinglePrecisionFloat=False,LinkedTo=(BehaviorTreeGraphNode_Root_0 9450CF9E43B76514FB234496E10AAE16,),PersistentGuid=00000000000000000000000000000000,bHidden=False,bNotConnectable=False,bDefaultValueIsReadOnly=False,bDefaultValueIsIgnored=False,bAdvancedView=False,bOrphanedPin=False,)
+   CustomProperties Pin (PinId=9881739F4AD5D410ADFC5E854ECBF1F0,PinName="Out",Direction="EGPD_Output",PinType.PinCategory="MultipleNodes",PinType.PinSubCategory="",PinType.PinSubCategoryObject=None,PinType.PinSubCategoryMemberReference=(),PinType.PinValueType=(),PinType.ContainerType=None,PinType.bIsReference=False,PinType.bIsConst=False,PinType.bIsWeakPointer=False,PinType.bIsUObjectWrapper=False,PinType.bSerializeAsSinglePrecisionFloat=False,LinkedTo=(BehaviorTreeGraphNode_Composite_0 8F9044C840EFF28C98C7719A9379B27B,BehaviorTreeGraphNode_Composite_2 8F9044C840EFF28C98C7719A9379B27B,),PersistentGuid=00000000000000000000000000000000,bHidden=False,bNotConnectable=False,bDefaultValueIsReadOnly=False,bDefaultValueIsIgnored=False,bAdvancedView=False,bOrphanedPin=False,)
+End Object
+Begin Object Class=/Script/BehaviorTreeEditor.BehaviorTreeGraphNode_Task Name="BehaviorTreeGraphNode_Task_10" ExportPath="/Script/BehaviorTreeEditor.BehaviorTreeGraphNode_Task'/Game/Actors_And_Blueprints/AI/Enemies/Enemies/Riveter/BT_Riveter.BT_Riveter:Behavior Tree.BehaviorTreeGraphNode_Task_10'"
+   Begin Object Class=/Game/Actors_And_Blueprints/AI/Enemies/Enemies/BTT_Find_Patrol_Point.BTT_Find_Patrol_Point_C Name="BTT_Find_Patrol_Point_C_0" ExportPath="/Game/Actors_And_Blueprints/AI/Enemies/Enemies/BTT_Find_Patrol_Point.BTT_Find_Patrol_Point_C'/Game/Actors_And_Blueprints/AI/Enemies/Enemies/Riveter/BT_Riveter.BT_Riveter:Behavior Tree.BehaviorTreeGraphNode_Task_10.BTT_Find_Patrol_Point_C_0'"
+   End Object
+   Begin Object Name="BTT_Find_Patrol_Point_C_0" ExportPath="/Game/Actors_And_Blueprints/AI/Enemies/Enemies/BTT_Find_Patrol_Point.BTT_Find_Patrol_Point_C'/Game/Actors_And_Blueprints/AI/Enemies/Enemies/Riveter/BT_Riveter.BT_Riveter:Behavior Tree.BehaviorTreeGraphNode_Task_10.BTT_Find_Patrol_Point_C_0'"
+      TargetLocation=(SelectedKeyName="MoveToLocation")
+      TreeAsset="/Script/AIModule.BehaviorTree'/Game/Actors_And_Blueprints/AI/Enemies/Enemies/Riveter/BT_Riveter.BT_Riveter'"
+      ParentNode="/Script/AIModule.BTComposite_Sequence'BehaviorTreeGraphNode_Composite_0.BTComposite_Sequence_5'"
+   End Object
+   ClassData=(AssetName="BTT_Find_Patrol_Point",GeneratedClassPackage="/Game/Actors_And_Blueprints/AI/Enemies/Enemies/BTT_Find_Patrol_Point",ClassName="BTT_Find_Patrol_Point_C")
+   NodeInstance="/Game/Actors_And_Blueprints/AI/Enemies/Enemies/BTT_Find_Patrol_Point.BTT_Find_Patrol_Point_C'BTT_Find_Patrol_Point_C_0'"
+   CopySubNodeIndex=6
+   NodePosX=-992
+   NodePosY=672
+   NodeGuid=B81849BF429A25A4B29F27BA0B8C7D7D
+   CustomProperties Pin (PinId=30792B2A45DD3C0B0E175EAE3D932ED6,PinName="In",PinType.PinCategory="SingleComposite",PinType.PinSubCategory="",PinType.PinSubCategoryObject=None,PinType.PinSubCategoryMemberReference=(),PinType.PinValueType=(),PinType.ContainerType=None,PinType.bIsReference=False,PinType.bIsConst=False,PinType.bIsWeakPointer=False,PinType.bIsUObjectWrapper=False,PinType.bSerializeAsSinglePrecisionFloat=False,LinkedTo=(BehaviorTreeGraphNode_Composite_0 E53C5A9348E17C5F032BDA86A3317CC7,),PersistentGuid=00000000000000000000000000000000,bHidden=False,bNotConnectable=False,bDefaultValueIsReadOnly=False,bDefaultValueIsIgnored=False,bAdvancedView=False,bOrphanedPin=False,)
+End Object
+Begin Object Class=/Script/BehaviorTreeEditor.BehaviorTreeGraphNode_Task Name="BehaviorTreeGraphNode_Task_6" ExportPath="/Script/BehaviorTreeEditor.BehaviorTreeGraphNode_Task'/Game/Actors_And_Blueprints/AI/Enemies/Enemies/Riveter/BT_Riveter.BT_Riveter:Behavior Tree.BehaviorTreeGraphNode_Task_6'"
+   Begin Object Class=/Game/Actors_And_Blueprints/AI/Enemies/Enemies/Riveter/BTTask_VoxelMoveToSingle.BTTask_VoxelMoveToSingle_C Name="BTTask_VoxelMoveToSingle_C_0" ExportPath="/Game/Actors_And_Blueprints/AI/Enemies/Enemies/Riveter/BTTask_VoxelMoveToSingle.BTTask_VoxelMoveToSingle_C'/Game/Actors_And_Blueprints/AI/Enemies/Enemies/Riveter/BT_Riveter.BT_Riveter:Behavior Tree.BehaviorTreeGraphNode_Task_6.BTTask_VoxelMoveToSingle_C_0'"
+   End Object
+   Begin Object Name="BTTask_VoxelMoveToSingle_C_0" ExportPath="/Game/Actors_And_Blueprints/AI/Enemies/Enemies/Riveter/BTTask_VoxelMoveToSingle.BTTask_VoxelMoveToSingle_C'/Game/Actors_And_Blueprints/AI/Enemies/Enemies/Riveter/BT_Riveter.BT_Riveter:Behavior Tree.BehaviorTreeGraphNode_Task_6.BTTask_VoxelMoveToSingle_C_0'"
+      TargetLocation=(SelectedKeyName="MoveToLocation")
+      ResponseType="Patrol Initiated"
+      TreeAsset="/Script/AIModule.BehaviorTree'/Game/Actors_And_Blueprints/AI/Enemies/Enemies/Riveter/BT_Riveter.BT_Riveter'"
+      ParentNode="/Script/AIModule.BTComposite_Sequence'BehaviorTreeGraphNode_Composite_0.BTComposite_Sequence_5'"
+   End Object
+   ClassData=(AssetName="BTTask_VoxelMoveToSingle",GeneratedClassPackage="/Game/Actors_And_Blueprints/AI/Enemies/Enemies/Riveter/BTTask_VoxelMoveToSingle",ClassName="BTTask_VoxelMoveToSingle_C")
+   NodeInstance="/Game/Actors_And_Blueprints/AI/Enemies/Enemies/Riveter/BTTask_VoxelMoveToSingle.BTTask_VoxelMoveToSingle_C'BTTask_VoxelMoveToSingle_C_0'"
+   CopySubNodeIndex=7
+   NodePosX=-688
+   NodePosY=672
+   NodeGuid=00DA5ABC47A2614A9FFE399B8F1B04CA
+   CustomProperties Pin (PinId=58920560466888D1A64648BF52B4AB70,PinName="In",PinType.PinCategory="SingleComposite",PinType.PinSubCategory="",PinType.PinSubCategoryObject=None,PinType.PinSubCategoryMemberReference=(),PinType.PinValueType=(),PinType.ContainerType=None,PinType.bIsReference=False,PinType.bIsConst=False,PinType.bIsWeakPointer=False,PinType.bIsUObjectWrapper=False,PinType.bSerializeAsSinglePrecisionFloat=False,LinkedTo=(BehaviorTreeGraphNode_Composite_0 E53C5A9348E17C5F032BDA86A3317CC7,),PersistentGuid=00000000000000000000000000000000,bHidden=False,bNotConnectable=False,bDefaultValueIsReadOnly=False,bDefaultValueIsIgnored=False,bAdvancedView=False,bOrphanedPin=False,)
+End Object
+Begin Object Class=/Script/BehaviorTreeEditor.BehaviorTreeGraphNode_Composite Name="BehaviorTreeGraphNode_Composite_8" ExportPath="/Script/BehaviorTreeEditor.BehaviorTreeGraphNode_Composite'/Game/Actors_And_Blueprints/AI/Enemies/Enemies/Riveter/BT_Riveter.BT_Riveter:Behavior Tree.BehaviorTreeGraphNode_Composite_8'"
+   Begin Object Class=/Script/AIModule.BTComposite_Sequence Name="BTComposite_Sequence_7" ExportPath="/Script/AIModule.BTComposite_Sequence'/Game/Actors_And_Blueprints/AI/Enemies/Enemies/Riveter/BT_Riveter.BT_Riveter:Behavior Tree.BehaviorTreeGraphNode_Composite_8.BTComposite_Sequence_7'"
+   End Object
+   Begin Object Name="BTComposite_Sequence_7" ExportPath="/Script/AIModule.BTComposite_Sequence'/Game/Actors_And_Blueprints/AI/Enemies/Enemies/Riveter/BT_Riveter.BT_Riveter:Behavior Tree.BehaviorTreeGraphNode_Composite_8.BTComposite_Sequence_7'"
+      Children(0)=(ChildTask="/Script/AIModule.BTTask_RunEQSQuery'BehaviorTreeGraphNode_Task_22.BTTask_RunEQSQuery_0'")
+      Children(1)=(ChildTask="/Game/Actors_And_Blueprints/AI/Enemies/Enemies/Riveter/BTTask_VoxelMoveToSingle.BTTask_VoxelMoveToSingle_C'BehaviorTreeGraphNode_Task_1.BTTask_VoxelMoveToSingle_C_1'")
+      Services(0)="/Game/Actors_And_Blueprints/AI/Enemies/Enemies/HeavyDrone/BTS_Investigate.BTS_Investigate_C'BehaviorTreeGraphNode_Service_3.BTS_Investigate_C_0'"
+      TreeAsset="/Script/AIModule.BehaviorTree'/Game/Actors_And_Blueprints/AI/Enemies/Enemies/Riveter/BT_Riveter.BT_Riveter'"
+      ParentNode="/Script/AIModule.BTComposite_Sequence'BehaviorTreeGraphNode_Composite_0.BTComposite_Sequence_5'"
+   End Object
+   Decorators(0)="/Script/BehaviorTreeEditor.BehaviorTreeGraphNode_Decorator'BehaviorTreeGraphNode_Decorator_5'"
+   Services(0)="/Script/BehaviorTreeEditor.BehaviorTreeGraphNode_Service'BehaviorTreeGraphNode_Service_3'"
+   ClassData=(ClassName="BTComposite_Sequence")
+   NodeInstance="/Script/AIModule.BTComposite_Sequence'BTComposite_Sequence_7'"
+   SubNodes(0)="/Script/BehaviorTreeEditor.BehaviorTreeGraphNode_Decorator'BehaviorTreeGraphNode_Decorator_5'"
+   SubNodes(1)="/Script/BehaviorTreeEditor.BehaviorTreeGraphNode_Service'BehaviorTreeGraphNode_Service_3'"
+   CopySubNodeIndex=8
+   NodePosX=-336
+   NodePosY=672
+   NodeGuid=B9546020445D4B4606348AA1E59D9AF6
+   CustomProperties Pin (PinId=35E95B5A41355327AB75CF9651B24183,PinName="In",PinType.PinCategory="MultipleNodes",PinType.PinSubCategory="",PinType.PinSubCategoryObject=None,PinType.PinSubCategoryMemberReference=(),PinType.PinValueType=(),PinType.ContainerType=None,PinType.bIsReference=False,PinType.bIsConst=False,PinType.bIsWeakPointer=False,PinType.bIsUObjectWrapper=False,PinType.bSerializeAsSinglePrecisionFloat=False,LinkedTo=(BehaviorTreeGraphNode_Composite_0 E53C5A9348E17C5F032BDA86A3317CC7,),PersistentGuid=00000000000000000000000000000000,bHidden=False,bNotConnectable=False,bDefaultValueIsReadOnly=False,bDefaultValueIsIgnored=False,bAdvancedView=False,bOrphanedPin=False,)
+   CustomProperties Pin (PinId=14DD299041A3896E5DC325A11D4ADB7B,PinName="Out",Direction="EGPD_Output",PinType.PinCategory="MultipleNodes",PinType.PinSubCategory="",PinType.PinSubCategoryObject=None,PinType.PinSubCategoryMemberReference=(),PinType.PinValueType=(),PinType.ContainerType=None,PinType.bIsReference=False,PinType.bIsConst=False,PinType.bIsWeakPointer=False,PinType.bIsUObjectWrapper=False,PinType.bSerializeAsSinglePrecisionFloat=False,LinkedTo=(BehaviorTreeGraphNode_Task_22 0E18565A40056ADF40E5B9BD85B09978,BehaviorTreeGraphNode_Task_1 58920560466888D1A64648BF52B4AB70,),PersistentGuid=00000000000000000000000000000000,bHidden=False,bNotConnectable=False,bDefaultValueIsReadOnly=False,bDefaultValueIsIgnored=False,bAdvancedView=False,bOrphanedPin=False,)
+End Object
+Begin Object Class=/Script/BehaviorTreeEditor.BehaviorTreeGraphNode_Task Name="BehaviorTreeGraphNode_Task_1" ExportPath="/Script/BehaviorTreeEditor.BehaviorTreeGraphNode_Task'/Game/Actors_And_Blueprints/AI/Enemies/Enemies/Riveter/BT_Riveter.BT_Riveter:Behavior Tree.BehaviorTreeGraphNode_Task_1'"
+   Begin Object Class=/Game/Actors_And_Blueprints/AI/Enemies/Enemies/Riveter/BTTask_VoxelMoveToSingle.BTTask_VoxelMoveToSingle_C Name="BTTask_VoxelMoveToSingle_C_1" ExportPath="/Game/Actors_And_Blueprints/AI/Enemies/Enemies/Riveter/BTTask_VoxelMoveToSingle.BTTask_VoxelMoveToSingle_C'/Game/Actors_And_Blueprints/AI/Enemies/Enemies/Riveter/BT_Riveter.BT_Riveter:Behavior Tree.BehaviorTreeGraphNode_Task_1.BTTask_VoxelMoveToSingle_C_1'"
+   End Object
+   Begin Object Name="BTTask_VoxelMoveToSingle_C_1" ExportPath="/Game/Actors_And_Blueprints/AI/Enemies/Enemies/Riveter/BTTask_VoxelMoveToSingle.BTTask_VoxelMoveToSingle_C'/Game/Actors_And_Blueprints/AI/Enemies/Enemies/Riveter/BT_Riveter.BT_Riveter:Behavior Tree.BehaviorTreeGraphNode_Task_1.BTTask_VoxelMoveToSingle_C_1'"
+      TargetLocation=(SelectedKeyName="InvestigateLocation")
+      ResponseType="Investigating"
+      TreeAsset="/Script/AIModule.BehaviorTree'/Game/Actors_And_Blueprints/AI/Enemies/Enemies/Riveter/BT_Riveter.BT_Riveter'"
+      ParentNode="/Script/AIModule.BTComposite_Sequence'BehaviorTreeGraphNode_Composite_8.BTComposite_Sequence_7'"
+   End Object
+   ClassData=(AssetName="BTTask_VoxelMoveToSingle",GeneratedClassPackage="/Game/Actors_And_Blueprints/AI/Enemies/Enemies/Riveter/BTTask_VoxelMoveToSingle",ClassName="BTTask_VoxelMoveToSingle_C")
+   NodeInstance="/Game/Actors_And_Blueprints/AI/Enemies/Enemies/Riveter/BTTask_VoxelMoveToSingle.BTTask_VoxelMoveToSingle_C'BTTask_VoxelMoveToSingle_C_1'"
+   CopySubNodeIndex=9
+   NodePosX=-256
+   NodePosY=960
+   NodeGuid=B58D53554C6100C4E76BFB93689C2CE8
+   CustomProperties Pin (PinId=58920560466888D1A64648BF52B4AB70,PinName="In",PinType.PinCategory="SingleComposite",PinType.PinSubCategory="",PinType.PinSubCategoryObject=None,PinType.PinSubCategoryMemberReference=(),PinType.PinValueType=(),PinType.ContainerType=None,PinType.bIsReference=False,PinType.bIsConst=False,PinType.bIsWeakPointer=False,PinType.bIsUObjectWrapper=False,PinType.bSerializeAsSinglePrecisionFloat=False,LinkedTo=(BehaviorTreeGraphNode_Composite_8 14DD299041A3896E5DC325A11D4ADB7B,),PersistentGuid=00000000000000000000000000000000,bHidden=False,bNotConnectable=False,bDefaultValueIsReadOnly=False,bDefaultValueIsIgnored=False,bAdvancedView=False,bOrphanedPin=False,)
+End Object
+Begin Object Class=/Script/BehaviorTreeEditor.BehaviorTreeGraphNode_Task Name="BehaviorTreeGraphNode_Task_22" ExportPath="/Script/BehaviorTreeEditor.BehaviorTreeGraphNode_Task'/Game/Actors_And_Blueprints/AI/Enemies/Enemies/Riveter/BT_Riveter.BT_Riveter:Behavior Tree.BehaviorTreeGraphNode_Task_22'"
+   Begin Object Class=/Script/AIModule.BTTask_RunEQSQuery Name="BTTask_RunEQSQuery_0" ExportPath="/Script/AIModule.BTTask_RunEQSQuery'/Game/Actors_And_Blueprints/AI/Enemies/Enemies/Riveter/BT_Riveter.BT_Riveter:Behavior Tree.BehaviorTreeGraphNode_Task_22.BTTask_RunEQSQuery_0'"
+      Begin Object Class=/Script/AIModule.BlackboardKeyType_Object Name="None_Object_0" ExportPath="/Script/AIModule.BlackboardKeyType_Object'/Game/Actors_And_Blueprints/AI/Enemies/Enemies/Riveter/BT_Riveter.BT_Riveter:Behavior Tree.BehaviorTreeGraphNode_Task_22.BTTask_RunEQSQuery_0.None_Object_0'"
+      End Object
+   End Object
+   Begin Object Name="BTTask_RunEQSQuery_0" ExportPath="/Script/AIModule.BTTask_RunEQSQuery'/Game/Actors_And_Blueprints/AI/Enemies/Enemies/Riveter/BT_Riveter.BT_Riveter:Behavior Tree.BehaviorTreeGraphNode_Task_22.BTTask_RunEQSQuery_0'"
+      Begin Object Name="None_Object_0" ExportPath="/Script/AIModule.BlackboardKeyType_Object'/Game/Actors_And_Blueprints/AI/Enemies/Enemies/Riveter/BT_Riveter.BT_Riveter:Behavior Tree.BehaviorTreeGraphNode_Task_22.BTTask_RunEQSQuery_0.None_Object_0'"
+         BaseClass="/Script/CoreUObject.Class'/Script/AIModule.EnvQuery'"
+      End Object
+      EQSRequest=(QueryTemplate="/Script/AIModule.EnvQuery'/Game/Actors_And_Blueprints/AI/Pathfinder/EQS_Investigate.EQS_Investigate'",EQSQueryBlackboardKey=(),RunMode=AllMatching)
+      BlackboardKey=(SelectedKeyName="MoveToLocation")
+      TreeAsset="/Script/AIModule.BehaviorTree'/Game/Actors_And_Blueprints/AI/Enemies/Enemies/Riveter/BT_Riveter.BT_Riveter'"
+      ParentNode="/Script/AIModule.BTComposite_Sequence'BehaviorTreeGraphNode_Composite_8.BTComposite_Sequence_7'"
+   End Object
+   ClassData=(ClassName="BTTask_RunEQSQuery")
+   NodeInstance="/Script/AIModule.BTTask_RunEQSQuery'BTTask_RunEQSQuery_0'"
+   CopySubNodeIndex=10
+   NodePosX=-560
+   NodePosY=960
+   NodeGuid=443E55F74289D0A547FD989325E2219E
+   CustomProperties Pin (PinId=0E18565A40056ADF40E5B9BD85B09978,PinName="In",PinType.PinCategory="SingleComposite",PinType.PinSubCategory="",PinType.PinSubCategoryObject=None,PinType.PinSubCategoryMemberReference=(),PinType.PinValueType=(),PinType.ContainerType=None,PinType.bIsReference=False,PinType.bIsConst=False,PinType.bIsWeakPointer=False,PinType.bIsUObjectWrapper=False,PinType.bSerializeAsSinglePrecisionFloat=False,LinkedTo=(BehaviorTreeGraphNode_Composite_8 14DD299041A3896E5DC325A11D4ADB7B,),PersistentGuid=00000000000000000000000000000000,bHidden=False,bNotConnectable=False,bDefaultValueIsReadOnly=False,bDefaultValueIsIgnored=False,bAdvancedView=False,bOrphanedPin=False,)
+End Object
+Begin Object Class=/Script/BehaviorTreeEditor.BehaviorTreeGraphNode_Composite Name="BehaviorTreeGraphNode_Composite_10" ExportPath="/Script/BehaviorTreeEditor.BehaviorTreeGraphNode_Composite'/Game/Actors_And_Blueprints/AI/Enemies/Enemies/Riveter/BT_Riveter.BT_Riveter:Behavior Tree.BehaviorTreeGraphNode_Composite_10'"
+   Begin Object Class=/Script/AIModule.BTComposite_Sequence Name="BTComposite_Sequence_0" ExportPath="/Script/AIModule.BTComposite_Sequence'/Game/Actors_And_Blueprints/AI/Enemies/Enemies/Riveter/BT_Riveter.BT_Riveter:Behavior Tree.BehaviorTreeGraphNode_Composite_10.BTComposite_Sequence_0'"
+   End Object
+   Begin Object Name="BTComposite_Sequence_0" ExportPath="/Script/AIModule.BTComposite_Sequence'/Game/Actors_And_Blueprints/AI/Enemies/Enemies/Riveter/BT_Riveter.BT_Riveter:Behavior Tree.BehaviorTreeGraphNode_Composite_10.BTComposite_Sequence_0'"
+      Children(0)=(ChildTask="/Game/Actors_And_Blueprints/AI/Enemies/Enemies/Riveter/EstablishReferences.EstablishReferences_C'BehaviorTreeGraphNode_Task_2.EstablishReferences_C_1'")
+      Children(1)=(ChildTask="/Script/AIModule.BTTask_RunBehaviorDynamic'BehaviorTreeGraphNode_Task_3.BTTask_RunBehaviorDynamic_1'")
+      Services(0)="/Game/Actors_And_Blueprints/AI/Enemies/Enemies/BTS_Scan.BTS_Scan_C'BehaviorTreeGraphNode_Service_11.BTS_Scan_C_0'"
+      TreeAsset="/Script/AIModule.BehaviorTree'/Game/Actors_And_Blueprints/AI/Enemies/Enemies/Riveter/BT_Riveter.BT_Riveter'"
+   End Object
+   Decorators(0)="/Script/BehaviorTreeEditor.BehaviorTreeGraphNode_Decorator'BehaviorTreeGraphNode_Decorator_1'"
+   Services(0)="/Script/BehaviorTreeEditor.BehaviorTreeGraphNode_Service'BehaviorTreeGraphNode_Service_11'"
+   ClassData=(ClassName="BTComposite_Sequence")
+   NodeInstance="/Script/AIModule.BTComposite_Sequence'BTComposite_Sequence_0'"
+   SubNodes(0)="/Script/BehaviorTreeEditor.BehaviorTreeGraphNode_Decorator'BehaviorTreeGraphNode_Decorator_1'"
+   SubNodes(1)="/Script/BehaviorTreeEditor.BehaviorTreeGraphNode_Service'BehaviorTreeGraphNode_Service_11'"
+   CopySubNodeIndex=11
+   NodePosX=304
+   NodePosY=448
+   NodeGuid=C166C28E4BB406CB3C5DAB947F1AE54E
+   CustomProperties Pin (PinId=8F9044C840EFF28C98C7719A9379B27B,PinName="In",PinType.PinCategory="MultipleNodes",PinType.PinSubCategory="",PinType.PinSubCategoryObject=None,PinType.PinSubCategoryMemberReference=(),PinType.PinValueType=(),PinType.ContainerType=None,PinType.bIsReference=False,PinType.bIsConst=False,PinType.bIsWeakPointer=False,PinType.bIsUObjectWrapper=False,PinType.bSerializeAsSinglePrecisionFloat=False,PersistentGuid=00000000000000000000000000000000,bHidden=False,bNotConnectable=False,bDefaultValueIsReadOnly=False,bDefaultValueIsIgnored=False,bAdvancedView=False,bOrphanedPin=False,)
+   CustomProperties Pin (PinId=E53C5A9348E17C5F032BDA86A3317CC7,PinName="Out",Direction="EGPD_Output",PinType.PinCategory="MultipleNodes",PinType.PinSubCategory="",PinType.PinSubCategoryObject=None,PinType.PinSubCategoryMemberReference=(),PinType.PinValueType=(),PinType.ContainerType=None,PinType.bIsReference=False,PinType.bIsConst=False,PinType.bIsWeakPointer=False,PinType.bIsUObjectWrapper=False,PinType.bSerializeAsSinglePrecisionFloat=False,LinkedTo=(BehaviorTreeGraphNode_Task_2 3B2179A745606CD44E16BF9D92276736,BehaviorTreeGraphNode_Task_3 3EE2D2B14F466B75839B578EF53BE728,),PersistentGuid=00000000000000000000000000000000,bHidden=False,bNotConnectable=False,bDefaultValueIsReadOnly=False,bDefaultValueIsIgnored=False,bAdvancedView=False,bOrphanedPin=False,)
+End Object
+Begin Object Class=/Script/BehaviorTreeEditor.BehaviorTreeGraphNode_Task Name="BehaviorTreeGraphNode_Task_2" ExportPath="/Script/BehaviorTreeEditor.BehaviorTreeGraphNode_Task'/Game/Actors_And_Blueprints/AI/Enemies/Enemies/Riveter/BT_Riveter.BT_Riveter:Behavior Tree.BehaviorTreeGraphNode_Task_2'"
+   Begin Object Class=/Game/Actors_And_Blueprints/AI/Enemies/Enemies/Riveter/EstablishReferences.EstablishReferences_C Name="EstablishReferences_C_1" ExportPath="/Game/Actors_And_Blueprints/AI/Enemies/Enemies/Riveter/EstablishReferences.EstablishReferences_C'/Game/Actors_And_Blueprints/AI/Enemies/Enemies/Riveter/BT_Riveter.BT_Riveter:Behavior Tree.BehaviorTreeGraphNode_Task_2.EstablishReferences_C_1'"
+   End Object
+   Begin Object Name="EstablishReferences_C_1" ExportPath="/Game/Actors_And_Blueprints/AI/Enemies/Enemies/Riveter/EstablishReferences.EstablishReferences_C'/Game/Actors_And_Blueprints/AI/Enemies/Enemies/Riveter/BT_Riveter.BT_Riveter:Behavior Tree.BehaviorTreeGraphNode_Task_2.EstablishReferences_C_1'"
+      TreeAsset="/Script/AIModule.BehaviorTree'/Game/Actors_And_Blueprints/AI/Enemies/Enemies/Riveter/BT_Riveter.BT_Riveter'"
+   End Object
+   ClassData=(AssetName="EstablishReferences",GeneratedClassPackage="/Game/Actors_And_Blueprints/AI/Enemies/Enemies/Riveter/EstablishReferences",ClassName="EstablishReferences_C")
+   NodeInstance="/Game/Actors_And_Blueprints/AI/Enemies/Enemies/Riveter/EstablishReferences.EstablishReferences_C'EstablishReferences_C_1'"
+   CopySubNodeIndex=12
+   NodePosX=192
+   NodePosY=656
+   NodeGuid=A3E177F84C878532948F3EA0828718F3
+   CustomProperties Pin (PinId=3B2179A745606CD44E16BF9D92276736,PinName="In",PinType.PinCategory="SingleComposite",PinType.PinSubCategory="",PinType.PinSubCategoryObject=None,PinType.PinSubCategoryMemberReference=(),PinType.PinValueType=(),PinType.ContainerType=None,PinType.bIsReference=False,PinType.bIsConst=False,PinType.bIsWeakPointer=False,PinType.bIsUObjectWrapper=False,PinType.bSerializeAsSinglePrecisionFloat=False,LinkedTo=(BehaviorTreeGraphNode_Composite_10 E53C5A9348E17C5F032BDA86A3317CC7,),PersistentGuid=00000000000000000000000000000000,bHidden=False,bNotConnectable=False,bDefaultValueIsReadOnly=False,bDefaultValueIsIgnored=False,bAdvancedView=False,bOrphanedPin=False,)
+End Object
+Begin Object Class=/Script/BehaviorTreeEditor.BehaviorTreeGraphNode_Task Name="BehaviorTreeGraphNode_Task_3" ExportPath="/Script/BehaviorTreeEditor.BehaviorTreeGraphNode_Task'/Game/Actors_And_Blueprints/AI/Enemies/Enemies/Riveter/BT_Riveter.BT_Riveter:Behavior Tree.BehaviorTreeGraphNode_Task_3'"
+   Begin Object Class=/Script/AIModule.BTTask_RunBehaviorDynamic Name="BTTask_RunBehaviorDynamic_1" ExportPath="/Script/AIModule.BTTask_RunBehaviorDynamic'/Game/Actors_And_Blueprints/AI/Enemies/Enemies/Riveter/BT_Riveter.BT_Riveter:Behavior Tree.BehaviorTreeGraphNode_Task_3.BTTask_RunBehaviorDynamic_1'"
+   End Object
+   Begin Object Name="BTTask_RunBehaviorDynamic_1" ExportPath="/Script/AIModule.BTTask_RunBehaviorDynamic'/Game/Actors_And_Blueprints/AI/Enemies/Enemies/Riveter/BT_Riveter.BT_Riveter:Behavior Tree.BehaviorTreeGraphNode_Task_3.BTTask_RunBehaviorDynamic_1'"
+      DefaultBehaviorAsset="/Script/AIModule.BehaviorTree'/Game/Actors_And_Blueprints/AI/Enemies/Enemies/BT_Medium_Range.BT_Medium_Range'"
+      TreeAsset="/Script/AIModule.BehaviorTree'/Game/Actors_And_Blueprints/AI/Enemies/Enemies/Riveter/BT_Riveter.BT_Riveter'"
+   End Object
+   ClassData=(ClassName="BTTask_RunBehaviorDynamic")
+   NodeInstance="/Script/AIModule.BTTask_RunBehaviorDynamic'BTTask_RunBehaviorDynamic_1'"
+   CopySubNodeIndex=13
+   NodePosX=432
+   NodePosY=656
+   NodeGuid=1EB486DF429D070D12DA75BAFA138C10
+   CustomProperties Pin (PinId=3EE2D2B14F466B75839B578EF53BE728,PinName="In",PinType.PinCategory="SingleComposite",PinType.PinSubCategory="",PinType.PinSubCategoryObject=None,PinType.PinSubCategoryMemberReference=(),PinType.PinValueType=(),PinType.ContainerType=None,PinType.bIsReference=False,PinType.bIsConst=False,PinType.bIsWeakPointer=False,PinType.bIsUObjectWrapper=False,PinType.bSerializeAsSinglePrecisionFloat=False,LinkedTo=(BehaviorTreeGraphNode_Composite_10 E53C5A9348E17C5F032BDA86A3317CC7,),PersistentGuid=00000000000000000000000000000000,bHidden=False,bNotConnectable=False,bDefaultValueIsReadOnly=False,bDefaultValueIsIgnored=False,bAdvancedView=False,bOrphanedPin=False,)
+End Object
+Begin Object Class=/Script/BehaviorTreeEditor.BehaviorTreeGraphNode_Service Name="BehaviorTreeGraphNode_Service_9" ExportPath="/Script/BehaviorTreeEditor.BehaviorTreeGraphNode_Service'/Game/Actors_And_Blueprints/AI/Enemies/Enemies/Riveter/BT_Riveter.BT_Riveter:Behavior Tree.BehaviorTreeGraphNode_Service_9'"
+   Begin Object Class=/Game/Actors_And_Blueprints/AI/Enemies/Enemies/BTS_BurstMachineGun.BTS_BurstMachineGun_C Name="BTS_BurstMachineGun_C_1" ExportPath="/Game/Actors_And_Blueprints/AI/Enemies/Enemies/BTS_BurstMachineGun.BTS_BurstMachineGun_C'/Game/Actors_And_Blueprints/AI/Enemies/Enemies/Riveter/BT_Riveter.BT_Riveter:Behavior Tree.BehaviorTreeGraphNode_Service_9.BTS_BurstMachineGun_C_1'"
+   End Object
+   Begin Object Name="BTS_BurstMachineGun_C_1" ExportPath="/Game/Actors_And_Blueprints/AI/Enemies/Enemies/BTS_BurstMachineGun.BTS_BurstMachineGun_C'/Game/Actors_And_Blueprints/AI/Enemies/Enemies/Riveter/BT_Riveter.BT_Riveter:Behavior Tree.BehaviorTreeGraphNode_Service_9.BTS_BurstMachineGun_C_1'"
+      Attack Burst Count=15
+      Attack Burst Speed=0.080000
+      Cone Half Angle in Degrees=1.000000
+      Interval=6.000000
+      TreeAsset="/Script/AIModule.BehaviorTree'/Game/Actors_And_Blueprints/AI/Enemies/Enemies/Riveter/BT_Riveter.BT_Riveter'"
+      ParentNode="/Script/AIModule.BTComposite_Sequence'BehaviorTreeGraphNode_Composite_2.BTComposite_Sequence_1'"
+   End Object
+   ClassData=(AssetName="BTS_BurstMachineGun",GeneratedClassPackage="/Game/Actors_And_Blueprints/AI/Enemies/Enemies/BTS_BurstMachineGun",ClassName="BTS_BurstMachineGun_C")
+   NodeInstance="/Game/Actors_And_Blueprints/AI/Enemies/Enemies/BTS_BurstMachineGun.BTS_BurstMachineGun_C'BTS_BurstMachineGun_C_1'"
+   CopySubNodeIndex=2
+   NodeGuid=34931B124E51E581A698C3B8C4FA7A75
+End Object
+Begin Object Class=/Script/BehaviorTreeEditor.BehaviorTreeGraphNode_Decorator Name="BehaviorTreeGraphNode_Decorator_0" ExportPath="/Script/BehaviorTreeEditor.BehaviorTreeGraphNode_Decorator'/Game/Actors_And_Blueprints/AI/Enemies/Enemies/Riveter/BT_Riveter.BT_Riveter:Behavior Tree.BehaviorTreeGraphNode_Decorator_0'"
+   Begin Object Class=/Script/AIModule.BTDecorator_Blackboard Name="BTDecorator_Blackboard_0" ExportPath="/Script/AIModule.BTDecorator_Blackboard'/Game/Actors_And_Blueprints/AI/Enemies/Enemies/Riveter/BT_Riveter.BT_Riveter:Behavior Tree.BehaviorTreeGraphNode_Decorator_0.BTDecorator_Blackboard_0'"
+   End Object
+   Begin Object Name="BTDecorator_Blackboard_0" ExportPath="/Script/AIModule.BTDecorator_Blackboard'/Game/Actors_And_Blueprints/AI/Enemies/Enemies/Riveter/BT_Riveter.BT_Riveter:Behavior Tree.BehaviorTreeGraphNode_Decorator_0.BTDecorator_Blackboard_0'"
+      CachedDescription="Target is Is Set"
+      BlackboardKey=(SelectedKeyName="Target")
+      TreeAsset="/Script/AIModule.BehaviorTree'/Game/Actors_And_Blueprints/AI/Enemies/Enemies/Riveter/BT_Riveter.BT_Riveter'"
+      ParentNode="/Script/AIModule.BTComposite_Selector'BehaviorTreeGraphNode_Composite_5.BTComposite_Selector_0'"
+   End Object
+   ClassData=(ClassName="BTDecorator_Blackboard")
+   NodeInstance="/Script/AIModule.BTDecorator_Blackboard'BTDecorator_Blackboard_0'"
+   CopySubNodeIndex=2
+   NodeGuid=E567E18D4EB4D39F80FA93B4F13C63D5
+End Object
+Begin Object Class=/Script/BehaviorTreeEditor.BehaviorTreeGraphNode_Decorator Name="BehaviorTreeGraphNode_Decorator_4" ExportPath="/Script/BehaviorTreeEditor.BehaviorTreeGraphNode_Decorator'/Game/Actors_And_Blueprints/AI/Enemies/Enemies/Riveter/BT_Riveter.BT_Riveter:Behavior Tree.BehaviorTreeGraphNode_Decorator_4'"
+   Begin Object Class=/Script/AIModule.BTDecorator_Blackboard Name="BTDecorator_Blackboard_4" ExportPath="/Script/AIModule.BTDecorator_Blackboard'/Game/Actors_And_Blueprints/AI/Enemies/Enemies/Riveter/BT_Riveter.BT_Riveter:Behavior Tree.BehaviorTreeGraphNode_Decorator_4.BTDecorator_Blackboard_4'"
+   End Object
+   Begin Object Name="BTDecorator_Blackboard_4" ExportPath="/Script/AIModule.BTDecorator_Blackboard'/Game/Actors_And_Blueprints/AI/Enemies/Enemies/Riveter/BT_Riveter.BT_Riveter:Behavior Tree.BehaviorTreeGraphNode_Decorator_4.BTDecorator_Blackboard_4'"
+      CachedDescription="Target is Is Not Set"
+      OperationType=1
+      BasicOperation=NotSet
+      BlackboardKey=(SelectedKeyName="Target")
+      FlowAbortMode=Self
+      TreeAsset="/Script/AIModule.BehaviorTree'/Game/Actors_And_Blueprints/AI/Enemies/Enemies/Riveter/BT_Riveter.BT_Riveter'"
+      ParentNode="/Script/AIModule.BTComposite_Selector'BehaviorTreeGraphNode_Composite_5.BTComposite_Selector_0'"
+   End Object
+   ClassData=(ClassName="BTDecorator_Blackboard")
+   NodeInstance="/Script/AIModule.BTDecorator_Blackboard'BTDecorator_Blackboard_4'"
+   CopySubNodeIndex=3
+   NodeGuid=347957444E332B6B245068B1D9964F55
+End Object
+Begin Object Class=/Script/BehaviorTreeEditor.BehaviorTreeGraphNode_Service Name="BehaviorTreeGraphNode_Service_2" ExportPath="/Script/BehaviorTreeEditor.BehaviorTreeGraphNode_Service'/Game/Actors_And_Blueprints/AI/Enemies/Enemies/Riveter/BT_Riveter.BT_Riveter:Behavior Tree.BehaviorTreeGraphNode_Service_2'"
+   Begin Object Class=/Game/Actors_And_Blueprints/AI/Enemies/Enemies/BTS_Find_Target.BTS_Find_Target_C Name="BTS_Find_Target_C_2" ExportPath="/Game/Actors_And_Blueprints/AI/Enemies/Enemies/BTS_Find_Target.BTS_Find_Target_C'/Game/Actors_And_Blueprints/AI/Enemies/Enemies/Riveter/BT_Riveter.BT_Riveter:Behavior Tree.BehaviorTreeGraphNode_Service_2.BTS_Find_Target_C_2'"
+   End Object
+   Begin Object Name="BTS_Find_Target_C_2" ExportPath="/Game/Actors_And_Blueprints/AI/Enemies/Enemies/BTS_Find_Target.BTS_Find_Target_C'/Game/Actors_And_Blueprints/AI/Enemies/Enemies/Riveter/BT_Riveter.BT_Riveter:Behavior Tree.BehaviorTreeGraphNode_Service_2.BTS_Find_Target_C_2'"
+      Cone Half Angle=60.000000
+      TargetRecheckRate=10.000000
+      Interval=0.200000
+      RandomDeviation=0.000000
+      TreeAsset="/Script/AIModule.BehaviorTree'/Game/Actors_And_Blueprints/AI/Enemies/Enemies/Riveter/BT_Riveter.BT_Riveter'"
+      ParentNode="/Script/AIModule.BTComposite_Selector'BehaviorTreeGraphNode_Composite_5.BTComposite_Selector_0'"
+   End Object
+   ClassData=(AssetName="BTS_Find_Target",GeneratedClassPackage="/Game/Actors_And_Blueprints/AI/Enemies/Enemies/BTS_Find_Target",ClassName="BTS_Find_Target_C")
+   NodeInstance="/Game/Actors_And_Blueprints/AI/Enemies/Enemies/BTS_Find_Target.BTS_Find_Target_C'BTS_Find_Target_C_2'"
+   CopySubNodeIndex=5
+   NodeGuid=BC4FED1E4BA5E8D12F00BB8AFB5D88C6
+End Object
+Begin Object Class=/Script/BehaviorTreeEditor.BehaviorTreeGraphNode_Decorator Name="BehaviorTreeGraphNode_Decorator_5" ExportPath="/Script/BehaviorTreeEditor.BehaviorTreeGraphNode_Decorator'/Game/Actors_And_Blueprints/AI/Enemies/Enemies/Riveter/BT_Riveter.BT_Riveter:Behavior Tree.BehaviorTreeGraphNode_Decorator_5'"
+   Begin Object Class=/Script/AIModule.BTDecorator_Loop Name="BTDecorator_Loop_1" ExportPath="/Script/AIModule.BTDecorator_Loop'/Game/Actors_And_Blueprints/AI/Enemies/Enemies/Riveter/BT_Riveter.BT_Riveter:Behavior Tree.BehaviorTreeGraphNode_Decorator_5.BTDecorator_Loop_1'"
+   End Object
+   Begin Object Name="BTDecorator_Loop_1" ExportPath="/Script/AIModule.BTDecorator_Loop'/Game/Actors_And_Blueprints/AI/Enemies/Enemies/Riveter/BT_Riveter.BT_Riveter:Behavior Tree.BehaviorTreeGraphNode_Decorator_5.BTDecorator_Loop_1'"
+      TreeAsset="/Script/AIModule.BehaviorTree'/Game/Actors_And_Blueprints/AI/Enemies/Enemies/Riveter/BT_Riveter.BT_Riveter'"
+      ParentNode="/Script/AIModule.BTComposite_Sequence'BehaviorTreeGraphNode_Composite_0.BTComposite_Sequence_5'"
+   End Object
+   ClassData=(ClassName="BTDecorator_Loop")
+   NodeInstance="/Script/AIModule.BTDecorator_Loop'BTDecorator_Loop_1'"
+   CopySubNodeIndex=8
+   NodeGuid=E6A54055433C063F52F849A11283C366
+End Object
+Begin Object Class=/Script/BehaviorTreeEditor.BehaviorTreeGraphNode_Service Name="BehaviorTreeGraphNode_Service_3" ExportPath="/Script/BehaviorTreeEditor.BehaviorTreeGraphNode_Service'/Game/Actors_And_Blueprints/AI/Enemies/Enemies/Riveter/BT_Riveter.BT_Riveter:Behavior Tree.BehaviorTreeGraphNode_Service_3'"
+   Begin Object Class=/Game/Actors_And_Blueprints/AI/Enemies/Enemies/HeavyDrone/BTS_Investigate.BTS_Investigate_C Name="BTS_Investigate_C_0" ExportPath="/Game/Actors_And_Blueprints/AI/Enemies/Enemies/HeavyDrone/BTS_Investigate.BTS_Investigate_C'/Game/Actors_And_Blueprints/AI/Enemies/Enemies/Riveter/BT_Riveter.BT_Riveter:Behavior Tree.BehaviorTreeGraphNode_Service_3.BTS_Investigate_C_0'"
+   End Object
+   Begin Object Name="BTS_Investigate_C_0" ExportPath="/Game/Actors_And_Blueprints/AI/Enemies/Enemies/HeavyDrone/BTS_Investigate.BTS_Investigate_C'/Game/Actors_And_Blueprints/AI/Enemies/Enemies/Riveter/BT_Riveter.BT_Riveter:Behavior Tree.BehaviorTreeGraphNode_Service_3.BTS_Investigate_C_0'"
+      InvestigateLocation=(SelectedKeyName="InvestigateLocation")
+      TreeAsset="/Script/AIModule.BehaviorTree'/Game/Actors_And_Blueprints/AI/Enemies/Enemies/Riveter/BT_Riveter.BT_Riveter'"
+      ParentNode="/Script/AIModule.BTComposite_Sequence'BehaviorTreeGraphNode_Composite_8.BTComposite_Sequence_7'"
+   End Object
+   ClassData=(AssetName="BTS_Investigate",GeneratedClassPackage="/Game/Actors_And_Blueprints/AI/Enemies/Enemies/HeavyDrone/BTS_Investigate",ClassName="BTS_Investigate_C")
+   NodeInstance="/Game/Actors_And_Blueprints/AI/Enemies/Enemies/HeavyDrone/BTS_Investigate.BTS_Investigate_C'BTS_Investigate_C_0'"
+   CopySubNodeIndex=8
+   NodeGuid=9E100ACA44BA8DAF6FE430B1F1C79EB0
+End Object
+Begin Object Class=/Script/BehaviorTreeEditor.BehaviorTreeGraphNode_Decorator Name="BehaviorTreeGraphNode_Decorator_1" ExportPath="/Script/BehaviorTreeEditor.BehaviorTreeGraphNode_Decorator'/Game/Actors_And_Blueprints/AI/Enemies/Enemies/Riveter/BT_Riveter.BT_Riveter:Behavior Tree.BehaviorTreeGraphNode_Decorator_1'"
+   Begin Object Class=/Script/AIModule.BTDecorator_Blackboard Name="BTDecorator_Blackboard_3" ExportPath="/Script/AIModule.BTDecorator_Blackboard'/Game/Actors_And_Blueprints/AI/Enemies/Enemies/Riveter/BT_Riveter.BT_Riveter:Behavior Tree.BehaviorTreeGraphNode_Decorator_1.BTDecorator_Blackboard_3'"
+   End Object
+   Begin Object Name="BTDecorator_Blackboard_3" ExportPath="/Script/AIModule.BTDecorator_Blackboard'/Game/Actors_And_Blueprints/AI/Enemies/Enemies/Riveter/BT_Riveter.BT_Riveter:Behavior Tree.BehaviorTreeGraphNode_Decorator_1.BTDecorator_Blackboard_3'"
+      CachedDescription="Target is Is Set"
+      BlackboardKey=(SelectedKeyName="Target")
+      TreeAsset="/Script/AIModule.BehaviorTree'/Game/Actors_And_Blueprints/AI/Enemies/Enemies/Riveter/BT_Riveter.BT_Riveter'"
+      ParentNode="/Script/AIModule.BTComposite_Selector'BehaviorTreeGraphNode_Composite_5.BTComposite_Selector_0'"
+   End Object
+   ClassData=(ClassName="BTDecorator_Blackboard")
+   NodeInstance="/Script/AIModule.BTDecorator_Blackboard'BTDecorator_Blackboard_3'"
+   CopySubNodeIndex=11
+   NodeGuid=D49998054E23144B908BCCB76B597E43
+End Object
+Begin Object Class=/Script/BehaviorTreeEditor.BehaviorTreeGraphNode_Service Name="BehaviorTreeGraphNode_Service_11" ExportPath="/Script/BehaviorTreeEditor.BehaviorTreeGraphNode_Service'/Game/Actors_And_Blueprints/AI/Enemies/Enemies/Riveter/BT_Riveter.BT_Riveter:Behavior Tree.BehaviorTreeGraphNode_Service_11'"
+   Begin Object Class=/Game/Actors_And_Blueprints/AI/Enemies/Enemies/BTS_Scan.BTS_Scan_C Name="BTS_Scan_C_0" ExportPath="/Game/Actors_And_Blueprints/AI/Enemies/Enemies/BTS_Scan.BTS_Scan_C'/Game/Actors_And_Blueprints/AI/Enemies/Enemies/Riveter/BT_Riveter.BT_Riveter:Behavior Tree.BehaviorTreeGraphNode_Service_11.BTS_Scan_C_0'"
+   End Object
+   Begin Object Name="BTS_Scan_C_0" ExportPath="/Game/Actors_And_Blueprints/AI/Enemies/Enemies/BTS_Scan.BTS_Scan_C'/Game/Actors_And_Blueprints/AI/Enemies/Enemies/Riveter/BT_Riveter.BT_Riveter:Behavior Tree.BehaviorTreeGraphNode_Service_11.BTS_Scan_C_0'"
+      TreeAsset="/Script/AIModule.BehaviorTree'/Game/Actors_And_Blueprints/AI/Enemies/Enemies/Riveter/BT_Riveter.BT_Riveter'"
+      ParentNode="/Script/AIModule.BTComposite_Sequence'BehaviorTreeGraphNode_Composite_10.BTComposite_Sequence_0'"
+   End Object
+   ClassData=(AssetName="BTS_Scan",GeneratedClassPackage="/Game/Actors_And_Blueprints/AI/Enemies/Enemies/BTS_Scan",ClassName="BTS_Scan_C")
+   NodeInstance="/Game/Actors_And_Blueprints/AI/Enemies/Enemies/BTS_Scan.BTS_Scan_C'BTS_Scan_C_0'"
+   CopySubNodeIndex=11
+   NodeGuid=FD5667AD47C1E83523D9798CC33BD18C
+End Object

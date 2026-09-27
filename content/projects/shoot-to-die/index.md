@@ -384,7 +384,9 @@ This philosophy extended directly into our weapon design. Instead of a simple cl
 * Reloading requires manually ejecting casings and loading bullets one by one. 
 
 <div style="margin-bottom: 0.5rem; border-radius: 1rem; overflow: hidden; border: 1px solid rgba(255, 255, 255, 0.1); box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
-  <img src="ShootToDieReload.gif" alt="Shoot To Die Prototype" style="width: 100%; height: auto; display: block;" />
+  <video autoplay loop muted playsinline style="width: 100%; height: auto; display: block; margin: 0 !important;">
+    <source src="ShootToDieReload.webm" type="video/webm">
+  </video>
 </div>
 
 ## Juggling Dice!

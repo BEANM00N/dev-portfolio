@@ -1,7 +1,7 @@
 ---
 title: SOL CONSTRUCT
 date: 2026-06-14
-summary: Pilot a Scrappy Aerial Combat Rig in a Rusty Survival Roguelite
+summary: Pilot a Scrappy Aerial Combat Rig in a Rusty Survival Metroidvania Adventure
   <ul class="card-achievements">
     <li><span class="keyword-red">Top to Bottom Weapon System;</span> FLECS Projectiles, Procedural Recoil, Accuracy & Bloom, Weapon Meshes, Rigs & AnimBP's.</li>
     <li><span class="keyword-red">Flight-based AI Ecosystem;</span> A* Pathfinding, EQS, Behaviour Trees, Enemy Meshes, Rigs & Procedural AnimBP's.</li>
@@ -243,6 +243,91 @@ toc: true
   }
 
   /* ========================================== */
+  /* GLASS IMAGE CAROUSEL CSS                   */
+  /* ========================================== */
+  .clean-carousel {
+    display: flex !important;
+    gap: 1.5rem !important;
+    overflow-x: auto !important;
+    padding: 1rem 0 !important;
+    scroll-snap-type: x mandatory !important;
+    scrollbar-width: thin;
+    scrollbar-color: #e05e5e rgba(255, 255, 255, 0.05);
+  }
+
+  .clean-carousel a,
+  .clean-carousel > p {
+    flex: 0 0 80% !important;
+    max-width: 550px !important;
+    flex-shrink: 0 !important;
+    scroll-snap-align: center !important;
+    text-decoration: none !important;
+    display: flex !important;
+    flex-direction: column !important;
+    margin: 0 !important;
+  }
+
+  .clean-carousel img {
+    width: 100% !important;
+    height: 350px !important;
+    object-fit: cover !important;
+    border-radius: 1rem !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5) !important;
+    transition: transform 0.2s ease, border-color 0.2s ease !important;
+    margin: 0 !important;
+  }
+
+  .clean-carousel img:hover {
+    transform: scale(1.02) !important;
+    border-color: #e05e5e !important;
+  }
+
+  .clean-carousel-caption {
+    text-align: center;
+    font-size: 0.85rem;
+    color: #94a3b8;
+    font-style: italic;
+    margin-top: 0.75rem;
+  }
+
+  /* ========================================== */
+  /* GLOBAL GLASS LIGHTBOX OVERRIDE             */
+  /* ========================================== */
+  #lightbox-modal {
+    position: fixed !important;
+    z-index: 999999 !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100vw !important;
+    height: 100vh !important;
+    background-color: rgba(15, 23, 42, 0.88) !important;
+    backdrop-filter: blur(12px) !important;
+    -webkit-backdrop-filter: blur(12px) !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s ease-in-out;
+  }
+
+  #lightbox-modal.lightbox-visible {
+    opacity: 1 !important;
+    pointer-events: auto !important;
+  }
+
+  #lightbox-modal img,
+  #lightbox-modal video {
+    max-width: 85vw !important;
+    max-height: 80vh !important;
+    border-radius: 1rem !important;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.8) !important;
+    border: 1px solid rgba(255, 255, 255, 0.15) !important;
+    object-fit: contain !important;
+  }
+
+  /* ========================================== */
   /* COLLAPSIBLE CODE BLOCKS CSS                */
   /* ========================================== */
   details.code-dropdown {
@@ -282,43 +367,11 @@ toc: true
     font-size: 0.8rem !important;
     line-height: 1.5 !important;
   }
-  .clean-carousel {
-    display: flex;
-    gap: 1.5rem;
-    overflow-x: auto;
-    padding: 1rem 0;
-    scroll-snap-type: x mandatory;
-    scrollbar-width: thin;
-    scrollbar-color: #e05e5e rgba(255, 255, 255, 0.05);
-  }
-  .clean-carousel a {
-    flex: 0 0 85%;
-    max-width: 600px;
-    scroll-snap-align: center;
-    text-decoration: none !important;
-    display: flex;
-    flex-direction: column;
-  }
-  .clean-carousel img {
-    width: 100%;
-    height: 350px;
-    object-fit: cover;
-    border-radius: 1rem;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-    transition: transform 0.2s ease, border-color 0.2s ease;
-    margin: 0 !important;
-  }
-  .clean-carousel img:hover {
-    transform: scale(1.02);
-    border-color: #e05e5e;
-  }
-  .clean-carousel-caption {
-    text-align: center;
-    font-size: 0.85rem;
-    color: #94a3b8;
-    font-style: italic;
-    margin-top: 0.75rem;
+
+  article p, 
+  article li {
+    font-size: 0.95rem !important;
+    line-height: 1.6 !important;
   }
 
   /* ========================================== */
@@ -342,7 +395,8 @@ toc: true
     article h2 { font-size: 1.3rem !important; }
     article h3 { font-size: 1.15rem !important; }
 
-    .clean-carousel a {
+    .clean-carousel a,
+    .clean-carousel > p {
       flex: 0 0 95% !important; 
     }
     .clean-carousel img {
@@ -353,7 +407,7 @@ toc: true
 
 <script>
   document.addEventListener('DOMContentLoaded', () => {
-    // Table of Contents Scroll Highlighting
+    // 1. Table of Contents Scroll Highlighting
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         const id = entry.target.getAttribute('id');
@@ -436,7 +490,7 @@ toc: true
 </script>
 
 <div class="tony-blurb">
-A high stakes SinglePlayer Survival Roguelite. Pilot a sentient flight combat rig built for survival in a decaying metal world. Obliterate your foes, harvest their scrap, and rebuild to survive.</div>
+A high stakes Flight Metroidvania. Pilot a sentient flight combat rig built for survival in a decaying metal world. Obliterate your foes, harvest their scrap, and rebuild to survive.</div>
 
 <div class="tony-specs-container">
   <div class="tony-spec-row">
@@ -469,6 +523,7 @@ A high stakes SinglePlayer Survival Roguelite. Pilot a sentient flight combat ri
     <li><span class="keyword-red">Custom Enemy ecosystem</span> with air and ground units.</li>
     <li>Core player flight, built with a tonne of playtesting, removing disorienting axis to create an intuitive flight model, using a custom replicatable movement component</li>
     <li>A super optimised projectile system using the <span class="keyword-red">FLECS C++ library</span>.</li>
+    <li>Co-Designed <span class="keyword-red">Combat encounters, flow, and requirements</span>, fully implemented in Blueprints.</li>
     <li>An <span class="keyword-red">Async Pathfinding and Utility EQS</span> implementation for dynamic flight awareness.</li>
     <li>Developed an internal Plugin for procedural texture generation.</li>
     <li>Full enemy implementation, including behavior trees, modular skeleton frames, animation BPs, and health/armor components.</li>
@@ -506,60 +561,48 @@ A high stakes SinglePlayer Survival Roguelite. Pilot a sentient flight combat ri
 
 SOL CONSTRUCT is the culmination of nearly 3 years of professional game development, encompassing all the triumphs, failures, and harsh lessons learned along the way. After oiginally setting out to make a flying game ([SOL DRIFT](http://localhost:1313/dev-portfolio/projects/sol-drift/)), we explored numerous genres before circling back to our roots, but this time with a hardened design philosophy.
 
-As a small team, we had to evaluate every mechanic on a "Bang for Buck" basis. We realised early on that the highest degree of excitement and variation in our gameplay loop would come directly from our enemies. No matter our capacity for level design or weapon crafting, our core pillar became creating AI that dynamically exploits and challenges the player's actions. 
+As a small team, we had to evaluate every mechanic on a "Bang for Buck" basis. We realised early on that the highest degree of excitement and variation in our gameplay loop would come directly from our enemies. No matter our capacity for level design or weapon crafting, our core pillar became creating AI that dynamically exploits and challenges the player's actions. The sandbox could then be balanced and built upon to get the most out of those encounters.
 
-## Iterating the Player Flight Model
+## Persistent Quest Subsystem
 
-During the first few months of development, player movement was the most heavily debated feature. I originally implemented Gyro Aim and full 6 Degrees of Freedom (6DOF). However, playtests revealed it was even more polarising than Marmite. Some players really grasped it, but many simply spun out. We realised that trying to cram standard flight sim conventions into an arcade action space was actively fighting the player’s intuition, at least in our game. [Delivery Complete](https://store.steampowered.com/app/3639060/DELIVERY_MUST_COMPLETE/) actually managed to implement it in a way that looks so cool, and frankly looks way more satisfying than what we had.
+Bespoke system for our Quests, left flexible enough to handle any challenges, achievements and secret quests too! This was a genuine relief to make - Unreal State Trees are just too unwieldly for the team's needs, and didn't allow for the Data-driven approach that we enjoy using. This solution allowed everyone to edit quests on the fly inside a custom graph editor, or in datatables, or even in excel!! I was heavily inspired by the Template and Instance design philosophy when tackling this one, and jinyuliao's Generic Graph plugin made it incredibly easy to expose all this into a workable and digestible format.
+
+<div style="margin-bottom: 0.5rem; border-radius: 1rem; overflow: hidden; border: 1px solid rgba(255, 255, 255, 0.1); box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
+  <img src="QuestGraph.webp" class="zoomable" alt="Quest Graph" style="width: 100%; height: auto; display: block; margin: 0 !important;" />
+</div>
+
+The Graph has a simple button that allows designers to bake their nodes down into a csv format, which then populates an in-engine Datatable, which in turn fules the Subsystem that takes care of everything. You can take a peak at some of the Susbsystem code below!
+
+{{< code src="QuestSubsystem.h" lang="cpp" title="QuestSubsystem.h" >}}
+{{< code src="QuestSubsystem.cpp" lang="cpp" title="QuestSubsystem.cpp" >}}
+
+Beyond the perforance and organisation benefits of this solution, full customisation is still available through UObjects, allowing any quest step to inherit a totally unique object based off the parent class which just listens to broadcasts (like an enemy dying) offering total flexibility of when a player completes a quest, picks up an item or two, maybe spawn a boss if too many are collected, etc. A lot of our gameplay systems use Gameplay Tags, so creating a solution that fits the dev environment that we're already used to was really important. This has led a near frictionless experience creating quests with the team. 
 
 <div style="margin-bottom: 0.5rem; border-radius: 1rem; overflow: hidden; border: 1px solid rgba(255, 255, 255, 0.1); box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
   <video autoplay loop muted playsinline style="width: 100%; height: auto; display: block; margin: 0 !important;">
-    <source src="Module Spin Sped Up.webm" type="video/webm">
+    <source src="QuestDebugger.webm" type="video/webm">
   </video>
 </div>
 
-My solution was to strip it back. I removed roll and the ability to fly completely upside down, pivoting to a movement style akin to Minecraft’s creative mode or Interplay's Descent. While it was tough to say goodbye to true 6DOF, this restriction immediately gave players total, intuitive control over their positioning. I matched this mechanically with a modular ship design. A central frame where wings, thrusters, and turrets attach, heavily utilising procedural animation to make the craft feel responsive and weighty. You can read more about the new Frame and Modules in my Blog post [Creating the LFTR](https://josh-mccamley.com/blog/creating-the-lftr/)!
-
-You can have a peep on what my anim graph looks like. Nothing too complex, but it adds a lot of juice:
-<details class="code-dropdown">
-  <summary><i class="fas fa-code"></i> Player Mesh Anim BP</summary>
-{{< blueprint src="LFTR Frame Anim BP.txt" >}}
-</details>
+I also implemented a debug menu for super fast quest testing and progression, as well as interation on those custom scenarios I mentioned earlier!
 
 ## Designing a Flying Enemy Ecosystem
+
+<div style="margin-bottom: 0.5rem; border-radius: 1rem; overflow: hidden; border: 1px solid rgba(255, 255, 255, 0.1); box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
+  <video autoplay loop muted playsinline style="width: 100%; height: auto; display: block; margin: 0 !important;">
+    <source src="Enemygangspedup.webm" type="video/webm">
+  </video>
+</div>
 
 Designing flying enemies is a completely different beast compared to grounded AI. Because they have an entire Z axis of open space to utilise, restricting them and giving them purpose was my biggest design hurdle. To solve this, I modeled our enemy roster after chess pieces (definitely inspired by DOOM!), categorised by their effective engagement distances: **Stationary, Long Range, Medium, and Close Range**.
 
 <div class="clean-carousel">
-  <a data-fancybox="gallery" href="riveter.png" data-caption="The Riveter applying localized pressure.">
-    <img src="riveter.png" alt="Riveter">
-    <div class="clean-carousel-caption">The Riveter applying localized pressure.</div>
-  </a>
-
-  <a data-fancybox="gallery" href="rocket drone.png" data-caption="High-mobility Rocket Drone for explosive interception.">
-    <img src="rocket drone.png" alt="Rocket Drone">
-    <div class="clean-carousel-caption">High-mobility Rocket Drone for explosive interception.</div>
-  </a>
-
-  <a data-fancybox="gallery" href="Cannon LFTR.png" data-caption="Heavy artillery Cannon LFTR engaging from a distance.">
-    <img src="Cannon LFTR.png" alt="Cannon LFTR">
-    <div class="clean-carousel-caption">Heavy artillery Cannon LFTR engaging from a distance.</div>
-  </a>
-
-  <a data-fancybox="gallery" href="Saw.png" data-caption="The terrifying close-range Saw enemy designed to embed and disable.">
-    <img src="Saw.png" alt="Saw Enemy">
-    <div class="clean-carousel-caption">The terrifying close-range Saw enemy designed to embed and disable.</div>
-  </a>
-
-  <a data-fancybox="gallery" href="sentry.png" data-caption="The aerial Sentry unit patrolling the perimeter.">
-    <img src="sentry.png" alt="Sentry">
-    <div class="clean-carousel-caption">The aerial Sentry unit patrolling the perimeter.</div>
-  </a>
-
-  <a data-fancybox="gallery" href="HeavyCrawler.png" data-caption="The heavily armored Crawler unit.">
-    <img src="HeavyCrawler.png" alt="Heavy Crawler">
-    <div class="clean-carousel-caption">The heavily armored Crawler unit.</div>
-  </a>
+  <a data-fancybox="gallery" href="riveter.webp" data-caption="The Riveter applying localized pressure."><img src="riveter.webp" alt="Riveter"><div class="clean-carousel-caption">The Riveter applying localised pressure.</div></a>
+  <a data-fancybox="gallery" href="rocket%20drone.webp" data-caption="High-mobility Rocket Drone for explosive interception."><img src="rocket%20drone.webp" alt="Rocket Drone"><div class="clean-carousel-caption">High mobility Rocket Drone for explosive interception.</div></a>
+  <a data-fancybox="gallery" href="Cannon%20LFTR.webp" data-caption="Heavy artillery Cannon LFTR engaging from a distance."><img src="Cannon%20LFTR.webp" alt="Cannon LFTR"><div class="clean-carousel-caption">Heavy artillery Cannon LFTR engaging from a distance.</div></a>
+  <a data-fancybox="gallery" href="Saw.webp" data-caption="The terrifying close-range Saw enemy designed to embed and disable."><img src="Saw.webp" alt="Saw Enemy"><div class="clean-carousel-caption">Close range Saw enemy designed to embed and disable.</div></a>
+  <a data-fancybox="gallery" href="sentry.webp" data-caption="The aerial Sentry unit patrolling the perimeter."><img src="sentry.webp" alt="Sentry"><div class="clean-carousel-caption">AA Sentry unit.</div></a>
+  <a data-fancybox="gallery" href="HeavyCrawler.webp" data-caption="The heavily armored Crawler unit."><img src="HeavyCrawler.webp" alt="Heavy Crawler"><div class="clean-carousel-caption">Heavily armored Crawler unit.</div></a>
 </div>
 
 I also did the 3D modelling for these guys, trying to maintain as many reusable and modular parts.
@@ -570,6 +613,9 @@ For example:
 * **Long-range enemies** are designed to encourage and exploit the player's dash.
 * **Short-range enemies** force the player to constantly reconsider their spatial positioning.
 
+Here's a snippet from one of our early enemies, capable of managing their own awareness (Sight, Noise, Health), Pathfinding and Attacks:
+
+
 <div style="margin-bottom: 0.5rem; border-radius: 1rem; overflow: hidden; border: 1px solid rgba(255, 255, 255, 0.1); box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
   <video autoplay loop muted playsinline style="width: 100%; height: auto; display: block; margin: 0 !important;">
     <source src="Meleedronespedup.webm" type="video/webm">
@@ -579,9 +625,7 @@ For example:
 Because we always wanted a minimum level of enemy density in encounters, these units had to complement each other. They don't necessarily "communicate" via code, but their roles naturally synergise. For example, I recently implemented a close range "Saw" enemy that embeds itself in the player, dealing tick damage but, more importantly, *disabling the player's dash and dodge*. If left unchecked, this allows the Long Range sniper enemies (who usually miss a dashing player) to easily land devastating hits. This encourages the player to approach encounters strategically, prioritising targets based on the specific restrictions their synergy imposes.
 
 <div style="margin-bottom: 0.5rem; border-radius: 1rem; overflow: hidden; border: 1px solid rgba(255, 255, 255, 0.1); box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
-  <video autoplay loop muted playsinline style="width: 100%; height: auto; display: block; margin: 0 !important;">
-    <source src="Enemygangspedup.webm" type="video/webm">
-  </video>
+  <img src="RiveterBT.webp" class="zoomable" alt="Quest Graph" style="width: 100%; height: auto; display: block; margin: 0 !important;" />
 </div>
 
 ## Frankensteined Pathfinding & EQS
@@ -605,12 +649,30 @@ To bring these designs to life, the AI needed to understand 3D space. I frankens
 **Volumetric grid Generation:** The query generates a large 3D spherical grid of potential movement locations (a 3000-unit radius with 500-unit spacing), giving the flying AI a full 6 Degrees of Freedom (6DOF) spatial canvas to evaluate.
 
 <div style="margin-bottom: 0.5rem; border-radius: 1rem; overflow: hidden; border: 1px solid rgba(255, 255, 255, 0.1); box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
-  <img src="3D Volume.webp" class="zoomable" alt="Module Randomiser Render" style="width: 100%; height: auto; display: block; margin: 0 !important;" />
+  <img src="3D Volume.webp" class="zoomable" alt="Module Randomiser Render" style="width: 50%; height: auto; display: block; margin: 0 auto !important;" />
 </div>
 
 **Environmental & Range Filtering:** It utilizes a boolean Trace test to immediately cull any points obstructed by world geometry (ensuring a clear line of sight to the player) alongside a strict Distance filter to discard points outside the enemy's effective combat range.
 
 **"Smart" Positioning via Dot Product:** The remaining viable points are scored using an Inverse Linear Distance modifier and a Dot Product test. This mathematically evaluates points relative to the player's facing direction, driving the AI to intelligently flank or prioritize specific angles of attack rather than simply flying straight at the target.
+</details>
+
+## Iterating the Player Flight Model
+
+During the first few months of development, player movement was the most heavily debated feature. I originally implemented Gyro Aim and full 6 Degrees of Freedom (6DOF). However, playtests revealed it was even more polarising than Marmite. Some players really grasped it, but many simply spun out. We realised that trying to cram standard flight sim conventions into an arcade action space was actively fighting the player’s intuition, at least in our game. [Delivery Complete](https://store.steampowered.com/app/3639060/DELIVERY_MUST_COMPLETE/) actually managed to implement it in a way that looks so cool, and frankly looks way more satisfying than what we had.
+
+<div style="margin-bottom: 0.5rem; border-radius: 1rem; overflow: hidden; border: 1px solid rgba(255, 255, 255, 0.1); box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
+  <video autoplay loop muted playsinline style="width: 100%; height: auto; display: block; margin: 0 !important;">
+    <source src="Module Spin Sped Up.webm" type="video/webm">
+  </video>
+</div>
+
+My solution was to strip it back. I removed roll and the ability to fly completely upside down, pivoting to a movement style akin to Minecraft’s creative mode or Interplay's Descent. While it was tough to say goodbye to true 6DOF, this restriction immediately gave players total, intuitive control over their positioning. I matched this mechanically with a modular ship design. A central frame where wings, thrusters, and turrets attach, heavily utilising procedural animation to make the craft feel responsive and weighty. You can read more about the new Frame and Modules in my Blog post [Creating the LFTR](https://josh-mccamley.com/blog/creating-the-lftr/)!
+
+You can have a peep on what my anim graph looks like. Nothing too complex, but it adds a lot of juice:
+<details class="code-dropdown">
+  <summary><i class="fas fa-code"></i> Player Mesh Anim BP</summary>
+{{< blueprint src="LFTR Frame Anim BP.txt" >}}
 </details>
 
 ## Streamlining the Pipeline (ProcTex Plugin)

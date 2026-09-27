@@ -23,12 +23,13 @@ tags:
 image:
   focal_point: "Top"
   preview_only: true
+toc: true
 ---
 
 <style>
   /* 1. Set the fixed, darkened background image for the whole page */
   body {
-    background-image: linear-gradient(rgba(15, 23, 42, 0.55), rgba(15, 23, 42, 0.85)), url('ProcTex.jpg') !important;
+    background-image: linear-gradient(rgba(15, 23, 42, 0.55), rgba(15, 23, 42, 0.85)), url('ProcTex.webp') !important;
     background-size: cover !important;
     background-attachment: fixed !important;
     background-position: top !important;
@@ -45,7 +46,7 @@ image:
     margin-top: 3rem;
     margin-bottom: 3rem;
     width: 100% !important;
-    max-width: 900px !important; /* Expanded from the theme's default ~700px */
+    max-width: 900px !important;
     margin-left: auto !important;
     margin-right: auto !important;
   }
@@ -113,25 +114,22 @@ image:
   /* TONY'S HIGHLIGHTS & TAGS CSS               */
   /* ========================================== */
 
-  /* Hide the native Hugo Blox tags block at the very bottom */
   .article-tags, 
   .pub-tags, 
   div:has(> a[href*="/tags/"]) {
     display: none !important;
   }
 
-  /* Indented Blurb Styling */
   .tony-blurb {
     border-left: 4px solid #e05e5e;
     padding-left: 1.5rem;
     margin: 1.5rem 0 2.5rem 0;
-    font-size: 1.15rem;
+    font-size: 1.05rem !important;
     line-height: 1.6;
     color: #94a3b8;
     font-style: italic;
   }
 
-  /* Specs & Tech Tag Rows */
   .tony-specs-container {
     display: flex;
     flex-direction: column;
@@ -153,7 +151,6 @@ image:
     color: #cbd5e1;
   }
 
-  /* Custom Pill Buttons */
   .tony-pill {
     padding: 0.25rem 0.8rem;
     border-radius: 0.35rem;
@@ -173,7 +170,6 @@ image:
     border: 1px solid rgba(255, 255, 255, 0.15);
   }
 
-  /* Highlights Card Box */
   .tony-highlights-card {
     background-color: rgba(30, 41, 59, 0.2);
     border: 2px solid rgba(224, 94, 94, 0.35);
@@ -214,108 +210,99 @@ image:
     margin-bottom: 0 !important;
   }
 
-  /* Specific Keyword Highlight Text */
   .keyword-red {
     color: #e05e5e;
     font-weight: 600;
   }
 
   /* ========================================== */
-  /* GLASS IMAGE CAROUSEL CSS                   */
+  /* CLEAN IMAGE CAROUSEL CSS                   */
   /* ========================================== */
-  .glass-carousel {
-    display: flex;
-    gap: 1rem;
-    overflow-x: auto;
-    padding-bottom: 1rem;
-    margin-top: 2rem;
-    margin-bottom: 2rem;
-    scroll-snap-type: x mandatory;
+  .clean-carousel {
+    display: flex !important;
+    gap: 1.5rem !important;
+    overflow-x: auto !important;
+    padding: 1rem 0 !important;
+    scroll-snap-type: x mandatory !important;
     scrollbar-width: thin;
     scrollbar-color: #e05e5e rgba(255, 255, 255, 0.05);
   }
 
-  .glass-carousel::-webkit-scrollbar {
-    height: 8px;
-  }
-  .glass-carousel::-webkit-scrollbar-track {
-    background: rgba(255, 255, 255, 0.05);
-    border-radius: 4px;
-  }
-  .glass-carousel::-webkit-scrollbar-thumb {
-    background: #e05e5e;
-    border-radius: 4px;
+  .clean-carousel a,
+  .clean-carousel > p,
+  .clean-carousel > img {
+    flex: 0 0 80% !important;
+    max-width: 550px !important;
+    flex-shrink: 0 !important;
+    scroll-snap-align: center !important;
+    text-decoration: none !important;
+    display: flex !important;
+    flex-direction: column !important;
+    margin: 0 !important;
   }
 
-  .glass-carousel img {
-    height: 300px; 
-    width: auto;
-    border-radius: 0.8rem;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-    scroll-snap-align: start;
-    flex-shrink: 0;
-    object-fit: cover;
-    background-color: rgba(0, 0, 0, 0.5); 
+  .clean-carousel img {
+    width: 100% !important;
+    height: 350px !important;
+    object-fit: cover !important;
+    border-radius: 1rem !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5) !important;
+    transition: transform 0.2s ease, border-color 0.2s ease !important;
+    margin: 0 !important;
     cursor: pointer;
-    transition: transform 0.2s ease, border-color 0.2s ease;
   }
 
-  .glass-carousel img:hover {
-    transform: scale(1.02);
-    border-color: #e05e5e;
+  .clean-carousel img:hover {
+    transform: scale(1.02) !important;
+    border-color: #e05e5e !important;
+  }
+
+  .clean-carousel-caption {
+    text-align: center;
+    font-size: 0.85rem;
+    color: #94a3b8;
+    font-style: italic;
+    margin-top: 0.75rem;
   }
 
   /* ========================================== */
-  /* EXPANDED IMAGE MODAL (LIGHTBOX) CSS        */
+  /* GLOBAL GLASS LIGHTBOX OVERRIDE             */
   /* ========================================== */
   #lightbox-modal {
-    position: fixed;
-    z-index: 9999;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(15, 23, 42, 0.95);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    position: fixed !important;
+    z-index: 999999 !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100vw !important;
+    height: 100vh !important;
+    background-color: rgba(15, 23, 42, 0.88) !important;
+    backdrop-filter: blur(12px) !important;
+    -webkit-backdrop-filter: blur(12px) !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
     opacity: 0;
     pointer-events: none;
-    transition: opacity 0.3s ease;
+    transition: opacity 0.2s ease-in-out;
   }
 
   #lightbox-modal.lightbox-visible {
-    opacity: 1;
-    pointer-events: auto;
+    opacity: 1 !important;
+    pointer-events: auto !important;
   }
 
-  .lightbox-content {
-    max-width: 90%;
-    max-height: 90%;
-    border-radius: 1rem;
-    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.7);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+  #lightbox-modal img,
+  #lightbox-modal video {
+    max-width: 85vw !important;
+    max-height: 80vh !important;
+    border-radius: 1rem !important;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.8) !important;
+    border: 1px solid rgba(255, 255, 255, 0.15) !important;
+    object-fit: contain !important;
   }
 
-  .lightbox-close {
-    position: absolute;
-    top: 30px;
-    right: 40px;
-    color: white;
-    font-size: 40px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: color 0.2s ease;
-  }
-
-  .lightbox-close:hover {
-    color: #e05e5e;
-  }
-
-/* ========================================== */
+  /* ========================================== */
   /* COLLAPSIBLE CODE BLOCKS CSS                */
   /* ========================================== */
   details.code-dropdown {
@@ -346,60 +333,52 @@ image:
     border-radius: 0 0 0.5rem 0.5rem;
   }
 
-  /* --- NEW: Force darker background & smaller text --- */
   details.code-dropdown .highlight pre {
-    background-color: rgba(10, 15, 24, 0.95) !important; /* Deep dark background */
+    background-color: rgba(10, 15, 24, 0.95) !important;
     padding: 1.25rem !important;
   }
 
   details.code-dropdown .highlight code {
-    font-size: 0.8rem !important; /* Shrinks the text down */
+    font-size: 0.8rem !important;
     line-height: 1.5 !important;
   }
 
-  /* --- NEW: Shrink general base text and lists --- */
   article p, 
   article li {
-    font-size: 0.95rem !important; /* Drops it slightly below engine standard */
-    line-height: 1.6 !important;   /* Keeps the spacing clean and highly readable */
+    font-size: 0.95rem !important;
+    line-height: 1.6 !important;
   }
 
-  /* --- NEW: Shrink the top intro blurb proportionately --- */
-  .tony-blurb {
-    font-size: 1.05rem !important; /* Scaled down slightly from 1.15rem */
+  /* ========================================== */
+  /* MOBILE RESPONSIVENESS PATCH                */
+  /* ========================================== */
+  @media (max-width: 768px) {
+    article {
+      padding: 1rem 0.5rem !important;
+      margin-top: 0.5rem !important;
+      margin-bottom: 0.5rem !important;
+      border-radius: 0.75rem !important;
+    }
+
+    .tony-blurb {
+      padding-left: 0.75rem !important;
+      margin-bottom: 1.25rem !important;
+      font-size: 0.95rem !important;
+    }
+    
+    article h1 { font-size: 1.7rem !important; }
+    article h2 { font-size: 1.3rem !important; }
+    article h3 { font-size: 1.15rem !important; }
+
+    .clean-carousel a,
+    .clean-carousel > p,
+    .clean-carousel > img {
+      flex: 0 0 95% !important; 
+    }
+    .clean-carousel img {
+      height: 220px !important;  
+    }
   }
-
-        /* ========================================== */
-          /* MOBILE RESPONSIVENESS PATCH                */
-          /* ========================================== */
-          @media (max-width: 768px) {
-            /* Maximize horizontal screen real estate */
-            article {
-              padding: 1rem 0.5rem !important;  /* Tighter padding: 1rem top/bottom, 0.5rem left/right */
-              margin-top: 0.5rem !important;    /* Tighter top margin */
-              margin-bottom: 0.5rem !important; /* Tighter bottom margin */
-              border-radius: 0.75rem !important;/* Slightly sharper corners for maximum space */
-            }
-
-            /* Keep the rest of your mobile rules here... */
-            .tony-blurb {
-              padding-left: 0.75rem !important;
-              margin-bottom: 1.25rem !important;
-              font-size: 0.95rem !important;
-            }
-            
-            article h1 { font-size: 1.7rem !important; }
-            article h2 { font-size: 1.3rem !important; }
-            article h3 { font-size: 1.15rem !important; }
-
-            .clean-carousel a {
-              flex: 0 0 95% !important; 
-            }
-            .clean-carousel img {
-              height: 220px !important;  
-            }
-          }
-
 </style>
 
 <script>
@@ -419,35 +398,70 @@ image:
 
     document.querySelectorAll('article h2, article h3').forEach(h => observer.observe(h));
 
-    // 2. Lightbox Modal Logic
-    const modal = document.getElementById('lightbox-modal');
-    const modalImg = document.getElementById('lightbox-img');
-    const closeBtn = document.querySelector('.lightbox-close');
-    const carouselImages = document.querySelectorAll('.glass-carousel img');
+    // 2. Auto-Injecting Lightbox (Handles both Images & Videos)
+    let modal = document.getElementById('lightbox-modal');
+    let modalImg = document.getElementById('lightbox-img');
+    let modalVideo = document.getElementById('lightbox-video');
 
-    // Open modal on image click
-    carouselImages.forEach(img => {
-      img.addEventListener('click', () => {
-        modal.classList.add('lightbox-visible');
+    if (!modal) {
+      modal = document.createElement('div');
+      modal.id = 'lightbox-modal';
+
+      modalImg = document.createElement('img');
+      modalImg.id = 'lightbox-img';
+
+      modalVideo = document.createElement('video');
+      modalVideo.id = 'lightbox-video';
+      modalVideo.autoplay = true;
+      modalVideo.loop = true;
+      modalVideo.muted = true;
+      modalVideo.playsInline = true;
+      modalVideo.controls = true;
+
+      modal.appendChild(modalImg);
+      modal.appendChild(modalVideo);
+      document.body.appendChild(modal);
+    }
+
+    // Attach click events to all article IMAGES
+    document.querySelectorAll('article img').forEach(img => {
+      img.style.cursor = 'pointer';
+      img.addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        modalVideo.style.display = 'none';
+        modalVideo.pause();
         modalImg.src = img.src;
+        modalImg.style.display = 'block';
+        modal.classList.add('lightbox-visible');
       });
     });
 
-    // Close on X button click
-    if(closeBtn) {
-      closeBtn.addEventListener('click', () => {
-        modal.classList.remove('lightbox-visible');
-      });
-    }
-
-    // Close when clicking on the dark background
-    if(modal) {
-      modal.addEventListener('click', (e) => {
-        if (e.target !== modalImg) {
-          modal.classList.remove('lightbox-visible');
+    // Attach click events to all article VIDEOS
+    document.querySelectorAll('article video').forEach(video => {
+      video.style.cursor = 'pointer';
+      video.addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        const src = video.currentSrc || video.querySelector('source')?.src;
+        if (src) {
+          modalImg.style.display = 'none';
+          modalVideo.src = src;
+          modalVideo.style.display = 'block';
+          modalVideo.play();
+          modal.classList.add('lightbox-visible');
         }
       });
-    }
+    });
+
+    // Close modal and reset video playback on click anywhere
+    modal.addEventListener('click', () => {
+      modal.classList.remove('lightbox-visible');
+      if (modalVideo) {
+        modalVideo.pause();
+        modalVideo.src = '';
+      }
+    });
   });
 </script>
 
@@ -480,7 +494,7 @@ image:
 </div>
 
 <div style="margin-bottom: 2.5rem; border-radius: 1rem; overflow: hidden; border: 1px solid rgba(255, 255, 255, 0.1); box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
-  <img src="ProcTex.jpg" alt="ProcTex Plugin Interface" style="width: 100%; height: auto; display: block;" />
+  <img src="ProcTex.webp" alt="ProcTex Plugin Interface" style="width: 100%; height: auto; display: block;" />
 </div>
 
 <div class="tony-highlights-card">
@@ -497,6 +511,7 @@ image:
 
 ProcTex was born out of a need to rapidly iterate on retro assets during the development of SOL CONSTRUCT. Rather than bouncing back and forth between external texture editing software and the engine, I wanted a native environment to instantly create our textures.
 
+
 **Core Tool Features:**
 
 * **Live 3D & 2D Previews:** Updates applied via the UI parameters are mapped in real time to an isolated 2D canvas and a full 3D viewport.
@@ -507,12 +522,11 @@ ProcTex was born out of a need to rapidly iterate on retro assets during the dev
 
 * **Flexible Export:** You have the choice to either export raw textures to plug into your own custom shader pipelines, or export everything packaged cleanly into a ready to use Unreal Material. 
 
-<div class="glass-carousel">
-  <img src="Image1.png" alt="ProcTex Screenshot 1">
-  <img src="Image2.png" alt="ProcTex Screenshot 2">
-  <img src="Image3.png" alt="ProcTex Screenshot 3">
-  <img src="Image4.png" alt="ProcTex Screenshot 4">
-  <img src="Image5.png" alt="ProcTex Screenshot 5">
+<div class="clean-carousel">
+  <img src="Image2.webp" alt="ProcTex Screenshot 2">
+  <img src="Image3.webp" alt="ProcTex Screenshot 3">
+  <img src="Image4.webp" alt="ProcTex Screenshot 4">
+  <img src="Image5.webp" alt="ProcTex Screenshot 5">
 </div>
 
 *(Little Side note: Coincidentally, Puck's Pixelizer came out right around the time I was building this! Their tool is incredibly robust and offers a ton of advanced features, so I highly recommend checking it out if you need a heavier-duty solution, plus their palette stuff is super neat!)*
@@ -523,92 +537,14 @@ Developing ProcTex required bridging the gap between Blueprint Editor Utility Wi
 
 * **Custom 3D Viewport in UMG:** To render a live 3D mesh inside a UMG widget, I created a custom Slate viewport leveraging `SEditorViewport` and `FAdvancedPreviewScene`. This required creating a custom subclass of `FEditorViewportClient` to dynamically override the background color (matching the editor's UI hex colors) and locking Post Process exposure settings so the preview meshes wouldn't completely blow out against the dark background.
 
-<details class="code-dropdown">
-  <summary><i class="fas fa-code"></i> View C++: Slate Viewport Client Override</summary>
+{{< code src="CustomViewport.cpp" lang="cpp" title="CustomViewportSnippet.cpp" >}}
 
-```cpp
-// Custom Viewport Client to Override the Background
-class FMyPreviewViewportClient : public FEditorViewportClient
-{
-public:
-    FMyPreviewViewportClient(FPreviewScene* InPreviewScene)
-        : FEditorViewportClient(nullptr, InPreviewScene)
-    {
-    }
-
-    // Overrides the default engine color with matching UI Hex
-    virtual FLinearColor GetBackgroundColor() const override
-    {
-        return FColor::FromHex(TEXT("#131313"));
-    }
-};
-
-// ... inside SMyCustomViewport ::MakeEditorViewportClient() ...
-MyViewportClient = MakeShareable(new FMyPreviewViewportClient(PreviewScene.Get()));
-MyViewportClient->bSetListenerPosition = false;
-MyViewportClient->SetRealtime(true);
-```
-</details>
-
-**Overcoming Quirks with SinglePropertyViews:**
-    Building a simple dropdown to select either a Static or Skeletal mesh ran into UE5's strict property typing. I solved this by defining a generic UObject* variable in C++ using the AllowedClasses = "StaticMesh,SkeletalMesh" specifier. To bypass UMG bugs, the widget dynamically binds to itself using an Event Pre Construct node before executing a C++ cast to seamlessly swap the hidden mesh components in the preview scene.
-
-<details class="code-dropdown">
-  <summary><i class="fas fa-code"></i> View C++: Slate Viewport Client Override</summary>
-
-```cpp
-void UModelPreviewWidget::ApplyMeshAsset()
-{
-#if WITH_EDITOR
-    // Safely cast the generic UObject parameter assigned via the SinglePropertyView
-    if (UStaticMesh* SM = Cast<UStaticMesh>(PreviewMeshAsset))
-    {
-        SetStaticMesh(SM);
-    }
-    else if (USkeletalMesh* SKM = Cast<USkeletalMesh>(PreviewMeshAsset))
-    {
-        SetSkeletalMesh(SKM);
-    }
-    else 
-    {
-        SetStaticMesh(nullptr);
-        SetSkeletalMesh(nullptr);
-    }
-#endif
-}
-```
-</details>
-
-**Overcoming Quirks with SinglePropertyViews:**
+## Overcoming Quirks with SinglePropertyViews:
 Building a simple dropdown to select either a Static or Skeletal mesh ran into UE5's strict property typing. I solved this by defining a generic UObject* variable in C++ using the AllowedClasses = "StaticMesh,SkeletalMesh" specifier. To bypass UMG bugs, the widget dynamically binds to itself using an Event Pre Construct node before executing a C++ cast to seamlessly swap the hidden mesh components in the preview scene.
 
-<details class="code-dropdown">
-  <summary><i class="fas fa-code"></i> View C++: Slate Viewport Client Override</summary>
+{{< blueprint src="TextureGeneratorGraph.txt" >}}
 
-```cpp
-void UModelPreviewWidget::ApplyMeshAsset()
-{
-#if WITH_EDITOR
-    // Safely cast the generic UObject parameter assigned via the SinglePropertyView
-    if (UStaticMesh* SM = Cast<UStaticMesh>(PreviewMeshAsset))
-    {
-        SetStaticMesh(SM);
-    }
-    else if (USkeletalMesh* SKM = Cast<USkeletalMesh>(PreviewMeshAsset))
-    {
-        SetSkeletalMesh(SKM);
-    }
-    else 
-    {
-        SetStaticMesh(nullptr);
-        SetSkeletalMesh(nullptr);
-    }
-#endif
-}
-```
-</details>
-
-  **Procedural Material Architecture:**
-    The underlying retro rendering logic relies heavily on parameterized Materials all working together. The posterization effect, for instance, uses a streamlined Multiply -> Floor -> Divide math operation to snap 0-1 color values into distinct visual bands. By updating global parameters via Dynamic Material Instances, sliders in the UI recalculate the shader logic instantly.
+## Procedural Material Architecture:
+The underlying retro rendering logic relies heavily on parameterized Materials all working together. The posterization effect, for instance, uses a streamlined Multiply -> Floor -> Divide math operation to snap 0-1 color values into distinct visual bands. By updating global parameters via Dynamic Material Instances, sliders in the UI recalculate the shader logic instantly.
 
 {{< blueprint src="generatorgraph.txt" >}}
