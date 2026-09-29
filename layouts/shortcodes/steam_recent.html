@@ -65,11 +65,23 @@
     margin-top: 1.5rem;
     margin-bottom: 2rem;
   }
+  
+  /* --- MOBILE TILE GRID ADJUSTMENTS --- */
   @media (max-width: 640px) {
     .steam-recent-grid {
-      grid-template-columns: repeat(1, 1fr);
+      grid-template-columns: repeat(3, 1fr); /* Keeps 3-column tile grid on mobile */
+      gap: 0.5rem; /* Tighter gap for small screens */
+    }
+
+    .steam-game-info {
+      padding: 0.4rem 0.5rem; /* Compact padding */
+    }
+
+    .steam-game-title {
+      font-size: 0.7rem; /* Slightly smaller font for titles on mobile */
     }
   }
+
   .steam-game-card {
     background: rgba(30, 41, 59, 0.5);
     border: 1px solid rgba(255, 255, 255, 0.1);
@@ -80,17 +92,20 @@
     display: flex;
     flex-direction: column;
   }
+
   .steam-game-card:hover {
     transform: translateY(-4px);
     border-color: #e05e5e;
     box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.5), 0 0 10px rgba(224, 94, 94, 0.2);
   }
+
   .steam-img-container {
     width: 100%;
-    height: 115px;
+    aspect-ratio: 1 / 1;
     background-color: rgba(15, 23, 42, 0.6);
     overflow: hidden;
   }
+
   .steam-game-card img {
     width: 100%;
     height: 100%;
@@ -98,12 +113,14 @@
     display: block;
     margin: 0 !important;
   }
+
   .steam-game-info {
     padding: 0.75rem 0.85rem;
     display: flex;
     align-items: center;
     background: rgba(15, 23, 42, 0.4);
   }
+
   .steam-game-title {
     font-weight: 700;
     font-size: 0.85rem;
