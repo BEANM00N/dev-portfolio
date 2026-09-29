@@ -52,3 +52,5 @@ hugoblox:
       enable: false
   search:
     enable: true
+steam_api_key: "77705691817B483DB4F85F5AB02CE84C"
+steam_id: "76561198257689650"

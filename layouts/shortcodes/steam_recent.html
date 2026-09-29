@@ -1,0 +1,115 @@
+{{- $steamID := .Get "steamid" | default (site.Params.steam_id | default "76561198257689650") -}}
+{{- $apiKey := .Get "key" | default site.Params.steam_api_key -}}
+
+{{- if not $apiKey -}}
+  <p style="color: #f87171; font-size: 0.85rem; padding: 0.75rem 1rem; border: 1px dashed rgba(248,113,113,0.4); border-radius: 0.5rem; background: rgba(248,113,113,0.1);">
+    ⚠️ <strong>Steam API Key Missing:</strong> Add <code>steam_api_key: "YOUR_KEY"</code> to <code>config/_default/params.yaml</code>.
+  </p>
+{{- else -}}
+  {{- $url := printf "https://api.steampowered.com/IPlayerService/GetOwnedGames/v1/?key=%s&steamid=%s&include_appinfo=true&include_played_free_games=true" $apiKey $steamID -}}
+  {{- $opts := dict "headers" (dict "Accept" "application/json") -}}
+
+  {{- with try (resources.GetRemote $url $opts) -}}
+    {{- with .Err -}}
+      <p style="color: #94a3b8; font-size: 0.85rem; font-style: italic;">Unable to load Steam games (Check API key or profile privacy settings).</p>
+    {{- else with .Value -}}
+      {{- $data := .Content | transform.Unmarshal -}}
+      {{- $allGames := $data.response.games -}}
+      
+      {{- if $allGames -}}
+        {{- $recentGames := first 9 (sort $allGames "rtime_last_played" "desc") -}}
+        
+        <div class="steam-recent-grid">
+          {{- range $recentGames -}}
+            {{- $appID := printf "%.0f" (float .appid) -}}
+            {{- $detailsUrl := printf "https://store.steampowered.com/api/appdetails?appids=%s" $appID -}}
+            {{- $headerImg := "" -}}
+            
+            {{- with try (resources.GetRemote $detailsUrl) -}}
+              {{- with .Value -}}
+                {{- $detailsJson := .Content | transform.Unmarshal -}}
+                {{- $gameDetails := index $detailsJson $appID -}}
+                {{- if and $gameDetails $gameDetails.success -}}
+                  {{- $headerImg = $gameDetails.data.header_image -}}
+                {{- end -}}
+              {{- end -}}
+            {{- end -}}
+
+            {{/* Fallback to standard CDN path if appdetails query fails */}}
+            {{- if not $headerImg -}}
+              {{- $headerImg = printf "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/%s/header.jpg" $appID -}}
+            {{- end -}}
+            
+            <a href="https://store.steampowered.com/app/{{ $appID }}/" target="_blank" rel="noopener" class="steam-game-card">
+              <div class="steam-img-container">
+                <img src="{{ $headerImg }}" alt="{{ .name }}" loading="lazy">
+              </div>
+              <div class="steam-game-info">
+                <span class="steam-game-title">{{ .name }}</span>
+              </div>
+            </a>
+          {{- end -}}
+        </div>
+      {{- else -}}
+        <p style="color: #94a3b8; font-size: 0.85rem; font-style: italic;">No Steam games found.</p>
+      {{- end -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
+
+<style>
+  .steam-recent-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    margin-top: 1.5rem;
+    margin-bottom: 2rem;
+  }
+  @media (max-width: 640px) {
+    .steam-recent-grid {
+      grid-template-columns: repeat(1, 1fr);
+    }
+  }
+  .steam-game-card {
+    background: rgba(30, 41, 59, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 0.75rem;
+    overflow: hidden;
+    text-decoration: none !important;
+    transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+    display: flex;
+    flex-direction: column;
+  }
+  .steam-game-card:hover {
+    transform: translateY(-4px);
+    border-color: #e05e5e;
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.5), 0 0 10px rgba(224, 94, 94, 0.2);
+  }
+  .steam-img-container {
+    width: 100%;
+    height: 115px;
+    background-color: rgba(15, 23, 42, 0.6);
+    overflow: hidden;
+  }
+  .steam-game-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    margin: 0 !important;
+  }
+  .steam-game-info {
+    padding: 0.75rem 0.85rem;
+    display: flex;
+    align-items: center;
+    background: rgba(15, 23, 42, 0.4);
+  }
+  .steam-game-title {
+    font-weight: 700;
+    font-size: 0.85rem;
+    color: #ffffff;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+</style>

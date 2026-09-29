@@ -119,62 +119,6 @@ sections:
     ce: "section-skills"
     id: "skills"
     As: "section-03113be1"
-  # - block: "resume-experience"
-  #   content:
-  #     title: "Experience"
-  #     date_format: "Jan 2006"
-  #     items:
-  #       - title: "Senior Software Engineer"
-  #         company: "Tech Corp"
-  #         company_url: ""
-  #         company_logo: ""
-  #         location: "San Francisco, CA"
-  #         date_start: "2023-01-01"
-  #         date_end: ""
-  #         description: |-
-  #           * Lead development of microservices architecture serving 1M+ users
-  #           * Improved API response time by 40% through optimization
-  #           * Mentored team of 5 junior developers
-  #           * Tech stack: React, Node.js, PostgreSQL, AWS
-  #       - title: "Full-Stack Developer"
-  #         company: "Startup Inc"
-  #         company_url: ""
-  #         company_logo: ""
-  #         location: "Remote"
-  #         date_start: "2021-06-01"
-  #         date_end: "2022-12-31"
-  #         description: |-
-  #           * Built and deployed 3 production applications from scratch
-  #           * Implemented CI/CD pipeline reducing deployment time by 60%
-  #           * Collaborated with design team on UI/UX improvements
-  #           * Tech stack: Next.js, Express, MongoDB, Docker
-  #       - title: "Junior Developer"
-  #         company: "Web Agency"
-  #         company_url: ""
-  #         company_logo: ""
-  #         location: "New York, NY"
-  #         date_start: "2020-01-01"
-  #         date_end: "2021-05-31"
-  #         description: |-
-  #           * Developed client websites using modern web technologies
-  #           * Maintained and updated legacy codebases
-  #           * Participated in code reviews and agile ceremonies
-  #           * Tech stack: React, WordPress, PHP, MySQL
-  #   design:
-  #     columns: "1"
-  #     background:
-  #       color:
-  #         light: "#ffffff"
-  #         dark: "#12151d"
-  #     spacing:
-  #       padding:
-  #         - "4rem"
-  #         - "0"
-  #         - "4rem"
-  #         - "0"
-  #   ce: "section-experience"
-  #   id: "experience"
-  #   As: "section-82dbc876"
   - block: "collection"
     content:
       title: "Recent Posts"
@@ -202,33 +146,18 @@ sections:
     ce: "section-blog"
     id: "blog"
     As: "section-8cb092e5"
-  - block: "contact-info"
-    content:
-      title: "Get In Touch"
-      subtitle: "Let's chat!"
-      text: |-
-       Whether you're looking to fill a technical design role or you just want to talk engine architecture and game feel over a virtual coffee, my inbox is open. Hit me up on LinkedIn, or drop a direct email. Always down to chat!
-      email: "joshmccamley@gmail.com"
-      autolink: true
-    design:
-      columns: "1"
-      background:
-        color:
-          light: "#ffffff"
-          dark: "#12151d"
-      spacing:
-        padding:
-          - "4rem"
-          - "0"
-          - "4rem"
-          - "0"
-    ce: "section-contact"
-    id: "contact"
-    As: "section-7a252383"
   - block: "markdown"
     content:
       title: ""
       text: |
+        <div id="steam-recent-section">
+          <div class="steam-section-header">
+            <i class="fab fa-steam"></i>
+            <h2>Recently Played</h2>
+          </div>
+          {{< steam_recent >}}
+        </div>
+
         <style>
           /* 1. Full-bleed background image for the Hero Section */
           #hero {
@@ -240,14 +169,14 @@ sections:
             border-bottom: 1px solid rgba(255, 255, 255, 0.1);
           }
 
-          /* 2. Turn ONLY the content container into a centered Glass Island */
+          /* Centered Glass Island for Hero Intro */
           #hero > div:has(h1) {
             background-color: rgba(30, 41, 59, 0.75) !important;
             backdrop-filter: blur(12px);
             -webkit-backdrop-filter: blur(12px);
             border: 1px solid rgba(255, 255, 255, 0.1) !important;
             border-radius: 2rem !important;
-            padding: 0rem 2rem !important;
+            padding: 2.5rem 2rem !important;
             max-width: 720px !important; 
             margin: 0 auto !important; 
             box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5) !important; 
@@ -260,18 +189,17 @@ sections:
             margin-bottom: 0.5rem !important;
           }
 
-          /* 4. Resize the Profile Picture AND its circular mask */
-          #hero img {
+          /* Profile Picture Avatar Styling */
+          #hero img:not(#steam-recent-section img) {
             width: 200px !important; 
             height: 200px !important; 
             max-width: none !important;
             object-fit: cover !important;
           }
 
-          /* Target the invisible wrapper container */
-          #hero div:has(> img), 
-          #hero a:has(> img),
-          #hero span:has(> img) {
+          #hero div:has(> img):not(#steam-recent-section *), 
+          #hero a:has(> img):not(#steam-recent-section *),
+          #hero span:has(> img):not(#steam-recent-section *) {
             width: 200px !important;
             height: 200px !important;
             max-width: 200px !important;
@@ -280,7 +208,61 @@ sections:
             margin: 0 auto !important;
           }
 
-          /* Force the Unreal Engine logo to be pure white */
+          /* 2. Standalone Steam Section Above Contact */
+          #steam-recent-section {
+            background-color: rgba(30, 41, 59, 0.6) !important;
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1) !important;
+            border-radius: 1.5rem !important;
+            padding: 2.5rem !important;
+            max-width: 900px !important;
+            margin: 0 auto !important;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5) !important;
+          }
+
+          .steam-section-header {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.75rem;
+            color: #ffffff;
+            margin-bottom: 1.5rem;
+          }
+
+          .steam-section-header i {
+            color: #e05e5e;
+            font-size: 1.8rem;
+          }
+
+          .steam-section-header h2 {
+            font-size: 1.75rem !important;
+            font-weight: 700 !important;
+            color: #ffffff !important;
+            margin: 0 !important;
+          }
+
+          /* STEAM GAME IMAGES - PERFECT 1:1 SQUARE FIT */
+          #steam-recent-section .steam-img-container {
+            width: 100% !important;
+            aspect-ratio: 1 / 1 !important;
+            height: auto !important;
+            border-radius: 0.5rem 0.5rem 0 0 !important;
+            overflow: hidden !important;
+            background-color: rgba(15, 23, 42, 0.6) !important;
+          }
+
+          #steam-recent-section .steam-game-card img {
+            width: 100% !important;
+            height: 100% !important;
+            max-width: 100% !important;
+            object-fit: cover !important;
+            border-radius: 0 !important;
+            display: block !important;
+            margin: 0 !important;
+          }
+
+          /* Unreal Engine Logo Brightness */
           [class*="unrealengine"], 
           img[src*="unrealengine"], 
           svg:has([id*="unrealengine"]) {
@@ -289,7 +271,7 @@ sections:
             filter: brightness(0) invert(1) !important;
           }
 
-          /* Make the entire Project Card clickable */
+          /* Project Cards Interactive State */
           #projects .group,
           #projects .card {
             position: relative !important;
@@ -310,6 +292,10 @@ sections:
 
           /* MOBILE RESPONSIVENESS PATCH */
           @media (max-width: 768px) {
+            #steam-recent-section {
+              padding: 1.5rem 1rem !important;
+            }
+
             article {
               padding: 1rem 0.5rem !important;
               margin-top: 0.5rem !important;
@@ -335,7 +321,7 @@ sections:
             }
           }
 
-          /* --- Achievement Bullets --- */
+          /* Achievements & Status Tags */
           .card-achievements {
             list-style-type: disc !important;
             padding-left: 1.2rem !important;
@@ -349,7 +335,6 @@ sections:
             line-height: 1.35 !important;
           }
 
-          /* --- Big Status Tags --- */
           .card-status-container {
             margin-top: 1rem;
             margin-bottom: 0.5rem;
@@ -371,7 +356,7 @@ sections:
           .status-proprietary { background: rgba(139, 92, 246, 0.15); border: 1.5px solid #8b5cf6; color: #a78bfa; }
           .status-alpha       { background: rgba(92, 246, 195, 0.15); border: 1.5px solid #5cf6c8; color: #8bfacf; }
 
-          /* --- Seamless WebM Video Preview --- */
+          /* Video Previews */
           #projects .featured-image-wrapper,
           #projects article div:has(> img),
           #projects .group a:has(> img) {
@@ -397,7 +382,6 @@ sections:
             font-weight: 600;
           }
 
-          /* --- Shared Hover & Scroll-Active Animation --- */
           #projects article:hover,
           #projects .group:hover,
           #projects article.is-hovered,
@@ -407,7 +391,6 @@ sections:
             border-color: rgba(224, 94, 94, 0.6) !important;
           }
 
-          /* Reveal video preview on desktop hover OR mobile scroll active */
           #projects article:hover .card-video-preview,
           #projects .group:hover .card-video-preview,
           #projects article.is-hovered .card-video-preview,
@@ -418,6 +401,7 @@ sections:
 
         <script>
           document.addEventListener('DOMContentLoaded', () => {
+            // Project Video Hover & Scroll Observer
             const projectVideos = {
               'sol-construct': 'Module Spin Sped Up.webm',
               'perforce-live-app': 'PerforceLiveApp.webm',
@@ -428,7 +412,6 @@ sections:
 
             const isMobile = window.innerWidth <= 768 || 'ontouchstart' in window;
 
-            // IntersectionObserver triggers card hover state & video play on mobile
             const mobileCardObserver = new IntersectionObserver((entries) => {
               entries.forEach(entry => {
                 const card = entry.target;
@@ -446,7 +429,7 @@ sections:
                 }
               });
             }, {
-              threshold: 0.60 // Triggers when card is 60% in view on mobile
+              threshold: 0.60
             });
 
             document.querySelectorAll('#projects article, #projects .group').forEach(card => {
@@ -460,7 +443,6 @@ sections:
               const imgWrapper = card.querySelector('div:has(> img)') || card.querySelector('a:has(> img)');
               if (!imgWrapper) return;
 
-              // Construct path to bundle asset and encode spaces
               const videoFilename = projectVideos[key];
               const videoSrc = href.replace(/\/$/, '') + '/' + encodeURI(videoFilename);
 
@@ -473,7 +455,6 @@ sections:
               video.preload = 'metadata';
               imgWrapper.appendChild(video);
 
-              // Desktop hover events
               card.addEventListener('mouseenter', () => {
                 if (!isMobile) video.play().catch(() => {});
               });
@@ -484,7 +465,6 @@ sections:
                 }
               });
 
-              // Mobile scroll visibility trigger
               if (isMobile) {
                 mobileCardObserver.observe(card);
               }
@@ -492,12 +472,40 @@ sections:
           });
         </script>
     design:
+      columns: "1"
+      background:
+        color:
+          light: "#ffffff"
+          dark: "#12151d"
       spacing:
         padding:
+          - "4rem"
           - "0"
-          - "0"
-          - "0"
+          - "4rem"
           - "0"
     ce: "section-43a65081"
     As: "section-0eee42b6"
+  - block: "contact-info"
+    content:
+      title: "Get In Touch"
+      subtitle: "Let's chat!"
+      text: |-
+       Whether you're looking to fill a technical design role or you just want to talk engine architecture and game feel over a virtual coffee, my inbox is open. Hit me up on LinkedIn, or drop a direct email. Always down to chat!
+      email: "joshmccamley@gmail.com"
+      autolink: true
+    design:
+      columns: "1"
+      background:
+        color:
+          light: "#ffffff"
+          dark: "#12151d"
+      spacing:
+        padding:
+          - "4rem"
+          - "0"
+          - "4rem"
+          - "0"
+    ce: "section-contact"
+    id: "contact"
+    As: "section-7a252383"
 ---

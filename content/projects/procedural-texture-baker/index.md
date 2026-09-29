@@ -509,6 +509,8 @@ toc: true
 
 ## Plugin Overview
 
+{{< steam_recent >}}
+
 ProcTex was born out of a need to rapidly iterate on retro assets during the development of SOL CONSTRUCT. Rather than bouncing back and forth between external texture editing software and the engine, I wanted a native environment to instantly create our textures.
 
 
